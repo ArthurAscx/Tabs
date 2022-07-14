@@ -54,6 +54,16 @@ let peliculas = [
         price: 5,
         genre: "Comedia"
     },
+
+    {
+        id: 0007,
+        title: "The grey guy",
+        rating: 7,
+        awards: false,
+        length: 100,
+        price: 8,
+        genre: "Aventuras"
+    },
 ]
 
 module.exports = peliculas;
