@@ -1,2 +1,2 @@
-# grupo6-tabs
+# grupo6-tabs 
 DH Proyecto integrador   
