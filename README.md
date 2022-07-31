@@ -17,3 +17,5 @@ https://www.disqueriamusicshop.com/ - Tienda de discos de vinilo en Argentina
 https://monostereo1stop.com - Servicio de masterización en Vinilo
 https://thesoundofvinyl.us - Tienda de Vinilos por género --------------------------------------------------------
 https://mercadolibre.com.ar - Mercado comunitario de productos
+
+https://trello.com/b/tT1Isyp7/sprint-1-2-proyectointegrador - Link al trello
