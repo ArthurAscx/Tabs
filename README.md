@@ -19,3 +19,6 @@ https://thesoundofvinyl.us - Tienda de Vinilos por género ---------------------
 https://mercadolibre.com.ar - Mercado comunitario de productos
 
 https://trello.com/b/tT1Isyp7/sprint-1-2-proyectointegrador - Link al trello
+
+Tipografía:
+Roboto, sans-serif.
