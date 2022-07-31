@@ -1,0 +1,23 @@
+{
+  "name": "grupo_6_tabs",
+  "version": "1.0.0",
+  "description": "DH Proyecto integrador \r Temática del e-commerce: Tienda de discos de vinilo \r Público objetivo: Coleccionistas de discos en formato vinilo.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurAscx/grupo_6_tabs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurAscx/grupo_6_tabs/issues"
+  },
+  "homepage": "https://github.com/ArthurAscx/grupo_6_tabs#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
