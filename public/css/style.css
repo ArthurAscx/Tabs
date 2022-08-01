@@ -5,7 +5,47 @@
     font-family: "Roboto", sans-serif;
 }
 
+body{
+    background-color: #33b199;
+}
+
+header{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #990017;
+    border: solid 5px #b5292a;
+    border-radius: 5px;
+}
+
+input{
+    width: 85%;
+    padding: 10px;
+    align-self: center;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.user-panel ul{
+    list-style: none;
+}
+
+.navegador{
+    order:1;
+}
+
+.navegador ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navegador ul li{
+    margin: 5px;
+}
+
 .logo{
-    width: 50vw;
-    height: 50px;
+    width: 70vw;
 }
