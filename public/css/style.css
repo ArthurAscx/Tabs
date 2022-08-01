@@ -7,6 +7,8 @@
 
 body{
     background-color: #33b199;
+    width: 100%;
+    height: 100%;
 }
 
 header{
@@ -27,19 +29,42 @@ input{
     border-radius: 5px;
 }
 
+header ul li {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 3px;
+    min-width: 35%;
+}
+
+header ul li a{
+    padding: 5px;   
+    align-self: center;
+}
+
+header ul li i{
+    align-self: center;
+}
+
 .user-panel ul{
     list-style: none;
 }
 
-.navegador{
-    order:1;
+.user-panel{
+    min-width: 90%;
 }
 
-.navegador ul{
+.navegador{
+    order:1;
+    min-width: 90%;
+}
+
+header ul{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     list-style: none;
+    margin: 5px;
 }
 
 .navegador ul li{
