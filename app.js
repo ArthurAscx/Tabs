@@ -6,6 +6,10 @@ app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get('/carrousel', (req,res)=>{
+    res.sendFile(__dirname + '/views/test-carrousel.html');
+});
+
 app.listen(3000, ()=>{
     console.log('Servidor funcionando');
 });
