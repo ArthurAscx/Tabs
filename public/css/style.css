@@ -73,6 +73,7 @@ header ul{
     justify-content: space-evenly;
     list-style: none;
     margin: 5px;
+    align-items: baseline;
 }
 
 .navegador ul li{
@@ -115,14 +116,17 @@ footer ul{
 
 footer .social-foot{
     display: flex;
-    width: 70%;
+    width: 40%;
     justify-content: space-around;
+    padding: 0% 30%;
+    gap: 5px;
 }
 
 footer button{
     height: 25px;
     width: 25px;
-    background-color: #bbb;
+    background-color: white;
+    color: black;
     border-radius: 50%;
     margin: 2px;
 }
