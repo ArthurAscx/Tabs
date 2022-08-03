@@ -132,7 +132,11 @@ footer button{
 }
 
 .testing p{
-    margin: 400px;
+    margin: 400px 0px;
+}
+
+.testing img{
+    width: 100vw;
 }
 
 
