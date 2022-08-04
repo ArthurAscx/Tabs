@@ -16,7 +16,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #493159;
+    background-color: #cdc3d4;
     border: solid 5px #09735F;
     border-radius: 5px;
 }
@@ -52,6 +52,10 @@ header ul li a{
 
 header ul li i{
     align-self: center;
+}
+
+.top-header{
+    text-align: center;
 }
 
 .user-panel ul{
@@ -264,6 +268,18 @@ html { scroll-behavior: smooth; }
 /* CSS DEL CARROUSEL FIN */
 
 @media (min-width: 576px){
+    
+    .top-header{
+        display: flex;
+               
+    }
+
+    input{
+               
+        width: 100%;
+       
+    }
+        
     header .navegador{
         display: block;
     }
