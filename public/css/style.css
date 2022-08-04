@@ -157,7 +157,7 @@ html { scroll-behavior: smooth; }
 
 
 .wrapper {
-	max-width: 1200px;
+    max-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -235,6 +235,18 @@ html { scroll-behavior: smooth; }
 	font-size: 1.5rem;
 }
 
+.listasventa{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3px;
+    flex-wrap: wrap;
+}
+
+.listasventa article img{
+    width: 92px;
+    height: 92px;
+}
+
 @media only screen and (min-width: 1200px) {
 	.slide {
 		width: 1200px;
@@ -262,4 +274,10 @@ html { scroll-behavior: smooth; }
      header button {
         display:none;
     } 
+    .listasventa article img{
+        width: 12vw;
+        height: 10vh;
+    }
+    
+
 }
