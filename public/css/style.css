@@ -1,17 +1,17 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
 
-body{
+body {
     background-color: #33b199;
     width: 100%;
     height: 100%;
 }
 
-header{
+header {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -21,15 +21,15 @@ header{
     border-radius: 5px;
 }
 
-header .navegador{
+header .navegador {
     display: none;
 }
 
-header .user-panel{
+header .user-panel {
     display: none;
 }
 
-input{
+input {
     width: 85%;
     padding: 10px;
     align-self: center;
@@ -45,33 +45,33 @@ header ul li {
     min-width: 35%;
 }
 
-header ul li a{
-    padding: 5px;   
+header ul li a {
+    padding: 5px;
     align-self: center;
 }
 
-header ul li i{
+header ul li i {
     align-self: center;
 }
 
-.top-header{
+.top-header {
     text-align: center;
 }
 
-.user-panel ul{
+.user-panel ul {
     list-style: none;
 }
 
-.user-panel{
+.user-panel {
     min-width: 90%;
 }
 
-.navegador{
-    order:1;
+.navegador {
+    order: 1;
     min-width: 90%;
 }
 
-header ul{
+header ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -80,15 +80,15 @@ header ul{
     align-items: baseline;
 }
 
-.navegador ul li{
+.navegador ul li {
     margin: 5px;
 }
 
-.logo{
+.logo {
     max-width: 30vw;
 }
 
-header ul li{
+header ul li {
     display: flex;
 }
 
@@ -99,11 +99,11 @@ header button {
     border-radius: 7px;
 }
 
-.logo-footer{
+.logo-footer {
     max-width: 20vw;
 }
 
-footer{
+footer {
     display: flex;
     margin: 5px;
     border-top: solid 1px black;
@@ -112,13 +112,13 @@ footer{
     color: white;
 }
 
-footer ul{
+footer ul {
     margin: 4px;
     list-style: none;
     font-style: italic;
 }
 
-footer .social-foot{
+footer .social-foot {
     display: flex;
     width: 40%;
     justify-content: space-around;
@@ -126,7 +126,7 @@ footer .social-foot{
     gap: 5px;
 }
 
-footer button{
+footer button {
     height: 25px;
     width: 25px;
     background-color: white;
@@ -138,162 +138,231 @@ footer button{
 /* CSS DEL CARROUSEL */
 
 @keyframes slide {
-	0% { transform: translateX(0); }
-	10% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
 
-	15% { transform: translateX(-100%); }
-	30% { transform: translateX(-100%); }
+    10% {
+        transform: translateX(0);
+    }
 
-	35% { transform: translateX(-200%); }
-	50% { transform: translateX(-200%); }
+    15% {
+        transform: translateX(-100%);
+    }
 
-	55% { transform: translateX(-300%); }
-	70% { transform: translateX(-300%); }
+    30% {
+        transform: translateX(-100%);
+    }
 
-	75% { transform: translateX(-400%); }
-	90% { transform: translateX(-400%); }
+    35% {
+        transform: translateX(-200%);
+    }
 
-	95% { transform: translateX(-500%); }
-	100% { transform: translateX(-500%); }
+    50% {
+        transform: translateX(-200%);
+    }
+
+    55% {
+        transform: translateX(-300%);
+    }
+
+    70% {
+        transform: translateX(-300%);
+    }
+
+    75% {
+        transform: translateX(-400%);
+    }
+
+    90% {
+        transform: translateX(-400%);
+    }
+
+    95% {
+        transform: translateX(-500%);
+    }
+
+    100% {
+        transform: translateX(-500%);
+    }
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 
 .wrapper {
     max-width: 1200px;
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 .slider {
-	position: relative;
+    position: relative;
 }
 
 .slides {
-	position: relative;
-	display: flex;
-	overflow: hidden;
+    position: relative;
+    display: flex;
+    overflow: hidden;
 }
 
 .slide {
-	width: 100vw;
-	flex-shrink: 0;
-	animation-name: slide;
-	animation-duration: 20s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+    width: 100vw;
+    flex-shrink: 0;
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .slide img {
-	width: 100%;
-	vertical-align: top;
+    width: 100%;
+    vertical-align: top;
 }
 
 .slide a {
-	width: 100%;
-	display: inline-block;
-	position: relative;
+    width: 100%;
+    display: inline-block;
+    position: relative;
 }
 
 .caption {
-	color: white;
-	text-shadow: 1px 1px black;
-	font-size: 8vw;
-	position: absolute;
-	bottom: 8vw;
-	right: 4vw;
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 8vw;
+    position: absolute;
+    bottom: 8vw;
+    right: 4vw;
 }
 
 .slide:target {
-	animation-name: none;
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 50;
+    animation-name: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
 }
 
 .slider-controler {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	text-align: center;
-	padding: 5px;
-	background-color: rgba(0,0,0,0.5);
-	z-index: 100;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 
 .slider-controler li {
-	margin: 0 0.5rem;
-	display: inline-block;
-	vertical-align: top;
+    margin: 0 0.5rem;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .slider-controler a {
-	display: inline-block;
-	vertical-align: top;
-	text-decoration: none;
-	color: white;
-	font-size: 1.5rem;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
 }
 
-.listasventa{
+.listasventa {
     display: flex;
     justify-content: space-evenly;
     margin: 3px;
     flex-wrap: wrap;
 }
 
-.listasventa article img{
+.listasventa article img {
     width: 92px;
     height: 92px;
 }
 
-@media only screen and (min-width: 1200px) {
-	.slide {
-		width: 1200px;
-	}
+.estiloForm {
+    padding: 20px 15px;
+    width: 50%;
+    text-align: center;
+    
+}
 
-	.caption {
-		font-size: 96px;
-		bottom: 96px;
-		right: 50px;
-	}
+.estiloForm1 {
+    margin-bottom: 15px;
+}
+
+.estiloForm1 label {
+    margin-bottom: 5px;
+    font-style: italic;
+    display: block;
+}
+.estiloForm2{
+    width: 100%;
+    padding: 8px 8px;
+}
+
+.estiloForm3{
+    width: 100%;
+    padding: 8px 8px;
+}
+
+.botonForm{
+    background-color: blue;
+    color:white;
+    border: none;
+    font-size: 15px;
+    padding: 3px 3px;
+    border-radius: 3px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .slide {
+        width: 1200px;
+    }
+
+    .caption {
+        font-size: 96px;
+        bottom: 96px;
+        right: 50px;
+    }
 }
 
 
 
 /* CSS DEL CARROUSEL FIN */
 
-@media (min-width: 576px){
-    
-    .top-header{
+@media (min-width: 576px) {
+
+    .top-header {
         display: flex;
-               
+
     }
 
-    input{
-               
+    input {
+
         width: 100%;
-       
+
     }
-        
-    header .navegador{
+
+    header .navegador {
         display: block;
     }
+
     header .user-panel {
         display: block;
     }
 
-     header button {
-        display:none;
-    } 
-    .listasventa article img{
+    header button {
+        display: none;
+    }
+
+    .listasventa article img {
         width: 12vw;
         height: 10vh;
     }
-    
+
 
 }
