@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +11,22 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Lado A</title>
 </head>
+
 <body>
     <header>
-            <img src="/img/Logo1.gif" class="logo">
-            <input placeholder="Buscar artículos o géneros" action="#" method="GET">
-                <button><i class="gg-sort-az"></i></button>
+        <img src="/img/Logo1.gif" class="logo">
+        <input placeholder="Buscar artículos o géneros" action="#" method="GET">
+        <button><i class="gg-sort-az"></i></button>
         <div class="navegador">
-        <ul>
+            <ul>
+                <li><a href="/register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
                 <li><i class="gg-home"></i><a href="#">Home</a></li>
                 <li><i class="gg-dollar"></i><a href="#">Lo mas vendido</a></li>
                 <li><i class="gg-disc"></i><a href="#">Discos por género</a></li>
                 <li><i class="gg-info"></i><a href="#">Ayuda</a></li>
                 <li><i class="gg-user"></i><a href="#">Quienes Somos</a></li>
                 <li><i class="gg-user-list"></i><a href="#">Contacto</a></li>
-        </ul>
+            </ul>
         </div>
         <div class="user-panel">
             <ul>
@@ -34,8 +37,48 @@
         </div>
     </header>
     <div class="carrusel">
-        <p>Prueba1</p>
+       
     </div>
+    <form action="register" method="post" class="estiloForm">
+        <br>
+        <label>Registro de usuario</label>
+            </br>
+            <div class="estiloForm1">
+            <label for="nombreApellido" class="estiloForm2">nombre y apellido:</label>
+            <input type="text" name="nombreApellido" class="estiloForm3">
+            </div>
+            <div class="estiloForm1">
+            <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
+            <input type="text" name="nombreDeUsuario" class="estiloForm3">
+            </div>
+            <div class="estiloForm1">
+            <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
+            <input type="text" name="fechaDeNacimiento" class="estiloForm3">
+            </div>
+            <div class="estiloForm1">
+            <label for="domicilio" class="estiloForm2">Domicilio:</label>
+            <input type="text" name="domicilio" class="estiloForm3">
+            </div>
+            <div class="estiloForm1">
+            <label for="perfilDeUsuario" class="estiloForm2">Nombre del Perfil:</label>
+            <input type="text" name="perfilDeUsuario" class="estiloForm3">
+            </div>
+            <div class="estiloForm1">
+            <label for="correo" class="estiloForm2">Correo Electronico:</label>
+            <input type="email" name="correo" class="estiloForm3">
+            </div>
+            <div class="estiloForm1">
+            <label for="contraseña" class="estiloForm2">Contraseña:</label>
+            <input type="password" name="contraseña" class="estiloForm3">
+            </div>
+            
+
+            <div>
+            <button type="reset" class="botonForm">Borrar</button>
+            <button type="submit" class="botonForm">Enviar</button>
+            </div>
+
+    </form>
     <footer>
         <ul>
             <h2>LADO A</h2>
@@ -43,19 +86,25 @@
             <img src="/img/Logo1.gif" class="logo-footer">
         </ul>
         <ul>
-            <li><h4>Ayuda y FAQ</h4></li>
+            <li>
+                <h4>Ayuda y FAQ</h4>
+            </li>
             <li><a href="#">Link1</a></li>
             <li><a href="#">Link1</a></li>
             <li><a href="#">Link1</a></li>
         </ul>
         <ul>
-            <li><h4>Mi Cuenta</h4></li>
+            <li>
+                <h4>Mi Cuenta</h4>
+            </li>
             <li><a href="#">Link2</a></li>
             <li><a href="#">Link2</a></li>
             <li><a href="#">Link2</a></li>
         </ul>
         <ul>
-            <li><h4>Placeholder</h4></li>
+            <li>
+                <h4>Placeholder</h4>
+            </li>
             <li><a href="#">Link3</a></li>
             <li><a href="#">Link3</a></li>
             <li><a href="#">Link3</a></li>
@@ -68,4 +117,5 @@
         </div>
     </footer>
 </body>
+
 </html>
