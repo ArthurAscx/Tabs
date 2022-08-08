@@ -135,6 +135,24 @@ footer button {
     margin: 2px;
 }
 
+.masvendido{
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    padding: 5px;
+}
+
+.nuevos{
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    padding: 5px;
+}
+
+.seleccionados{
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    padding: 5px;
+}
+
 /* CSS DEL CARROUSEL */
 
 @keyframes slide {
