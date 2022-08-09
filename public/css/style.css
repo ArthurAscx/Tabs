@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #33b199;
+    background-color: white;
     width: 100%;
     height: 100%;
 }
@@ -16,7 +16,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #cdc3d4;
+    background-color: white;
     border: solid 5px #09735F;
     border-radius: 5px;
 }
@@ -109,7 +109,7 @@ footer {
     border-top: solid 1px black;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    color: white;
+    color: black;
 }
 
 footer ul {
