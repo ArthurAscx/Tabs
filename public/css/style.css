@@ -25,7 +25,7 @@ header .navegador {
     display: none;
 }
 
-header .user-panel {
+ .user-panel {
     display: none;
 }
 
@@ -40,9 +40,8 @@ input {
 header ul li {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     margin: 3px;
-    min-width: 35%;
+    /* min-width: 35%; */
     color:white
 }
 
@@ -60,13 +59,6 @@ header ul li i {
     text-align: center;
 }
 
-.user-panel ul {
-    list-style: none;
-}
-
-.user-panel {
-    min-width: 90%;
-}
 
 .navegador {
     order: 1;
@@ -76,8 +68,8 @@ header ul li i {
 
 header ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
     list-style: none;
     margin: 5px;
     align-items: baseline;
@@ -93,9 +85,6 @@ header ul {
     
 }
 
-header ul li {
-    display: flex;
-}
 
 header button {
     align-self: center;
@@ -360,31 +349,22 @@ html {
     align-items: center;
 }
 
-@media only screen and (min-width: 1200px) {
-    .logo {
-        max-width: 300px;
-    }
-    
-    
-    .slide {
-        width: 1200px;
-    }
-
-    .caption {
-        font-size: 96px;
-        bottom: 96px;
-        right: 50px;
-    }
-}
-
 
 
 /* CSS DEL CARROUSEL FIN */
 
-@media (min-width: 361px){ 
+@media (min-width: 550px){ 
+
+    .user-panel {
+        display:flex;
+        list-style: none;
+        align-items: center;
+    }
+
 
     .top-header {
         display: flex;
+        justify-content: space-around;
 
     }
     .logo{
@@ -394,7 +374,7 @@ html {
 
     input {
 
-        width: 50%;
+        width: 45%;
 
     }
 
@@ -403,10 +383,6 @@ html {
     }
 
     header .navegador {
-        display: block;
-    }
-
-    header .user-panel {
         display: block;
     }
 
@@ -423,4 +399,18 @@ html {
 
 @media (min-width: 769px){
 
+    .logo {
+        max-width: 300px;
+    }
+    
+    
+    .slide {
+        width: 1200px;
+    }
+
+    .caption {
+        font-size: 96px;
+        bottom: 96px;
+        right: 50px;
+    }
 }
