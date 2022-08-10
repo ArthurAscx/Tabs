@@ -16,7 +16,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: white;
+    background-color: black;
     border: solid 5px #09735F;
     border-radius: 5px;
 }
@@ -43,11 +43,13 @@ header ul li {
     flex-wrap: wrap;
     margin: 3px;
     min-width: 35%;
+    color:white
 }
 
 header ul li a {
     padding: 5px;
     align-self: center;
+    color:white
 }
 
 header ul li i {
@@ -87,6 +89,8 @@ header ul {
 
 .logo {
     max-width: 200px;
+    
+    
 }
 
 header ul li {
