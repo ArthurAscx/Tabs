@@ -135,6 +135,7 @@ footer button {
     margin: 2px;
 }
 
+
 .masvendido{
     border-left: solid 1px black;
     border-right: solid 1px black;
@@ -142,9 +143,23 @@ footer button {
 }
 
 .nuevos{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    justify-content: space-between;
     border-left: solid 1px black;
     border-right: solid 1px black;
     padding: 5px;
+}
+
+.nuevos h2{
+    width: 90%;
+}
+
+.nuevos article{
+    margin: 10px;
+    max-width: 30%;
+    overflow: hidden;
 }
 
 .seleccionados{
