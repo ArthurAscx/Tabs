@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,52 +11,73 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Lado A</title>
 </head>
+
 <body>
     <header>
-        <a href="/"><img src="/img/Logo.png" class="logo"></a>
+        <div class="top-header">
+            <a href="/"><img src="/img/Logo.png" class="logo"></a>
             <input placeholder="Buscar artículos o géneros" action="#" method="GET">
-                <button><i class="gg-sort-az"></i></button>
+            <ul class="user-panel">
+                <li><i class="gg-calendar-next"></i><a href="/login">Ingresar</a></li>
+                <li><i class="gg-add-r"></i><a href="/register">Registro</a></li>
+                <li><i class="gg-shopping-cart"></i><a href="#">Carrito</a></li>
+              </ul>
+        </div>
+        <button><i class="gg-sort-az"></i></button>
         <div class="navegador">
-        <ul>
+            <ul>
                 <li><i class="gg-home"></i><a href="#">Home</a></li>
                 <li><i class="gg-dollar"></i><a href="#">Lo mas vendido</a></li>
                 <li><i class="gg-disc"></i><a href="#">Discos por género</a></li>
                 <li><i class="gg-info"></i><a href="#">Ayuda</a></li>
                 <li><i class="gg-user"></i><a href="#">Quienes Somos</a></li>
                 <li><i class="gg-user-list"></i><a href="#">Contacto</a></li>
-        </ul>
-        </div>
-        <div class="user-panel">
-            <ul>
-                <li><i class="gg-calendar-next"></i><a href="#">Ingresar</a></li>
-                <li><i class="gg-add-r"></i><a href="#">Registro</a></li>
-                <li><i class="gg-shopping-cart"></i><a href="#">Carrito</a></li>
             </ul>
         </div>
     </header>
-    <div class="testing">
-        <p>Prueba1</p>
-    </div>
+
+    <form action="login" method="post" class="estiloForm">
+
+        <div class="estiloForm1">
+            <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario</label>
+            <input type="text" name="nombreDeUsuario" class="estiloForm3">
+        </div>
+        <div class="estiloForm1">
+            <label for="contraseña" class="estiloForm2">Contraseña</label>
+            <input type="password" name="contraseña" minlength="10" class="estiloForm3">
+        </div>
+        <div class="estiloForm1">
+            <button type="reset" class="botonForm">Borrar</button>
+            <button type="submit" class="botonForm">Enviar</button>
+        </div>
+
+    </form>
     <footer>
         <ul>
             <h2>LADO A</h2>
             <h4>Vinyl Company</h4>
-            <img src="/img/Logo1.gif" class="logo-footer">
+            <img src="/img/Logo.png" class="logo-footer">
         </ul>
         <ul>
-            <li><h4>Ayuda y FAQ</h4></li>
+            <li>
+                <h4>Ayuda y FAQ</h4>
+            </li>
             <li><a href="#">Link1</a></li>
             <li><a href="#">Link1</a></li>
             <li><a href="#">Link1</a></li>
         </ul>
         <ul>
-            <li><h4>Mi Cuenta</h4></li>
+            <li>
+                <h4>Mi Cuenta</h4>
+            </li>
             <li><a href="#">Link2</a></li>
             <li><a href="#">Link2</a></li>
             <li><a href="#">Link2</a></li>
         </ul>
         <ul>
-            <li><h4>Placeholder</h4></li>
+            <li>
+                <h4>Placeholder</h4>
+            </li>
             <li><a href="#">Link3</a></li>
             <li><a href="#">Link3</a></li>
             <li><a href="#">Link3</a></li>
@@ -67,5 +89,5 @@
             <button><span><i class="gg-twitter"></i></span></button>
         </div>
     </footer>
-</body>
+
 </html>

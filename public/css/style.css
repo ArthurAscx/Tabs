@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #33b199;
+    background-color: white;
     width: 100%;
     height: 100%;
 }
@@ -16,7 +16,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #cdc3d4;
+    background-color: black;
     border: solid 5px #09735F;
     border-radius: 5px;
 }
@@ -25,7 +25,7 @@ header .navegador {
     display: none;
 }
 
-header .user-panel {
+ .user-panel {
     display: none;
 }
 
@@ -40,14 +40,15 @@ input {
 header ul li {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     margin: 3px;
-    min-width: 35%;
+    /* min-width: 35%; */
+    color:white
 }
 
 header ul li a {
     padding: 5px;
     align-self: center;
+    color:white
 }
 
 header ul li i {
@@ -58,23 +59,17 @@ header ul li i {
     text-align: center;
 }
 
-.user-panel ul {
-    list-style: none;
-}
-
-.user-panel {
-    min-width: 90%;
-}
 
 .navegador {
     order: 1;
     min-width: 90%;
+  
 }
 
 header ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
     list-style: none;
     margin: 5px;
     align-items: baseline;
@@ -85,12 +80,11 @@ header ul {
 }
 
 .logo {
-    max-width: 30vw;
+    max-width: 200px;
+    
+    
 }
 
-header ul li {
-    display: flex;
-}
 
 header button {
     align-self: center;
@@ -109,7 +103,7 @@ footer {
     border-top: solid 1px black;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    color: white;
+    color: black;
 }
 
 footer ul {
@@ -320,7 +314,7 @@ html {
     padding: 20px 15px;
     width: 50%;
     text-align: center;
-    
+    min-width: 65vw;
 }
 
 .estiloForm1 {
@@ -331,64 +325,103 @@ html {
     margin-bottom: 5px;
     font-style: italic;
     display: block;
+    
+    
 }
+
+.login-crear{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.register-login{
+    margin: 10px;
+}
+
+.register-login button{
+    margin-top: 15px;
+}
+
+.register-login h2{ 
+    margin-top:20px;
+}
+
+.register-login ul{
+    margin: 20px;
+}
+
 .estiloForm2{
     width: 100%;
     padding: 8px 8px;
 }
 
 .estiloForm3{
-    width: 100%;
+    width: 70%;
     padding: 8px 8px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    
 }
 
 .botonForm{
-    background-color: blue;
-    color:white;
-    border: none;
+    
+    color:black;
+    
     font-size: 15px;
-    padding: 3px 3px;
-    border-radius: 3px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    transition: 0.5s;
 }
+
+.botonForm:hover{
+    background-color: black;
+    color: white;
+    
+}
+
 
 .estiloForm4{
     align-items: center;
-}
-
-@media only screen and (min-width: 1200px) {
-    .slide {
-        width: 1200px;
-    }
-
-    .caption {
-        font-size: 96px;
-        bottom: 96px;
-        right: 50px;
-    }
 }
 
 
 
 /* CSS DEL CARROUSEL FIN */
 
-@media (min-width: 576px) {
+@media (min-width: 550px){ 
+
+    .login-crear{
+        flex-wrap: nowrap;
+    }
+
+    .user-panel {
+        display:flex;
+        list-style: none;
+        align-items: center;
+    }
+
 
     .top-header {
         display: flex;
+        justify-content: space-around;
 
     }
+    .logo{
+        padding: 30px;
+    }
+
 
     input {
 
-        width: 100%;
+        width: 45%;
 
+    }
+
+    header{
+        display:block
     }
 
     header .navegador {
-        display: block;
-    }
-
-    header .user-panel {
         display: block;
     }
 
@@ -401,5 +434,22 @@ html {
         height: 10vh;
     }
 
+}
 
+@media (min-width: 769px){
+
+    .logo {
+        max-width: 300px;
+    }
+    
+    
+    .slide {
+        width: 1200px;
+    }
+
+    .caption {
+        font-size: 96px;
+        bottom: 96px;
+        right: 50px;
+    }
 }

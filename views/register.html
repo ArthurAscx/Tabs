@@ -14,13 +14,18 @@
 
 <body>
     <header>
-        <a href="/"><img src="/img/Logo.png" class="logo"></a>
-        <input placeholder="Buscar artículos o géneros" action="#" method="GET">
+        <div class="top-header">
+            <a href="/"><img src="/img/Logo.png" class="logo"></a>
+            <input placeholder="Buscar artículos o géneros" action="#" method="GET">
+            <ul class="user-panel">
+                <li><i class="gg-calendar-next"></i><a href="/login">Ingresar</a></li>
+                <li><i class="gg-add-r"></i><a href="/register">Registro</a></li>
+                <li><i class="gg-shopping-cart"></i><a href="#">Carrito</a></li>
+              </ul>
+        </div>
         <button><i class="gg-sort-az"></i></button>
         <div class="navegador">
             <ul>
-                <li><a href="/register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
-                <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
                 <li><i class="gg-home"></i><a href="#">Home</a></li>
                 <li><i class="gg-dollar"></i><a href="#">Lo mas vendido</a></li>
                 <li><i class="gg-disc"></i><a href="#">Discos por género</a></li>
@@ -29,52 +34,45 @@
                 <li><i class="gg-user-list"></i><a href="#">Contacto</a></li>
             </ul>
         </div>
-        <div class="user-panel">
-            <ul>
-                <li><i class="gg-calendar-next"></i><a href="#">Ingresar</a></li>
-                <li><i class="gg-add-r"></i><a href="#">Registro</a></li>
-                <li><i class="gg-shopping-cart"></i><a href="#">Carrito</a></li>
-            </ul>
-        </div>
     </header>
     <form action="register" method="post" class="estiloForm">
         <br>
-        <label>Registro de usuario</label>
-            </br>
-            <div class="estiloForm1">
+        <h3>Registro de usuario</h3>
+        </br>
+        <div class="estiloForm1">
             <label for="nombreApellido" class="estiloForm2">nombre y apellido:</label>
             <input type="text" name="nombreApellido" class="estiloForm3">
-            </div>
-            <div class="estiloForm1">
+        </div>
+        <div class="estiloForm1">
             <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
             <input type="text" name="nombreDeUsuario" class="estiloForm3">
-            </div>
-            <div class="estiloForm1">
+        </div>
+        <div class="estiloForm1">
             <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
             <input type="date" name="fechaDeNacimiento" class="estiloForm3">
-            </div>
-            <div class="estiloForm1">
+        </div>
+        <div class="estiloForm1">
             <label for="domicilio" class="estiloForm2">Domicilio:</label>
             <input type="text" name="domicilio" class="estiloForm3">
-            </div>
-            <div class="estiloForm1">
+        </div>
+        <div class="estiloForm1">
             <label for="perfilDeUsuario" class="estiloForm2">Nombre del Perfil:</label>
             <input type="text" name="perfilDeUsuario" class="estiloForm3">
-            </div>
-            <div class="estiloForm1">
+        </div>
+        <div class="estiloForm1">
             <label for="correo" class="estiloForm2">Correo Electronico:</label>
             <input type="email" name="correo" class="estiloForm3">
-            </div>
-            <div class="estiloForm1">
+        </div>
+        <div class="estiloForm1">
             <label for="contraseña" class="estiloForm2">Contraseña:</label>
             <input type="password" name="contraseña" class="estiloForm3">
-            </div>
-            
+        </div>
 
-            <div>
+
+        <div>
             <button type="reset" class="botonForm">Borrar</button>
             <button type="submit" class="botonForm">Enviar</button>
-            </div>
+        </div>
 
     </form>
     <footer>
