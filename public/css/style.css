@@ -297,10 +297,9 @@ html {
 
 .estiloForm {
     padding: 20px 15px;
-    width: 100%;
+    width: 50%;
     text-align: center;
-    
-    
+    min-width: 65vw;
 }
 
 .estiloForm1 {
@@ -315,6 +314,27 @@ html {
     
 }
 
+.login-crear{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.register-login{
+    margin: 10px;
+}
+
+.register-login button{
+    margin-top: 15px;
+}
+
+.register-login h2{ 
+    margin-top:20px;
+}
+
+.register-login ul{
+    margin: 20px;
+}
 
 .estiloForm2{
     width: 100%;
@@ -322,7 +342,7 @@ html {
 }
 
 .estiloForm3{
-    width: 30%;
+    width: 70%;
     padding: 8px 8px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     
@@ -354,6 +374,10 @@ html {
 /* CSS DEL CARROUSEL FIN */
 
 @media (min-width: 550px){ 
+
+    .login-crear{
+        flex-wrap: nowrap;
+    }
 
     .user-panel {
         display:flex;
