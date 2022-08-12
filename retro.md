@@ -8,3 +8,4 @@ Equilibrar el contraste de los colores de la página ya que luego no coincidian 
 Organizarnos mejor horarios de las reuniones y mejorar la delegación de contenidos a hacer de cada uno durante el sprint.
 
 -Que deberiamos de no volver a hacer
+No encontramos cuestiones críticas para este punto.
