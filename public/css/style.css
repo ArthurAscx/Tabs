@@ -17,8 +17,8 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: black;
-    border: solid 5px #09735F;
-    border-radius: 5px;
+    /* border: solid 5px #09735F; */
+    /* border-radius: 5px; */
 }
 
 header .navegador {
@@ -312,14 +312,22 @@ html {
 }
 
 .estiloForm {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 20px 15px;
-    width: 50%;
+    width: 100%;
     text-align: center;
     min-width: 65vw;
 }
 
+.estiloForm h3{
+    width: 70%;
+}
+
 .estiloForm1 {
     margin-bottom: 15px;
+    min-width: 45%;
 }
 
 .estiloForm1 label {
@@ -364,10 +372,12 @@ html {
     
 }
 
+.botones-registro{
+    width: 90%;
+}
+
 .botonForm{
-    
     color:black;
-    
     font-size: 15px;
     padding: 3px 6px;
     border-radius: 5px;
