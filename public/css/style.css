@@ -21,6 +21,9 @@ header {
     /* border-radius: 5px; */
 }
 
+header a{
+    text-decoration: none;
+}
 header .navegador {
     display: none;
 }
@@ -245,8 +248,10 @@ html {
 }
 
 .slide img {
-    width: 100%;
     vertical-align: top;
+    object-fit:fill;
+    height: 500px;
+    width: 100%;
 }
 
 .slide a {
