@@ -101,12 +101,14 @@ header button {
 }
 
 footer {
+    width: 100%;
     display: flex;
-    margin: 5px;
-    border-top: solid 1px black;
+    margin-top: 5px;
+    /* border-top: solid 1px black; */
     flex-wrap: wrap;
     justify-content: space-evenly;
-    color: black;
+    color: white;
+    background-color: black ;
 }
 
 footer ul {
