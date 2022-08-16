@@ -464,6 +464,28 @@ html {
     margin-top: 20px; 
 }
 
+.detalle article{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 25px 10px;
+    justify-content: space-evenly;
+    
+ }
+
+.detalle article p{
+    text-align: center;
+}
+
+ article h1{
+    margin: 10px 10px 10px;
+    text-align: center;
+}
+
+.botonAñadir{
+    padding: 5px;
+    margin-bottom: 10px;
+}
 @media (min-width: 550px){ 
 
     .login-crear{
