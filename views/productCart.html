@@ -36,20 +36,73 @@
             </ul>
         </div>
     </header>
-
-    <div class="contGen">
-        <div class="contGrid">
-            <div class="producto">
-                <div class="imgCont">
-                    <img src="fa-solid fa-magnifying-glass-location"></i>" alt ="imagen dd representacion">
-                </div>
-                <div class="contenido">
-                    <p class="precio">X</p>
-                    <button type="button" class="bottomAñadirCarr"> Añadir al carrito </button>
-                </div>
-            </div>
-        </div>
+    <div class="headerCarro">
+    <h1>Carrito de productos</h1>
+    <p>Estos son los articulos actualmente en tu carrito: </p>
     </div>
+    <form action="/" method="get" class="formularioCompra">
+        <article>
+            <img src="/img/Discos/disco(9).webp">
+            <div class="datosDisco">
+            <h3> Nombre del Disco 1</h3>
+            <h4> Artista del Disco 1</h4>
+            <span> Precio del disco 1</span>
+         </div>
+            <div class="cantidadesCarrito">
+            <label>Cantidad:</label>
+            <select name="Cantidad" class="control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            </div>
+            <button class="botonEliminar">Eliminar</button>
+        </article>
+            <article>
+                <img src="/img/Discos/disco(7).webp">
+                <div class="datosDisco">
+                <h3> Nombre del Disco 2</h3>
+                <h4> Artista del Disco 2</h4>
+                <span> Precio del disco 2</span>
+                </div>
+                <div class="cantidadesCarrito">
+                <label>Cantidad:</label>
+                <select name="Cantidad" class="control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                 </div>
+                <button class="botonEliminar">Eliminar</button>
+            </article>
+                <article>
+                    <img src="/img/Discos/disco(4).webp">
+                    <div class="datosDisco">
+                    <h3> Nombre del Disco 3</h3>
+                    <h4> Artista del Disco 3</h4>
+                    <span> Precio del disco 3</span>
+                    </div>
+                    <div class="cantidadesCarrito">
+                    <label>Cantidad:</label>
+                    <select name="Cantidad" class="control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    </div>
+                    <button class="botonEliminar">Eliminar</button>
+                </article>
+                <div class ="finalCosto">
+                <h2 class="precioTotal">Costo total: 187.66$</h2>
+                <button type="submit" class="botonCompra">Comprar todo</button>
+                </div>
+    </form>
 
     <footer>
         <ul>

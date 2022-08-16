@@ -403,8 +403,66 @@ html {
 }
 
 
-
 /* CSS DEL CARROUSEL FIN */
+
+.formularioCompra{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formularioCompra article{
+    display: flex;
+    margin: 25px 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px grey;
+    border-bottom: solid 1px grey;
+    padding: 20px;
+}
+
+.datosDisco{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.formularioCompra article button{
+    margin-right: 50px;
+    margin-top: 20px;
+    background-color: gainsboro;
+    color: black;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.finalCosto{
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+}
+
+.botonCompra{
+    margin-right: 20px;
+    margin-left: 15px;
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.headerCarro{
+    margin: 10px;
+}
+
+.headerCarro p{
+    margin-top: 20px; 
+}
 
 @media (min-width: 550px){ 
 
