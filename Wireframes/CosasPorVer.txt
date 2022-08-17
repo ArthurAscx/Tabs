@@ -1,0 +1,4 @@
+Agregar imagen a la derecha del login
+Agregar checkboxes registro generos musica
+Achicar fotos
+Mover login y registro a la derecha........................

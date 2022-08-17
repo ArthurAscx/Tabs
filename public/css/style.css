@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #33b199;
+    background-color: white;
     width: 100%;
     height: 100%;
 }
@@ -16,16 +16,19 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #cdc3d4;
-    border: solid 5px #09735F;
-    border-radius: 5px;
+    background-color: black;
+    /* border: solid 5px #09735F; */
+    /* border-radius: 5px; */
 }
 
+header a{
+    text-decoration: none;
+}
 header .navegador {
     display: none;
 }
 
-header .user-panel {
+ .user-panel {
     display: none;
 }
 
@@ -40,14 +43,15 @@ input {
 header ul li {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     margin: 3px;
-    min-width: 35%;
+    /* min-width: 35%; */
+    color:white
 }
 
 header ul li a {
     padding: 5px;
     align-self: center;
+    color:white
 }
 
 header ul li i {
@@ -58,23 +62,17 @@ header ul li i {
     text-align: center;
 }
 
-.user-panel ul {
-    list-style: none;
-}
-
-.user-panel {
-    min-width: 90%;
-}
 
 .navegador {
     order: 1;
     min-width: 90%;
+  
 }
 
 header ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
     list-style: none;
     margin: 5px;
     align-items: baseline;
@@ -85,12 +83,11 @@ header ul {
 }
 
 .logo {
-    max-width: 30vw;
+    max-width: 200px;
+    
+    
 }
 
-header ul li {
-    display: flex;
-}
 
 header button {
     align-self: center;
@@ -104,12 +101,14 @@ header button {
 }
 
 footer {
+    width: 100%;
     display: flex;
-    margin: 5px;
-    border-top: solid 1px black;
+    margin-top: 5px;
+    /* border-top: solid 1px black; */
     flex-wrap: wrap;
     justify-content: space-evenly;
     color: white;
+    background-color: black ;
 }
 
 footer ul {
@@ -135,6 +134,7 @@ footer button {
     margin: 2px;
 }
 
+
 .masvendido{
     border-left: solid 1px black;
     border-right: solid 1px black;
@@ -142,9 +142,24 @@ footer button {
 }
 
 .nuevos{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    justify-content: space-between;
     border-left: solid 1px black;
     border-right: solid 1px black;
     padding: 5px;
+}
+
+.nuevos h2{
+    width: 90%;
+}
+
+.nuevos article{
+    margin: 10px;
+    max-width: 50%;
+    min-width: 40%;
+    overflow: hidden;
 }
 
 .seleccionados{
@@ -235,8 +250,10 @@ html {
 }
 
 .slide img {
-    width: 100%;
     vertical-align: top;
+    object-fit:fill;
+    height: 500px;
+    width: 100%;
 }
 
 .slide a {
@@ -302,78 +319,207 @@ html {
 }
 
 .estiloForm {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 20px 15px;
-    width: 50%;
+    width: 100%;
     text-align: center;
-    
+    min-width: 65vw;
+}
+
+.estiloForm h3{
+    width: 70%;
 }
 
 .estiloForm1 {
     margin-bottom: 15px;
+    min-width: 45%;
 }
 
 .estiloForm1 label {
     margin-bottom: 5px;
     font-style: italic;
     display: block;
+    
+    
 }
+
+.login-crear{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.register-login{
+    margin: 10px;
+}
+
+.register-login button{
+    margin-top: 15px;
+}
+
+.register-login h2{ 
+    margin-top:20px;
+}
+
+.register-login ul{
+    margin: 20px;
+}
+
 .estiloForm2{
     width: 100%;
     padding: 8px 8px;
 }
 
 .estiloForm3{
-    width: 100%;
+    width: 70%;
     padding: 8px 8px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    
+}
+
+.botones-registro{
+    width: 90%;
 }
 
 .botonForm{
-    background-color: blue;
-    color:white;
-    border: none;
+    color:black;
     font-size: 15px;
-    padding: 3px 3px;
-    border-radius: 3px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    transition: 0.5s;
 }
+
+.botonForm:hover{
+    background-color: black;
+    color: white;
+    
+}
+
 
 .estiloForm4{
     align-items: center;
 }
 
-@media only screen and (min-width: 1200px) {
-    .slide {
-        width: 1200px;
-    }
-
-    .caption {
-        font-size: 96px;
-        bottom: 96px;
-        right: 50px;
-    }
-}
-
-
 
 /* CSS DEL CARROUSEL FIN */
 
-@media (min-width: 576px) {
+.formularioCompra{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formularioCompra article{
+    display: flex;
+    margin: 25px 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px grey;
+    border-bottom: solid 1px grey;
+    padding: 20px;
+}
+
+.datosDisco{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.formularioCompra article button{
+    margin-right: 50px;
+    margin-top: 20px;
+    background-color: gainsboro;
+    color: black;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.finalCosto{
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+}
+
+.botonCompra{
+    margin-right: 20px;
+    margin-left: 15px;
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.headerCarro{
+    margin: 10px;
+}
+
+.headerCarro p{
+    margin-top: 20px; 
+}
+
+.detalle article{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 25px 10px;
+    justify-content: space-evenly;
+    
+ }
+
+.detalle article p{
+    text-align: center;
+}
+
+ article h1{
+    margin: 10px 10px 10px;
+    text-align: center;
+}
+
+.botonAñadir{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+@media (min-width: 550px){ 
+
+    .login-crear{
+        flex-wrap: nowrap;
+    }
+
+    .user-panel {
+        display:flex;
+        list-style: none;
+        align-items: center;
+    }
+
 
     .top-header {
         display: flex;
+        justify-content: space-around;
 
     }
+    .logo{
+        padding: 30px;
+    }
+
 
     input {
 
-        width: 100%;
+        width: 45%;
 
+    }
+
+    header{
+        display:block
     }
 
     header .navegador {
-        display: block;
-    }
-
-    header .user-panel {
         display: block;
     }
 
@@ -386,5 +532,22 @@ html {
         height: 10vh;
     }
 
+}
 
+@media (min-width: 769px){
+
+    .logo {
+        max-width: 300px;
+    }
+    
+    
+    .slide {
+        width: 1200px;
+    }
+
+    .caption {
+        font-size: 96px;
+        bottom: 96px;
+        right: 50px;
+    }
 }
