@@ -3,6 +3,10 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 
+app.set("view engine" , "ejs");
+
+// NO PRESTAR ATENCION A ESTA LINEA app.set("views", __dirname +"/public/views");
+
 // Routers
 const rutasPrincipales = require("./routers/mainRouter");
 const rutasProducto = require("./routers/productRouter");

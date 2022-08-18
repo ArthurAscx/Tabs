@@ -2,13 +2,13 @@ const path = require("path");
 
 const handlerOne = {
     index: (req,res)=>{
-        res.sendFile(path.join(__dirname , '../views/index.html'));
+        res.render("index");
     },
     contacto: (req,res)=>{
-        res.sendFile(path.join(__dirname , '../views/contacto.html'));
+        res.render("contacto");
     },
     ayuda: (req,res)=>{
-        res.sendFile(path.join(__dirname , '../views/ayuda.html'));
+        res.render("ayuda");
     }
 }
 

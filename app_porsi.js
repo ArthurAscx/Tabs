@@ -2,38 +2,34 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 
+app.set("view engine" , "ejs");
+
+// NO PRESTAR ATENCION A ESTA LINEA app.set("views", __dirname +"/public/views");
+
 // Rutas Principales
 
-app.use("/", rutasPrincipales);
-
 app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/index.html');
+    res.render('index');
 });
 
 // Rutas de Producto
 
-app.use("/detalle" , rutasProducto);
-app.use("/carrito" , rutasProducto);
+app.get('/carrito', (req,res)=>{
+    res.render('productCart');
+});
 
-app.get("/detalle" , (req,res) =>{
-    res.sendFile(__dirname + '/views/productDetail.html'); 
-})
-
-app.get("/carrito" , (req,res) =>{
-    res.sendFile(__dirname + '/views/productCart.html'); 
-})
-
+app.get('/detalle', (req,res)=>{
+    res.render('productDetail');
+});
 // Rutas de Usuario
 
-app.use("/login" , rutasUsuario);
-app.use("/register" , rutasUsuario);
 
 app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
+    res.render('login');
 });
 
 app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register.html');
+    res.render('register');
 });
 
 // Puerto escucha en el Numero:

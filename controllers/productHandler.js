@@ -2,11 +2,12 @@ const path = require("path");
 
 const productHandler = {
     detalle: (req,res)=>{
-        res.sendFile(path.join(__dirname , '../views/productDetail.html'));
+        res.render("productDetail");
     },
     carrito: (req,res)=>{
-        res.sendFile(path.join(__dirname , '../views/productCart.html'));
+        res.render("productCart");
     }
 }
+
 
 module.exports = productHandler;
