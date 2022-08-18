@@ -1,40 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link href='https://css.gg/css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
-    <title>Lado A</title>
-</head>
+<%- include("./partials/head")  %>
 
 <body>
-    <header>
-        <div class="top-header">
-            <a href="/"><img src="/img/Logo.png" class="logo"></a>
-            <input placeholder="Buscar artículos o géneros" action="#" method="GET">
-            <ul class="user-panel">
-                <li><i class="gg-calendar-next"></i><a href="/login">Ingresar</a></li>
-                <li><i class="gg-add-r"></i><a href="/register">Registro</a></li>
-                <li><i class="gg-shopping-cart"></i><a href="/carrito">Carrito</a></li>
-            </ul>
-        </div>
-        <button><i class="gg-sort-az"></i></button>
-        <div class="navegador">
-            <ul>
-                <li><i class="gg-home"></i><a href="#">Home</a></li>
-                <li><i class="gg-dollar"></i><a href="#">Lo mas vendido</a></li>
-                <li><i class="gg-disc"></i><a href="#">Discos por género</a></li>
-                <li><i class="gg-info"></i><a href="#">Ayuda</a></li>
-                <li><i class="gg-user"></i><a href="#">Quienes Somos</a></li>
-                <li><i class="gg-user-list"></i><a href="#">Contacto</a></li>
-            </ul>
-        </div>
-    </header>
+    <%- include("./partials/header")  %>
     <form class="detalle">
         <article>
             <img src="/img/Discos/disco(9).webp">
@@ -50,42 +17,5 @@
         </div>
         </article>
     </form>
-    <footer>
-        <ul>
-            <h2>LADO A</h2>
-            <h4>Vinyl Company</h4>
-            <img src="/img/Logo.png" class="logo-footer">
-        </ul>
-        <ul>
-            <li>
-                <h4>Ayuda y FAQ</h4>
-            </li>
-            <li><a href="#">Link1</a></li>
-            <li><a href="#">Link1</a></li>
-            <li><a href="#">Link1</a></li>
-        </ul>
-        <ul>
-            <li>
-                <h4>Mi Cuenta</h4>
-            </li>
-            <li><a href="#">Link2</a></li>
-            <li><a href="#">Link2</a></li>
-            <li><a href="#">Link2</a></li>
-        </ul>
-        <ul>
-            <li>
-                <h4>Placeholder</h4>
-            </li>
-            <li><a href="#">Link3</a></li>
-            <li><a href="#">Link3</a></li>
-            <li><a href="#">Link3</a></li>
-        </ul>
-        <div class="social-foot">
-            <button><span><i class="gg-instagram"></i></span></button>
-            <button><span><i class="gg-google"></i></span></button>
-            <button><span><i class="gg-facebook"></i></span></button>
-            <button><span><i class="gg-twitter"></i></span></button>
-        </div>
-    </footer>
-
+    <%- include("./partials/footer")  %>
 </html>
