@@ -1,26 +1,29 @@
+// Express instanciado y rutas estaticas
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
 
-app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/index.html');
-});
+// Routers
+const rutasPrincipales = require("./routers/mainRouter");
+const rutasProducto = require("./routers/productRouter");
+const rutasUsuario = require("./routers/userRouter");
 
-app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
-});
+// Rutas Principales
 
-app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register.html');
-});
+app.use("/", rutasPrincipales);
 
-app.get("/carrito" , (req,res) =>{
-    res.sendFile(__dirname + '/views/productCart.html'); 
-})
+// Rutas de Producto
 
-app.get("/detalle" , (req,res) =>{
-    res.sendFile(__dirname + '/views/productDetail.html'); 
-})
+app.use("/detalle" , rutasProducto);
+app.use("/carrito" , rutasProducto);
+
+
+// Rutas de Usuario
+
+app.use("/login" , rutasUsuario);
+app.use("/register" , rutasUsuario);
+
+// Puerto escucha en el Numero:
 
 app.listen(3000, ()=>{
     console.log('Servidor funcionando');
