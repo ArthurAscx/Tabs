@@ -481,6 +481,16 @@ html {
     margin: 10px 10px 10px;
     text-align: center;
 }
+.precio-artista-genero{
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.precio-artista-genero h3{
+    margin-right: 10px;
+}
 
 .botonAñadir{
     padding: 5px;
