@@ -7,7 +7,7 @@ app.set("view engine" , "ejs");
 
 // NO PRESTAR ATENCION A ESTA LINEA app.set("views", __dirname +"/public/views");
 
-// Routers
+// Routers importados
 const rutasPrincipales = require("./routers/mainRouter");
 const rutasProducto = require("./routers/productRouter");
 const rutasUsuario = require("./routers/userRouter");
@@ -18,14 +18,11 @@ app.use("/", rutasPrincipales);
 
 // Rutas de Producto
 
-app.use("/detalle" , rutasProducto);
-app.use("/carrito" , rutasProducto);
-
+app.use("/producto" , rutasProducto);
 
 // Rutas de Usuario
 
-app.use("/login" , rutasUsuario);
-app.use("/register" , rutasUsuario);
+app.use("/usuario" , rutasUsuario);
 
 // Puerto escucha en el Numero:
 
