@@ -267,6 +267,7 @@ html {
 .listasventa article img {
     width: 92px;
     height: 92px;
+    object-fit: fit;
 }
 
 .estiloForm {
@@ -491,6 +492,7 @@ html {
     .listasventa article img {
         width: 12vw;
         height: 10vh;
+        object-fit: contain;
     }
 
 }
