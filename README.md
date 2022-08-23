@@ -7,7 +7,7 @@ Descripción: Tienda online de discos de vinilo en la cual se puede adquirir dis
 
 Integrantes:
 Arturo Ascanio - 24 años - CABA, Capital Federal, Argentina 
-Joel Tardi -   - Córdoba, Córdoba, Argentina 
+Joel Tardi -   - 32 años-Córdoba, Córdoba, Argentina 
 Pablo Brizuela - 35 años - Córdoba, Córdoba, Argentina
 Tobias Szlukier - 16 años - CABA, Capítal Federal, Argentina
 
