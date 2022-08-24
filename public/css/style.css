@@ -266,6 +266,10 @@ html {
     flex-wrap: wrap;
 }
 
+.listasventa section{
+    min-width: 60vw;
+}
+
 .listasventa article img {
     width: 92px;
     height: 92px;
@@ -505,9 +509,8 @@ html {
         max-width: 300px;
     }
     
-    
-    .slide {
-        width: 1200px;
+    .listasventa section{
+        min-width: 0vw;
     }
 
     .caption {
