@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "titulo": "Blurryface",
+        "artista": "Twenty One Pilots",
+        "genero": "Rock",
+        "image": "blurryface.webp"
+    },
+    {
+        "id": 2,
+        "titulo": "Palaces",
+        "artista": "Flume",
+        "genero": "EDM",
+        "image": "palaces.webp"
+    },
+    {
+        "id": 3,
+        "titulo": "Trench",
+        "artista": "Twenty One Pilots",
+        "genero": "Rock",
+        "image": "trench.jpg"
+    },
+    {
+        "id": 4,
+        "titulo": "17",
+        "artista": "XXXTentation",
+        "genero": "Rap",
+        "image": "17.webp"
+    },
+    {
+        "id": 5,
+        "titulo": "So Far So Good",
+        "artista": "The Chainsmokers",
+        "genero": "EDM",
+        "image": "sofarsogood.webp"
+    },
+    {
+        "id": 6,
+        "titulo": "Evolve",
+        "artista": "Imagine Dragons",
+        "genero": "Pop",
+        "image": "evolve.webp"
+    },
+    {
+        "id": 7,
+        "titulo": "AM",
+        "artista": "Arctic Monkeys",
+        "genero": "Rock",
+        "image": "am.webp"
+    }
+]

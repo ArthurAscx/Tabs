@@ -9,7 +9,7 @@
     <form action="/" method="get" class="formularioCompra">
             <% for (const discos of lista) { %>
                 <article>
-                <img src="/img/Discos/disco(9).webp">
+                <img src="/img/Discos/<%= discos.image %>">
                 <div class="datosDisco">
                 <h3><%= discos.titulo%></h3>
                 <h4><%= discos.artista%></h4>

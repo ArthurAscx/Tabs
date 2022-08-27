@@ -368,6 +368,12 @@ html {
     flex-wrap: wrap;
 }
 
+.formularioCompra img{
+    object-fit: contain;
+    max-width: 300px;
+    max-height: 250px;
+}
+
 .formularioCompra article{
     display: flex;
     margin: 25px 10px;
