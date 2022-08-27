@@ -1,0 +1,21 @@
+<% for (const discos of lista) { %>
+    <article>
+    <img src="/img/Discos/<%= discos.image %>">
+    <div class="datosDisco">
+    <h3><%= discos.titulo%></h3>
+    <h4><%= discos.artista%></h4>
+    <span><%= discos.id%></span>
+</div>
+    <div class="cantidadesCarrito">
+        <label>Cantidad:</label>
+        <select name="Cantidad" class="control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        </div>
+        <button class="botonEliminar">Eliminar</button>          
+</article>
+<% } %>
