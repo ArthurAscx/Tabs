@@ -21,6 +21,7 @@ header {
     /* border-radius: 5px; */
 }
 
+
 header a{
     text-decoration: none;
 }
@@ -175,6 +176,7 @@ html {
     scroll-behavior: smooth;
 }
 
+.ca
 
 .wrapper {
     max-width: 1200px;
@@ -264,9 +266,14 @@ html {
     flex-wrap: wrap;
 }
 
+.listasventa section{
+    min-width: 60vw;
+}
+
 .listasventa article img {
     width: 92px;
     height: 92px;
+    object-fit: fit;
 }
 
 .estiloForm {
@@ -359,6 +366,12 @@ html {
 .formularioCompra{
     display: flex;
     flex-wrap: wrap;
+}
+
+.formularioCompra img{
+    object-fit: contain;
+    max-width: 300px;
+    max-height: 250px;
 }
 
 .formularioCompra article{
@@ -491,6 +504,7 @@ html {
     .listasventa article img {
         width: 12vw;
         height: 10vh;
+        object-fit: contain;
     }
 
 }
@@ -501,9 +515,8 @@ html {
         max-width: 300px;
     }
     
-    
-    .slide {
-        width: 1200px;
+    .listasventa section{
+        min-width: 0vw;
     }
 
     .caption {

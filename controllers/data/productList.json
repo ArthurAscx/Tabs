@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "titulo": "Blurryface",
+        "artista": "Twenty One Pilots",
+        "genero": "Rock",
+        "precio": 19.99,
+        "image": "blurryface.webp"
+    },
+    {
+        "id": 2,
+        "titulo": "Palaces",
+        "artista": "Flume",
+        "genero": "EDM",
+        "precio": 24.99,
+        "image": "palaces.webp"
+    },
+    {
+        "id": 3,
+        "titulo": "Trench",
+        "artista": "Twenty One Pilots",
+        "genero": "Rock",
+        "precio": 19.99,
+        "image": "trench.jpg"
+    },
+    {
+        "id": 4,
+        "titulo": "17",
+        "artista": "XXXTentation",
+        "genero": "Rap",
+        "precio": 29.99,
+        "image": "17.webp"
+    },
+    {
+        "id": 5,
+        "titulo": "So Far So Good",
+        "artista": "The Chainsmokers",
+        "genero": "EDM",
+        "precio": 24.99,
+        "image": "sofarsogood.webp"
+    },
+    {
+        "id": 6,
+        "titulo": "Evolve",
+        "artista": "Imagine Dragons",
+        "genero": "Pop",
+        "precio": 24.99,
+        "image": "evolve.webp"
+    },
+    {
+        "id": 7,
+        "titulo": "AM",
+        "artista": "Arctic Monkeys",
+        "genero": "Rock",
+        "precio": 19.99,
+        "image": "am.webp"
+    }
+]

@@ -4,7 +4,8 @@ const router = express.Router();
 
 const rutasProducto = require("../controllers/productHandler");
 
-router.get("/detalle", rutasProducto.detalle);
+router.get("/detalle/:id", rutasProducto.detalle);
+// router.get("/detalle", rutasProducto.detalleCatch) NECEISTAMOS UN CATCHH
 router.get("/carrito", rutasProducto.carrito);
 
 module.exports = router;
