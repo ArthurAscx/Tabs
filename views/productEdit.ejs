@@ -1,0 +1,43 @@
+<%- include("./partials/head")  %>
+<body>
+    <%- include("./partials/header")  %>
+    <form action="/" method="get" class="estiloForm">
+        <h3>Creación y edición de productos</h3>
+        <div class="estiloForm1">
+            <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
+            <input type="text" name="nombreApellido" class="estiloForm3">
+        </div>
+        <div class="estiloForm1">
+            <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
+            <input type="text" name="nombreDeUsuario" class="estiloForm3">
+        </div>
+        <div class="estiloForm1">
+            <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
+            <input type="date" name="fechaDeNacimiento" class="estiloForm3">
+        </div>
+        <div class="estiloForm1">
+            <label for="domicilio" class="estiloForm2">Domicilio:</label>
+            <input type="text" name="domicilio" class="estiloForm3">
+        </div>
+        <div class="estiloForm1">
+            <label for="correo" class="estiloForm2">Correo Electronico:</label>
+            <input type="email" name="correo" class="estiloForm3">
+        </div>
+        <div class="estiloForm1">
+            <label for="contraseña" class="estiloForm2">Contraseña:</label>
+            <input type="password" name="contraseña" class="estiloForm3">
+        </div>
+        <div class="estiloForm1">
+            <label for="Confirmar Contraseña" class="estiloForm2">Confirmar Contraseña:</label>
+            <input type="password" name="contraseña2" class="estiloForm3">
+        </div>
+
+        <div class="botones-registro">
+            <button type="reset" class="botonForm">Borrar</button>
+            <button type="submit" class="botonForm">Enviar</button>
+        </div>
+    </form>
+    <%- include("./partials/footer")  %>
+</body>
+
+</html>
