@@ -204,7 +204,7 @@ html {
 
 .slide img {
     vertical-align: top;
-    object-fit:fill;
+    object-fit:contain;
     height: 500px;
     width: 100%;
 }
@@ -484,9 +484,7 @@ html {
 
 
     input {
-
         width: 45%;
-
     }
 
     header{

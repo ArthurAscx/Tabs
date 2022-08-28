@@ -6,7 +6,7 @@ const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
 const productHandler = {
     detalle: (req,res)=>{
         let idDisco = parseInt(req.params.id);
-        
+        // UN TRY CATCH en caso de que este undefined el params id
         let disco = lista.find((disco)=> disco.id === idDisco)
 
         res.render("productDetail" , {disco : disco});
