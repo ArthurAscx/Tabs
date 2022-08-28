@@ -140,6 +140,7 @@ footer button {
     border-left: solid 1px black;
     border-right: solid 1px black;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 .nuevos{
@@ -150,6 +151,7 @@ footer button {
     border-left: solid 1px black;
     border-right: solid 1px black;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 .nuevos h2{
@@ -167,6 +169,7 @@ footer button {
     border-left: solid 1px black;
     border-right: solid 1px black;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 /* CSS DEL CARROUSEL */
@@ -370,9 +373,14 @@ html {
 
 .formularioCompra img{
     object-fit: contain;
-    max-width: 300px;
-    max-height: 250px;
+   width: 350px;
+   height: 300px;
 }
+
+.cantidadesCarrito{
+    width: 50%;
+}
+
 
 .formularioCompra article{
     display: flex;
@@ -390,6 +398,7 @@ html {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    width: 50%;
 }
 
 .formularioCompra article button{
