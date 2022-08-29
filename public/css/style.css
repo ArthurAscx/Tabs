@@ -331,6 +331,11 @@ html {
     list-style: none;
 }
 
+.recordarUsuario{
+    display: flex;
+    justify-content: end;
+}
+
 
 .estiloForm2{
     width: 100%;
