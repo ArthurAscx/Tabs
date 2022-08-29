@@ -325,6 +325,13 @@ html {
     margin: 20px;
 }
 
+.recuperarContraseña{
+    margin-top: 20px;
+    text-align:center;
+    list-style: none;
+}
+
+
 .estiloForm2{
     width: 100%;
     padding: 8px 8px;
