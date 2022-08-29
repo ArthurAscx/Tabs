@@ -328,6 +328,18 @@ html {
     margin: 20px;
 }
 
+.recuperarContraseña{
+    margin-top: 20px;
+    text-align:center;
+    list-style: none;
+}
+
+.recordarUsuario{
+    display: flex;
+    justify-content: end;
+}
+
+
 .estiloForm2{
     width: 100%;
     padding: 8px 8px;

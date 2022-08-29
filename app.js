@@ -27,5 +27,5 @@ app.use("/usuario" , rutasUsuario);
 // Puerto escucha en el Numero:
 
 app.listen(3000, ()=>{
-    console.log('Servidor funcionando');
+    console.log('Servidor funcionando puerto 3000');
 });

@@ -13,7 +13,12 @@ const productHandler = {
     },
     carrito: (req,res)=>{
         res.render("productCart", {lista: lista});
+    },
+
+    creacionEdicion: (req,res) =>{
+        res.render("productEdit")
     }
+
 }
 
 
