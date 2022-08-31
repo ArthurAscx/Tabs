@@ -6,6 +6,9 @@ const userHandler = {
     register: (req,res)=>{
         res.render("register");
     },
+    preguntas: (req,res) =>{
+        res.render("preguntasFrecuentes");
+    },
 };
 
 module.exports = userHandler;
