@@ -118,6 +118,15 @@ footer ul {
     font-style: italic;
 }
 
+footer a{
+    text-decoration: none;
+    color: grey;
+}
+
+footer h4{
+    color:#68478D;
+}
+
 footer .social-foot {
     display: flex;
     width: 40%;
