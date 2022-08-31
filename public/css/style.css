@@ -490,6 +490,27 @@ html {
     padding: 5px;
     margin-bottom: 10px;
 }
+.pregFrec{
+    text-align: center;
+}
+
+.pregFrec ul{
+    display: block;
+    text-align: center;
+    list-style: none;
+    margin: 0px 20% 0px 20%;
+    padding: 0px;
+    background-color: black;
+    border-radius: 10px;
+            
+}
+
+.pregFrec li {
+    padding: 5px;
+    border-bottom: 1px solid white;
+   
+}
+
 @media (min-width: 550px){ 
 
     .login-crear{
