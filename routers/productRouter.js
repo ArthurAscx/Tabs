@@ -15,7 +15,7 @@ router.get("/edicion", rutasProducto.creacionEdicion);
 router.get("/lista", rutasProducto.listado);
 
 router.get("/crear", rutasProducto.crearForm)
-//router.post("/crear", rutasProducto.crear)
+router.post("/crear", rutasProducto.crear)
 
 module.exports = router;
 

@@ -5,12 +5,16 @@ app.use(express.static('public'));
 
 app.set("view engine" , "ejs");
 
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
 // NO PRESTAR ATENCION A ESTA LINEA app.set("views", __dirname +"/public/views");
 
 // Routers importados
 const rutasPrincipales = require("./routers/mainRouter");
 const rutasProducto = require("./routers/productRouter");
 const rutasUsuario = require("./routers/userRouter");
+
 
 // Rutas Principales
 
@@ -25,6 +29,9 @@ app.use("/producto" , rutasProducto);
 app.use("/usuario" , rutasUsuario);
 
 // Puerto escucha en el Numero:
+
+
+
 
 app.listen(3000, ()=>{
     console.log('Servidor funcionando puerto 3000');

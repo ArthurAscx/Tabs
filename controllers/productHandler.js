@@ -23,7 +23,19 @@ const productHandler = {
     },
     crearForm: (req,res)=>{
         res.render("productCreateForm")
-    }
+    },
+    crear: (req,res)=>{
+        let producto= {
+            nombre: req.body.nombreProducto,
+            genero: req.body.genero,
+            artista: req.body.artista,
+            imagen: req.body.imagen,
+            año: req.body.ano,
+            precio: req.body.precio,
+            descripción: req.body.descripcion,
+        }  
+        res.send(producto);
+    },
 
 }
 
