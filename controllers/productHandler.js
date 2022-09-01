@@ -17,6 +17,12 @@ const productHandler = {
 
     creacionEdicion: (req,res) =>{
         res.render("productEdit")
+    },
+    listado: (req,res)=>{
+        res.render("productList", {lista: lista});
+    },
+    crearForm: (req,res)=>{
+        res.render("productCreateForm")
     }
 
 }

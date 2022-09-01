@@ -5,7 +5,8 @@
         "artista": "Twenty One Pilots",
         "genero": "Rock",
         "precio": 19.99,
-        "image": "blurryface.webp"
+        "image": "blurryface.webp",
+        "ventas":""
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "artista": "Flume",
         "genero": "EDM",
         "precio": 24.99,
-        "image": "palaces.webp"
+        "image": "palaces.webp",
+        "ventas":""
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "artista": "Twenty One Pilots",
         "genero": "Rock",
         "precio": 19.99,
-        "image": "trench.jpg"
+        "image": "trench.jpg",
+        "ventas":""
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "artista": "XXXTentation",
         "genero": "Rap",
         "precio": 29.99,
-        "image": "17.webp"
+        "image": "17.webp",
+        "ventas":""
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "artista": "The Chainsmokers",
         "genero": "EDM",
         "precio": 24.99,
-        "image": "sofarsogood.webp"
+        "image": "sofarsogood.webp",
+        "ventas":""
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "artista": "Imagine Dragons",
         "genero": "Pop",
         "precio": 24.99,
-        "image": "evolve.webp"
+        "image": "evolve.webp",
+        "ventas":""
     },
     {
         "id": 7,
@@ -53,6 +59,7 @@
         "artista": "Arctic Monkeys",
         "genero": "Rock",
         "precio": 19.99,
-        "image": "am.webp"
+        "image": "am.webp",
+        "ventas":""
     }
 ]
