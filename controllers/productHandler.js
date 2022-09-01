@@ -34,7 +34,7 @@ const productHandler = {
             precio: req.body.precio,
             descripción: req.body.descripcion,
         }  
-        res.send(producto);
+        res.redirect("/producto/lista");
     },
 
 }
