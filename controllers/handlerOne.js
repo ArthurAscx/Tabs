@@ -9,7 +9,10 @@ const handlerOne = {
     },
     ayuda: (req,res)=>{
         res.render("ayuda");
-    }
+    },
+    preguntas: (req,res) =>{
+        res.render("preguntasFrecuentes");
+    },
 }
 
 module.exports = handlerOne;

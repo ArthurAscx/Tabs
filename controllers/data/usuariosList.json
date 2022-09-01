@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "Nombre": "A",
+        "Apellido": "A",
+        "Email":" a@a.com",
+        "Contraseña": "******",
+        "Categoría": "admin",
+        "Imagen": "image.jpg"
+    },
+    {
+        "id": 2,
+        "Nombre": "U",
+        "Apellido": "U",
+        "Email": "u@u.com",
+        "Contraseña": "******",
+        "Categoría": "user",
+        "Imagen": "image2.jpg"
+    }
+]
