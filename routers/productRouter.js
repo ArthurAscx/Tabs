@@ -28,7 +28,7 @@ router.get("/edicion", rutasProducto.creacionEdicion);
 router.get("/lista", rutasProducto.listado);
 
 router.get("/crear", rutasProducto.crearForm)
-router.post("/crear", upload.single("imagen"),rutasProducto.crear)
+router.post("/crear", upload.single("imagenProducto"),rutasProducto.crear)
 
 module.exports = router;
 
