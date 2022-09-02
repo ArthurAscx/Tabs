@@ -24,8 +24,13 @@ const productHandler = {
     crearForm: (req,res)=>{
         res.render("productCreateForm")
     },
+
+    
     crear: (req,res)=>{
-        let producto= {
+        const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
+        console.log(req.file);
+        const productoNuevo= {
+            id: Date.now(),
             nombre: req.body.nombreProducto,
             genero: req.body.genero,
             artista: req.body.artista,
@@ -33,12 +38,12 @@ const productHandler = {
             año: req.body.ano,
             precio: req.body.precio,
             descripción: req.body.descripcion,
+
         }  
-       lista.push(producto)
-
-       const data = JSON.stringify(lista, null, " ");
-    fs.writeFileSync(rutaArchivo, data);
-
+        products.push(productoNuevo);
+        const data = JSON.stringify(lista, null, " ");
+        fs.writeFileSync(productsFilePath, data);
+       
         res.redirect("/producto/lista");
     },
 

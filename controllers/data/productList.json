@@ -1,65 +1,90 @@
 [
-    {
-        "id": 1,
-        "titulo": "Blurryface",
-        "artista": "Twenty One Pilots",
-        "genero": "Rock",
-        "precio": 19.99,
-        "image": "blurryface.webp",
-        "ventas":""
-    },
-    {
-        "id": 2,
-        "titulo": "Palaces",
-        "artista": "Flume",
-        "genero": "EDM",
-        "precio": 24.99,
-        "image": "palaces.webp",
-        "ventas":""
-    },
-    {
-        "id": 3,
-        "titulo": "Trench",
-        "artista": "Twenty One Pilots",
-        "genero": "Rock",
-        "precio": 19.99,
-        "image": "trench.jpg",
-        "ventas":""
-    },
-    {
-        "id": 4,
-        "titulo": "17",
-        "artista": "XXXTentation",
-        "genero": "Rap",
-        "precio": 29.99,
-        "image": "17.webp",
-        "ventas":""
-    },
-    {
-        "id": 5,
-        "titulo": "So Far So Good",
-        "artista": "The Chainsmokers",
-        "genero": "EDM",
-        "precio": 24.99,
-        "image": "sofarsogood.webp",
-        "ventas":""
-    },
-    {
-        "id": 6,
-        "titulo": "Evolve",
-        "artista": "Imagine Dragons",
-        "genero": "Pop",
-        "precio": 24.99,
-        "image": "evolve.webp",
-        "ventas":""
-    },
-    {
-        "id": 7,
-        "titulo": "AM",
-        "artista": "Arctic Monkeys",
-        "genero": "Rock",
-        "precio": 19.99,
-        "image": "am.webp",
-        "ventas":""
-    }
+ {
+  "id": 1,
+  "titulo": "Blurryface",
+  "artista": "Twenty One Pilots",
+  "genero": "Rock",
+  "precio": 19.99,
+  "image": "blurryface.webp",
+  "ventas": ""
+ },
+ {
+  "id": 2,
+  "titulo": "Palaces",
+  "artista": "Flume",
+  "genero": "EDM",
+  "precio": 24.99,
+  "image": "palaces.webp",
+  "ventas": ""
+ },
+ {
+  "id": 3,
+  "titulo": "Trench",
+  "artista": "Twenty One Pilots",
+  "genero": "Rock",
+  "precio": 19.99,
+  "image": "trench.jpg",
+  "ventas": ""
+ },
+ {
+  "id": 4,
+  "titulo": "17",
+  "artista": "XXXTentation",
+  "genero": "Rap",
+  "precio": 29.99,
+  "image": "17.webp",
+  "ventas": ""
+ },
+ {
+  "id": 5,
+  "titulo": "So Far So Good",
+  "artista": "The Chainsmokers",
+  "genero": "EDM",
+  "precio": 24.99,
+  "image": "sofarsogood.webp",
+  "ventas": ""
+ },
+ {
+  "id": 6,
+  "titulo": "Evolve",
+  "artista": "Imagine Dragons",
+  "genero": "Pop",
+  "precio": 24.99,
+  "image": "evolve.webp",
+  "ventas": ""
+ },
+ {
+  "id": 7,
+  "titulo": "AM",
+  "artista": "Arctic Monkeys",
+  "genero": "Rock",
+  "precio": 19.99,
+  "image": "am.webp",
+  "ventas": ""
+ },
+ {
+  "nombre": "fdsa",
+  "genero": "fda",
+  "artista": "fdsa",
+  "año": "5",
+  "precio": "5",
+  "descripción": "5"
+ },
+ {
+  "nombre": "fdsa",
+  "genero": "fda",
+  "artista": "fdsa",
+  "año": "5",
+  "precio": "5",
+  "descripción": "5"
+ },
+ {
+  "nombre": "probando",
+  "genero": "probando",
+  "artista": "probando",
+  "imagen": "default-image.png",
+  "año": "10",
+  "precio": "150",
+  "descripción": "k"
+ }
 ]
