@@ -86,5 +86,15 @@
   "año": "10",
   "precio": "150",
   "descripción": "k"
+ },
+ {
+  "id": 1662123390252,
+  "nombre": "prueba 2",
+  "genero": "prueba 2",
+  "artista": "prueba 2",
+  "imagen": "default-image.png",
+  "año": "4",
+  "precio": "2",
+  "descripción": "prueba 2"
  }
 ]

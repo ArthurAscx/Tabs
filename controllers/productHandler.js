@@ -26,6 +26,7 @@ const productHandler = {
     },
     crear: (req,res)=>{
         let producto= {
+            id: Date.now(),
             nombre: req.body.nombreProducto,
             genero: req.body.genero,
             artista: req.body.artista,
