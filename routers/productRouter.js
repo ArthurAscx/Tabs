@@ -24,7 +24,7 @@ router.get("/detalle/:id", rutasProducto.detalle);
 router.get("/carrito", rutasProducto.carrito);
 
 router.get("/edicion", rutasProducto.creacionEdicion);
-/* router.post("/creacionEdicion", rutasProducto.carrito); */
+/* router.put("/edicion/:id", rutasProducto.editar); */
 router.get("/lista", rutasProducto.listado);
 
 router.get("/crear", rutasProducto.crearForm)

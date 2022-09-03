@@ -96,5 +96,15 @@
   "año": "4",
   "precio": "2",
   "descripción": "prueba 2"
+ },
+ {
+  "id": 1662238796375,
+  "nombre": "a",
+  "genero": "b",
+  "artista": "c",
+  "imagen": "default-image.png",
+  "año": "5",
+  "precio": "5",
+  "descripción": "f"
  }
 ]

@@ -1,13 +1,14 @@
 // Express instanciado y rutas estaticas
 const express = require('express');
 const app = express();
+const methodOverride = require("method-override")
 app.use(express.static('public'));
 
 app.set("view engine" , "ejs");
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-
+app.use(methodOverride("_method"))
 // NO PRESTAR ATENCION A ESTA LINEA app.set("views", __dirname +"/public/views");
 
 // Routers importados
