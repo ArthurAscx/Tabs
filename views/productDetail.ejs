@@ -2,7 +2,7 @@
 
 <body>
     <%- include("./partials/header")  %>
-    <form class="detalle">
+    <div class="detalle">
         <article>
             <img src="/img/Discos/<%= disco.image %>">
            <div> 
@@ -15,7 +15,10 @@
             <button class="botonAñadir">Añadir a lista de destacado</button>
             <p>Texto detalle producto </p>
         </div>
+        <form action="/producto/borrar/<%= disco.id %>?_method=DELETE" method="POST">
+            <button type="submit" class="botonAñadir">ELIMINAR</button>
+        </form>
         </article>
-    </form>
+    </div>
     <%- include("./partials/footer")  %>
 </html>

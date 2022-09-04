@@ -18,6 +18,23 @@ const productHandler = {
     creacionEdicion: (req,res) =>{
         res.render("productEdit")
     },
+    editar:()=>{
+
+    },
+
+    borrar:(req,res)=>{
+        let lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        lista = lista.filter((p) => p.id != req.params.id);
+    
+        const data = JSON.stringify(lista, null, " ");
+    fs.writeFileSync(rutaArchivo, data);
+        
+        res.redirect("/producto/lista");
+      },
+    
+    
+
+
     listado: (req,res)=>{
         res.render("productList", {lista: lista});
     },

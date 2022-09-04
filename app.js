@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const methodOverride = require("method-override")
+
 app.use(express.static('public'));
 
 app.set("view engine" , "ejs");
@@ -37,3 +38,4 @@ app.use("/usuario" , rutasUsuario);
 app.listen(3000, ()=>{
     console.log('Servidor funcionando puerto 3000');
 });
+

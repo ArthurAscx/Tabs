@@ -30,6 +30,10 @@ router.get("/lista", rutasProducto.listado);
 router.get("/crear", rutasProducto.crearForm)
 router.post("/crear", upload.single("imagenProducto"),rutasProducto.crear)
 
+router.delete("/borrar/:id", rutasProducto.borrar);
+
+
+
 module.exports = router;
 
 /* Luego chequear esto
