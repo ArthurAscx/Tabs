@@ -1,0 +1,25 @@
+<%- include("./partials/head")  %>
+
+<body>
+    <%- include("./partials/header")  %>
+    <div class="detalle">
+        <article>
+            <img src="/img/Avatares/<%= user.Imagen %>">
+           <div> 
+            <h1><%= user.nombreApellido %></h1>
+            <div class="precio-artista-genero">
+           <h3><%= user.Usuario %></h3>
+           <h3><%= user.Email %> - <%= user.fechaDeNacimiento %></h3>
+           <h3><%= user.Categoria %></h3>
+           </div>
+            <button class="botonAñadir">Añadir al carrito</button>
+            <button class="botonAñadir">Añadir a lista de destacado</button>
+            <p>Texto detalle producto </p>
+        </div>
+        <form action="/usuario/borrar/<%= user.id %>?_method=DELETE" method="POST">
+            <button type="submit" class="botonAñadir">ELIMINAR</button>
+        </form>
+        </article>
+    </div>
+    <%- include("./partials/footer")  %>
+</html>

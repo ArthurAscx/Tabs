@@ -1,35 +1,42 @@
 <%- include("./partials/head")  %>
 <body>
     <%- include("./partials/header")  %>
-    <form action="/" method="get" class="estiloForm">
+    <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
         <h3>Registro de usuario</h3>
         <div class="estiloForm1">
             <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
-            <input type="text" name="nombreApellido" class="estiloForm3">
+            <input type="text" name="nombreApellido" class="estiloForm3" required>
         </div>
         <div class="estiloForm1">
             <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
-            <input type="text" name="nombreDeUsuario" class="estiloForm3">
+            <input type="text" name="nombreDeUsuario" class="estiloForm3" required>
         </div>
         <div class="estiloForm1">
             <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
-            <input type="date" name="fechaDeNacimiento" class="estiloForm3">
+            <input type="date" name="fechaDeNacimiento" class="estiloForm3" required>
         </div>
         <div class="estiloForm1">
-            <label for="domicilio" class="estiloForm2">Domicilio:</label>
-            <input type="text" name="domicilio" class="estiloForm3">
+            <label for="avatar" class="estiloForm2">Imagen de Perfil:</label>
+            <input type="file" name="avatar" id="avatar" class="estiloForm3">
         </div>
         <div class="estiloForm1">
             <label for="correo" class="estiloForm2">Correo Electronico:</label>
-            <input type="email" name="correo" class="estiloForm3">
+            <input type="email" name="correo" class="estiloForm3" required>
+        </div>
+        <div class="estiloForm1">
+            <label for="categoria" class="estiloForm2">Categoría:</label>
+            <select name="categoria" class="estiloForm3">
+                <option value="user" selected>Usuario</option>
+                <option value="admin">Administrador</option>
+            </select>
         </div>
         <div class="estiloForm1">
             <label for="contraseña" class="estiloForm2">Contraseña:</label>
-            <input type="password" name="contraseña" class="estiloForm3">
+            <input type="password" name="pass" class="estiloForm3" required>
         </div>
         <div class="estiloForm1">
             <label for="Confirmar Contraseña" class="estiloForm2">Confirmar Contraseña:</label>
-            <input type="password" name="contraseña2" class="estiloForm3">
+            <input type="password" name="pass2" class="estiloForm3" required>
         </div>
 
         <div class="botones-registro">
