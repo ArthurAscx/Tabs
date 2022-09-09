@@ -2,6 +2,7 @@
 
 <body>
     <%- include("./partials/header")  %>
+    <div class="container-login">
     <div class="detalle">
         <article>
             <img src="/img/productos/<%= disco.image %>">
@@ -11,14 +12,17 @@
            <h3><%= disco.precio %></h3>
            <h3><%= disco.genero %> - <%= disco.artista %></h3>
            </div>
+           <div class="botones-detalle">
             <button class="botonAñadir">Añadir al carrito</button>
             <button class="botonAñadir">Añadir a lista de destacado</button>
-            <p>Texto detalle producto </p>
+            </div>
+            <p><%= disco.descripción %> </p>
         </div>
         <form action="/producto/borrar/<%= disco.id %>?_method=DELETE" method="POST">
             <button type="submit" class="botonAñadir">ELIMINAR</button>
         </form>
         </article>
     </div>
+</div>
     <%- include("./partials/footer")  %>
 </html>

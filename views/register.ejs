@@ -1,6 +1,7 @@
 <%- include("./partials/head")  %>
 <body>
     <%- include("./partials/header")  %>
+    <div class="container-login">
     <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
         <h3>Registro de usuario</h3>
         <div class="estiloForm1">
@@ -44,6 +45,7 @@
             <button type="submit" class="botonForm">Enviar</button>
         </div>
     </form>
+</div>
     <%- include("./partials/footer")  %>
 </body>
 
