@@ -2,11 +2,11 @@
 <body>
     <%- include("./partials/header")  %>
     <div class="container-login">
-    <form action="/" method="get" class="estiloForm">
+    <form action="/producto/edicion/<%= disco.id %>?_method=PUT"  method="POST" class="estiloForm">
         <h3>Creación y edición de productos</h3>
         <div class="estiloForm1">
             <label for="nombreDelProducto" class="estiloForm2">Nombre del Producto :</label>
-            <input type="text" name="nombreDelProducto" class="estiloForm3">
+            <input type="text" name="nombreDelProducto" value="<%=disco.titulo%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
             <label for="descripción" class="estiloForm2">Descripción:</label>
@@ -31,7 +31,7 @@
        
         <div class="botones-registro">
             <button type="submit" class="botonForm">Modificar</button>
-            <button type="submit" class="botonForm">Crear</button>
+            
         </div>
     </form>
 </div>

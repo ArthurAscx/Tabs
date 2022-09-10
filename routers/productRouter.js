@@ -23,8 +23,9 @@ router.get("/detalle/:id", rutasProducto.detalle);
 // router.get("/detalle", rutasProducto.detalleCatch) NECEISTAMOS UN CATCHH
 router.get("/carrito", rutasProducto.carrito);
 
-router.get("/edicion", rutasProducto.creacionEdicion);
-/* router.put("/edicion/:id", rutasProducto.editar); */
+router.get("/edicion/:id", rutasProducto.creacionEdicion);
+router.put("/edicion/:id", rutasProducto.editar); 
+
 router.get("/lista", rutasProducto.listado);
 
 router.get("/crear", rutasProducto.crearForm)

@@ -16,11 +16,25 @@ const productHandler = {
     },
 
     creacionEdicion: (req, res) => {
-        res.render("productEdit")
+        const lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        const listas = lista.find((p) => p.id == req.params.id)
+          res.render("productEdit", { disco: listas });
+        
     },
-    editar: () => {
+    editar: (req, res) => {
+        const lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        const listas = lista.forEach((p) => {
+            
+            if(p.id == req.params.id){
+                p.titulo=req.body.nombreDelProducto
 
-    },
+            }
+        
+        })
+        const data = JSON.stringify(lista, null, " ");
+        fs.writeFileSync(rutaArchivo, data);
+            res.redirect("/producto/lista")
+    }, 
 
     borrar: (req, res) => {
         let lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
