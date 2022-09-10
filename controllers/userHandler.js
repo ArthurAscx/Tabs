@@ -33,6 +33,19 @@ const userHandler = {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         res.render("userList", {users: usuarios})
     },
+    detalle: (req,res)=>{
+        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        // Usar el find para encontrar el usuario y luego mandarlo a la página
+        let userid = parseInt(req.params.id);
+        let user = usuarios.find((u)=> u.id === userid);
+        if (user){
+        res.render("userDetail", {user})
+        }
+        else{
+            console.log(userid);
+            res.send(user)
+        }
+    },
     edicion: (req, res)=>{
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         // Usar el find para encontrar el usuario y luego mandarlo a la página
@@ -45,6 +58,12 @@ const userHandler = {
             console.log(userid);
             res.send(user)
         }
+    },
+    editar: (req,res)=>{
+        res.redirect("/usuario/login")
+    },
+    borrar: (req,res)=>{
+        
     }
 };
 
