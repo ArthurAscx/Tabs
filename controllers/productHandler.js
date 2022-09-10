@@ -30,6 +30,12 @@ const productHandler = {
                 p.descripción=req.body.descripción
                 p.genero=req.body.genero
                 p.precio=req.body.precio
+
+                if (req.file) {
+                    fs.unlinkSync("./public/img/productos/" + p.image);
+                    p.image = req.file.filename;
+                }
+                
             }
         
         })
