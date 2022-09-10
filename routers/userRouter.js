@@ -15,12 +15,21 @@ const storage = multer.diskStorage({
   })
  const upload = multer({storage});
 
+
+ // GETS de rutas
 router.get("/login", rutasUsuario.login);
 router.get("/register", rutasUsuario.register);
-router.post("/crear", upload.single("avatar"), rutasUsuario.crear)
 router.get("/lista", rutasUsuario.lista)
 router.get("/edicion/:id", rutasUsuario.edicion)
+router.get("/detalle/:id", rutasUsuario.detalle)
+//POST de rutas
+router.post("/crear", upload.single("avatar"), rutasUsuario.crear)
 
+// PUT de rutas
+router.put("/editar/:id", upload.single("avatar"), rutasUsuario.editar)
+
+// DELETE de rutas
+router.delete("/borrar/:id", rutasUsuario.borrar)
 module.exports = router;
 
 /* Luego chequear esto
