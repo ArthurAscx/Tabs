@@ -27,7 +27,9 @@ const productHandler = {
             
             if(p.id == req.params.id){
                 p.titulo=req.body.nombreDelProducto
-
+                p.descripción=req.body.descripción
+                p.genero=req.body.genero
+                p.precio=req.body.precio
             }
         
         })
