@@ -19,9 +19,11 @@
             <p><%= disco.descripción %> </p>
         </div>
         <form action="/producto/borrar/<%= disco.id %>?_method=DELETE" method="POST">
-            <button type="submit" class="botonAñadir">ELIMINAR</button>
+            <button type="submit" class="botonAñadir">Eliminar</button>
         </form>
-        </article>
+            <a href="/producto/edicion/<%= disco.id %>"><button  class="botonAñadir">Editar</button>
+            </a>    
+    </article>
     </div>
 </div>
     <%- include("./partials/footer")  %>

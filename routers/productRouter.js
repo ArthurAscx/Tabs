@@ -24,7 +24,7 @@ router.get("/detalle/:id", rutasProducto.detalle);
 router.get("/carrito", rutasProducto.carrito);
 
 router.get("/edicion/:id", rutasProducto.creacionEdicion);
-router.put("/edicion/:id", rutasProducto.editar); 
+router.put("/edicion/:id", upload.single("imagenProducto"),rutasProducto.editar); 
 
 router.get("/lista", rutasProducto.listado);
 

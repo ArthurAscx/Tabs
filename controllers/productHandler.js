@@ -39,6 +39,7 @@ const productHandler = {
             }
         
         })
+        
         const data = JSON.stringify(lista, null, " ");
         fs.writeFileSync(rutaArchivo, data);
             res.redirect("/producto/lista")
