@@ -30,6 +30,8 @@ const productHandler = {
                 p.descripción=req.body.descripción
                 p.genero=req.body.genero
                 p.precio=req.body.precio
+                p.año=req.body.ano
+                p.categoría=req.body.categoria
 
                 if (req.file) {
                     fs.unlinkSync("./public/img/productos/" + p.image);
