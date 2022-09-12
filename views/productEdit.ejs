@@ -2,7 +2,7 @@
 <body>
     <%- include("./partials/header")  %>
     <div class="container-login">
-    <form action="/producto/edicion/<%= disco.id %>?_method=PUT"  method="POST" class="estiloForm">
+    <form action="/producto/edicion/<%= disco.id %>?_method=PUT"  method="POST" enctype="multipart/form-data" class="estiloForm">
         <h3>Creación y edición de productos</h3>
         <div class="estiloForm1">
             <label for="nombreDelProducto" class="estiloForm2">Nombre del Producto :</label>

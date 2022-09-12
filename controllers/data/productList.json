@@ -5,9 +5,10 @@
   "artista": "Twenty One Pilots",
   "genero": "Rock",
   "precio": "20.5",
-  "image": "blurryface.webp",
+  "image": "1662994273481-Imagen para Facebook HK -0124.jpg",
   "ventas": "",
-  "descripción": ""
+  "año": "",
+  "categoría": ""
  },
  {
   "id": 2,
@@ -220,5 +221,16 @@
   "descripción": "",
   "ano": "2017",
   "categoría": "Internacional"
+ },
+ {
+  "id": 1662994435249,
+  "titulo": "Probando",
+  "genero": "Probando",
+  "artista": "Probando",
+  "image": "1662994435205-Imagen para Facebook HK -0124.jpg",
+  "año": 2222,
+  "precio": 555,
+  "descripción": "Probando",
+  "ventas": 1
  }
 ]
