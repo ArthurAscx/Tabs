@@ -468,7 +468,13 @@ html {
     width: 100%;
     margin: 25px 10px;
     justify-content: space-evenly;
-    
+    align-items: center;
+ }
+
+ .detalle article img{
+    object-fit: contain;
+    width: 400px;
+    height: 400px;
  }
 
 .detalle article p{
@@ -500,6 +506,16 @@ html {
 .botones-detalle button{
     margin: 10px
 }
+
+.detalle article img{
+    object-fit: contain;
+    width: 400px;
+    height: 200px;
+ }
+
+ .info-producto{
+    min-width: 95vw;
+ }
 
 .botonAñadir{
     padding: 5px;
@@ -571,6 +587,12 @@ html {
         object-fit: contain;
     }
 
+    .detalle article img{
+        object-fit: contain;
+        width: 500px;
+        height: 350px;
+     }
+
 }
 
 @media (min-width: 769px){
@@ -588,4 +610,9 @@ html {
         bottom: 96px;
         right: 50px;
     }
+    .detalle article img{
+        object-fit: contain;
+        width: 700px;
+        height: 500px;
+     }
 }
