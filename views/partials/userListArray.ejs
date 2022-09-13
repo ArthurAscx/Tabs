@@ -1,0 +1,23 @@
+<% for (const user of users) { %>
+    <article>
+        <a href="/usuario/detalle/<%= user.id%>"><img src="/img/Avatares/<%= user.Imagen %>"></a>
+        <div class="datosDisco">
+            <a href="/usuario/detalle/<%= user.id%>" style="text-decoration: none; color:black">
+                <h3>
+                    <%= user.Nombreapellido%>
+                </h3>
+            </a>
+            <h4>
+                <%= user.Usuario%>
+            </h4>
+            <span>ID:<%= user.id%></span>
+            <span>Email: <%= user.Email %></span>
+            <span>Permisos de Usuario: <%= user.Categoria %></span>
+            <span>Fecha de Nacimiento: <%= user.Nacimiento %></span>
+        </div>
+        <form action="/usuario/borrar/<%= user.id %>?_method=DELETE" method="POST">
+            <button class="botonEliminar" type="submit">Eliminar</button></a>
+        </form>
+<a href=" /usuario/edicion/<%=user.id%>"><button class="botonEliminar">Editar</button></a>
+    </article>
+    <% } %>

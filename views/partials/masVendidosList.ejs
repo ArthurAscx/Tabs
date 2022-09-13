@@ -1,0 +1,13 @@
+<% for (const disco of masvendidos) { %>
+    <article>
+        <a href="/producto/detalle/<%= disco.id%>"><img src="/img/productos/<%= disco.image %>"></a>
+        <br><span>
+            <%=disco.titulo %>
+        </span>
+        <br><span>
+            <%=disco.artista %>
+        </span>
+        <br><span>$<%=disco.precio %></span>
+    </article>
+    <% } %>
+        </section>

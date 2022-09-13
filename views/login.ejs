@@ -1,0 +1,47 @@
+<%- include("./partials/head") %>
+
+    <body>
+        <%- include("./partials/header") %>
+            <div class="container-login">
+                <div class="login-crear">
+                    <form action="/" method="get" class="estiloForm">
+
+                        <div class="estiloForm1">
+                            <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario</label>
+                            <input type="text" name="nombreDeUsuario" class="estiloForm3">
+                        </div>
+                        <div class="estiloForm1">
+                            <label for="contraseña" class="estiloForm2">Contraseña</label>
+                            <input type="password" name="contraseña" minlength="10" class="estiloForm3">
+                        </div>
+                        <div class="estiloForm1">
+                            <button type="reset" class="botonForm">Borrar</button>
+                            <button type="submit" class="botonForm">Enviar</button>
+                            <div class="recuperarContraseña">
+                                <li><a href="#">¿Olvidaste tu contraseña?</a></li>
+                            </div>
+                            <div class="recordarUsuario">
+                                <label for="recordarUsuario" class="">Recordar usuario</label>
+                                <input type="checkbox" name="recordarUsuario">
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <section class="register-login">
+                        <h2>Crear una cuenta</h2>
+                        <p>Con una cuenta vamos a poder hacer estas cosas:</p>
+                        <ul>
+                            <li>Añadir discos a nuestra lista de deseados</li>
+                            <li>Pagar y finalizar transacciones mas rápido</li>
+                            <li>Obtener ofertas especiales</li>
+                        </ul>
+                        <p style="font-style:italic">NOTA:Las cuentas creadas no recibiran publicidad por mail</p>
+                        <a href="/usuario/register"><button type="submit" class="botonForm">Enviar</button></a>
+                    </section>
+                </div>
+            </div>
+            <%- include("./partials/footer") %>
+    </body>
+
+    </html>

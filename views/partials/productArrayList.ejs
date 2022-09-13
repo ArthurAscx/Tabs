@@ -1,0 +1,11 @@
+<% for (const discos of lista) { %>
+    <article>
+    <a href="/producto/detalle/<%= discos.id%>"><img src="/img/productos/<%= discos.image %>"></a>
+    <div class="datosDisco">
+        <a href="/producto/detalle/<%= discos.id%>" style="text-decoration: none; color:black"><h3><%= discos.titulo%></h3></a>
+    <h4><%= discos.artista%></h4>
+    <span>ID:<%= discos.id%></span>
+    <span>$<%= discos.precio %></span>
+</div>      
+</article>
+<% } %>

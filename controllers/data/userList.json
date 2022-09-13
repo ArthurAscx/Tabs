@@ -1,0 +1,22 @@
+[
+ {
+  "id": 1663028519214,
+  "Nombreapellido": "cambio todo",
+  "Usuario": "cambiado",
+  "Nacimiento": "1110-10-10",
+  "Email": "cambio3@cambiotodo.copom",
+  "Categoria": "user",
+  "Imagen": "Imagen-952982084.png",
+  "Password": "$2a$10$imbDNXkSerW3YByfrkPbgekHBfc1VmqkU0ex5gq.CABVc88nKUp62"
+ },
+ {
+  "id": 1663082730176,
+  "Nombreapellido": "hasheando el hachis",
+  "Usuario": "hash",
+  "Nacimiento": "1998-07-01",
+  "Email": "hash@hash.com",
+  "Password": "$2a$10$4lYFpTzeYysjtbfmD8HqUOCCeNBNAUEibfC2pVvqQs8Ulb4eLRtYS",
+  "Categoria": "admin",
+  "Imagen": "avatar-591476973.jpeg"
+ }
+]

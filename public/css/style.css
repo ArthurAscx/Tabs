@@ -11,6 +11,10 @@ body {
     height: 100%;
 }
 
+ .container-login{
+    min-height: 600px;
+ }
+
 header {
     padding: 10px;
     display: flex;
@@ -20,6 +24,7 @@ header {
     /* border: solid 5px #09735F; */
     /* border-radius: 5px; */
 }
+
 
 header a{
     text-decoration: none;
@@ -117,6 +122,15 @@ footer ul {
     font-style: italic;
 }
 
+footer a{
+    text-decoration: none;
+    color: grey;
+}
+
+footer h4{
+    color:#68478D;
+}
+
 footer .social-foot {
     display: flex;
     width: 40%;
@@ -139,6 +153,8 @@ footer button {
     border-left: solid 1px black;
     border-right: solid 1px black;
     padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .nuevos{
@@ -149,6 +165,8 @@ footer button {
     border-left: solid 1px black;
     border-right: solid 1px black;
     padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .nuevos h2{
@@ -166,64 +184,18 @@ footer button {
     border-left: solid 1px black;
     border-right: solid 1px black;
     padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 /* CSS DEL CARROUSEL */
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    10% {
-        transform: translateX(0);
-    }
-
-    15% {
-        transform: translateX(-100%);
-    }
-
-    30% {
-        transform: translateX(-100%);
-    }
-
-    35% {
-        transform: translateX(-200%);
-    }
-
-    50% {
-        transform: translateX(-200%);
-    }
-
-    55% {
-        transform: translateX(-300%);
-    }
-
-    70% {
-        transform: translateX(-300%);
-    }
-
-    75% {
-        transform: translateX(-400%);
-    }
-
-    90% {
-        transform: translateX(-400%);
-    }
-
-    95% {
-        transform: translateX(-500%);
-    }
-
-    100% {
-        transform: translateX(-500%);
-    }
-}
 
 html {
     scroll-behavior: smooth;
 }
 
+.ca
 
 .wrapper {
     max-width: 1200px;
@@ -251,7 +223,7 @@ html {
 
 .slide img {
     vertical-align: top;
-    object-fit:fill;
+    object-fit:contain;
     height: 500px;
     width: 100%;
 }
@@ -313,9 +285,18 @@ html {
     flex-wrap: wrap;
 }
 
+.listasventa section{
+    min-width: 60vw;
+}
+
+.listasventa article{
+    margin: 10px;
+}
+
 .listasventa article img {
-    width: 92px;
-    height: 92px;
+    width: 120px;
+    height: 120px;
+    object-fit: fit;
 }
 
 .estiloForm {
@@ -367,6 +348,18 @@ html {
     margin: 20px;
 }
 
+.recuperarContraseña{
+    margin-top: 20px;
+    text-align:center;
+    list-style: none;
+}
+
+.recordarUsuario{
+    display: flex;
+    justify-content: end;
+}
+
+
 .estiloForm2{
     width: 100%;
     padding: 8px 8px;
@@ -410,6 +403,17 @@ html {
     flex-wrap: wrap;
 }
 
+.formularioCompra img{
+    object-fit: contain;
+   width: 350px;
+   height: 300px;
+}
+
+.cantidadesCarrito{
+    width: 50%;
+}
+
+
 .formularioCompra article{
     display: flex;
     margin: 25px 10px;
@@ -426,6 +430,7 @@ html {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    width: 50%;
 }
 
 .formularioCompra article button{
@@ -470,7 +475,13 @@ html {
     width: 100%;
     margin: 25px 10px;
     justify-content: space-evenly;
-    
+    align-items: center;
+ }
+
+ .detalle article img{
+    object-fit: contain;
+    width: 400px;
+    height: 400px;
  }
 
 .detalle article p{
@@ -480,12 +491,64 @@ html {
  article h1{
     margin: 10px 10px 10px;
     text-align: center;
+    text-overflow: ellipsis;
 }
+.precio-artista-genero{
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.precio-artista-genero h3{
+    margin-right: 10px;
+}
+
+.botones-detalle{
+    display: flex;
+    justify-content:center ;
+}
+
+.botones-detalle button{
+    margin: 10px
+}
+
+.detalle article img{
+    object-fit: contain;
+    width: 400px;
+    height: 200px;
+ }
+
+ .info-producto{
+    min-width: 95vw;
+ }
 
 .botonAñadir{
     padding: 5px;
     margin-bottom: 10px;
 }
+.pregFrec{
+    text-align: center;
+}
+
+.pregFrec ul{
+    display: block;
+    text-align: center;
+    list-style: none;
+    margin: 0px 20% 0px 20%;
+    padding: 0px;
+    background-color: black;
+    border-radius: 10px;
+            
+}
+
+.pregFrec li {
+    padding: 5px;
+    border-bottom: 1px solid white;
+   
+}
+
 @media (min-width: 550px){ 
 
     .login-crear{
@@ -510,9 +573,7 @@ html {
 
 
     input {
-
         width: 45%;
-
     }
 
     header{
@@ -528,9 +589,16 @@ html {
     }
 
     .listasventa article img {
-        width: 12vw;
-        height: 10vh;
+        width: 200px;
+        height: 150px;
+        object-fit: contain;
     }
+
+    .detalle article img{
+        object-fit: contain;
+        width: 500px;
+        height: 350px;
+     }
 
 }
 
@@ -540,9 +608,8 @@ html {
         max-width: 300px;
     }
     
-    
-    .slide {
-        width: 1200px;
+    .listasventa section{
+        min-width: 0vw;
     }
 
     .caption {
@@ -550,4 +617,9 @@ html {
         bottom: 96px;
         right: 50px;
     }
+    .detalle article img{
+        object-fit: contain;
+        width: 700px;
+        height: 500px;
+     }
 }

@@ -1,0 +1,52 @@
+<%- include("./partials/head") %>
+
+    <body>
+        <%- include("./partials/header") %>
+            <div class="container-login">
+                <form action="/producto/crear" method="POST" enctype="multipart/form-data" class="estiloForm">
+                    <h3>Creacion de productos</h3>
+                    <div class="estiloForm1">
+                        <label for="nombreProducto" class="estiloForm2">Nombre del producto:</label>
+                        <input type="text" name="nombreProducto" id="nombreProducto" class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="artista" class="estiloForm2">Artista</label>
+                        <input type="text" name="artista" id="artista" class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="genero" class="estiloForm2">Género</label>
+                        <input type="text" name="genero" id="genero" class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="categoria" class="estiloForm2">Categoría:</label>
+                        <input type="text" name="categoria" id="categoria"  class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="ano" class="estiloForm2">Año</label>
+                        <input type="number" name="ano" id="ano" class="estiloForm3">
+                    </div>
+                   
+                    <div class="estiloForm1">
+                        <label for="precio" class="estiloForm2">Precio</label>
+                        <input type="number" name="precio" id="precio" class="estiloForm3" step="any">
+                    </div>
+                    
+                    
+                    <div class="estiloForm1">
+                        <label for="descripcion" class="estiloForm2">Descripcion</label>
+                        <textarea name="descripcion" id="descripcion" class="estiloForm3" rows="4" cols="50"></textarea>
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="imagenProducto" class="estiloForm2">Imagen</label>
+                        <input type="file" name="imagenProducto" id="imagenProducto" class="estiloForm3">
+                    </div>
+
+                    <div class="botones-registro">
+                        <button type="submit" class="botonForm">Crear</button>
+                    </div>
+                </form>
+            </div>
+            <%- include("./partials/footer") %>
+    </body>
+
+    </html>
