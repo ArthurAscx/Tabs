@@ -1,22 +1,12 @@
 [
  {
-  "id": 1662589983532,
-  "Nombreapellido": "ahorasi",
-  "Usuario": "lakra",
-  "Nacimiento": "123124-03-12",
-  "Email": "asdas@hola.com",
-  "Contraseña": "66756",
-  "Categoria": "admin",
-  "Imagen": "OIP.jpg"
- },
- {
-  "id": 1662590892212,
-  "Nombreapellido": "AdminAsc",
-  "Usuario": "arthurasc",
-  "Nacimiento": "1990-08-07",
-  "Email": "arthur@ladoa.com",
-  "Contraseña": "A",
-  "Categoria": "admin",
-  "Imagen": "avatar-170957209.png"
+  "id": 1663028519214,
+  "Nombreapellido": "ultra solo",
+  "Usuario": "ultsolo",
+  "Nacimiento": "1990-09-09",
+  "Email": "ultrasolo@adsd.coim",
+  "Categoria": "user",
+  "Imagen": "Imagen-917749709.jpg",
+  "Password": "cambio de calve"
  }
 ]

@@ -26,7 +26,7 @@ router.get("/detalle/:id", rutasUsuario.detalle)
 router.post("/crear", upload.single("avatar"), rutasUsuario.crear)
 
 // PUT de rutas
-router.put("/editar/:id", upload.single("avatar"), rutasUsuario.editar)
+router.put("/editar/:id", upload.single("Imagen"), rutasUsuario.editar)
 
 // DELETE de rutas
 router.delete("/borrar/:id", rutasUsuario.borrar)
