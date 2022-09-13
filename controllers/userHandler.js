@@ -17,11 +17,11 @@ const userHandler = {
             Usuario: req.body.nombreDeUsuario,
             Nacimiento: req.body.fechaDeNacimiento,
             Email: req.body.correo,
-            Contraseña: req.body.pass,
+            Password: req.body.password,
             Categoria: req.body.categoria,
             Imagen: "OIP.jpg"
         };
-        if (req.file){
+        if (req.file) {
             usr.Imagen = req.file.filename
         }
         usuarios.push(usr);
@@ -29,41 +29,67 @@ const userHandler = {
         fs.writeFileSync(rutaArchivo, usuarios);
         res.redirect("/usuario/login")
     },
-    lista: (req,res)=>{
+    lista: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        res.render("userList", {users: usuarios})
+        res.render("userList", { users: usuarios })
     },
-    detalle: (req,res)=>{
+    detalle: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         // Usar el find para encontrar el usuario y luego mandarlo a la página
         let userid = parseInt(req.params.id);
-        let user = usuarios.find((u)=> u.id === userid);
-        if (user){
-        res.render("userDetail", {user})
+        let user = usuarios.find((u) => u.id === userid);
+        if (user) {
+            res.render("userDetail", { user })
         }
-        else{
+        else {
             console.log(userid);
             res.send(user)
         }
     },
-    edicion: (req, res)=>{
+    edicion: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         // Usar el find para encontrar el usuario y luego mandarlo a la página
         let userid = parseInt(req.params.id);
-        let user = usuarios.find((u)=> u.id === userid);
-        if (user){
-        res.render("userEdit", {user})
+        let user = usuarios.find((u) => u.id === userid);
+        if (user) {
+            res.render("userEdit", { user })
         }
-        else{
+        else {
             console.log(userid);
             res.send(user)
         }
     },
-    editar: (req,res)=>{
-        res.redirect("/usuario/login")
+    editar: (req, res) => {
+        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        let modificado = req.body;
+        let newavatar = req.file;
+        // Usar el find para encontrar el usuario y modificarlo
+        let userid = parseInt(req.params.id);
+        let user = usuarios.find((u) => u.id === userid);
+        if (user && modificado) {
+            user.Nombreapellido = modificado.Nombreapellido
+            user.Usuario = modificado.Usuario
+            user.Nacimiento = modificado.Nacimiento
+            user.Email = modificado.Email
+            user.Password = modificado.Password
+            user.Categoria = modificado.Categoria
+            if (newavatar){
+                user.Imagen = req.file.filename
+            }
+
+        }
+        usuarios = JSON.stringify(usuarios, null, " ");
+        fs.writeFileSync(rutaArchivo, usuarios);
+
+        res.redirect("/usuario/lista")
     },
-    borrar: (req,res)=>{
-        
+    borrar: (req, res) => {
+        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        let userid = parseInt(req.params.id);
+        let usuariossineliminado = usuarios.filter((u) => u.id !== userid);
+        usuariossineliminado = JSON.stringify(usuariossineliminado, null, " ");
+        fs.writeFileSync(rutaArchivo, usuariossineliminado);
+        res.redirect("/usuario/lista")
     }
 };
 

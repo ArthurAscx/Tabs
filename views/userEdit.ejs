@@ -1,0 +1,53 @@
+<%- include("./partials/head") %>
+
+    <body>
+        <%- include("./partials/header") %>
+            <div class="container-login">
+                <form action="/usuario/editar/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
+                    class="estiloForm">
+                    <h3>Edición de Usuarios Registrados</h3>
+                    <div class="estiloForm1">
+                        <label for="Nombreapellido" class="estiloForm2">Nombre y Apellido :</label>
+                        <input type="text" name="Nombreapellido" id="Nombreapellido" value="<%=user.Nombreapellido%>"
+                            class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="Usuario" class="estiloForm2">Usuario:</label>
+                        <input type="text" name="Usuario" id="Usuario" value="<%=user.Usuario%>" class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="Nacimiento" class="estiloForm2">Nacimiento:</label>
+                        <input type="date" name="Nacimiento" id="Nacimiento" value="<%=user.Nacimiento%>"
+                            class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="Email" class="estiloForm2">Email:</label>
+                        <input type="email" name="Email" id="Email" value="<%=user.Email%>" class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="Password" class="estiloForm2">Contraseña:</label>
+                        <input type="password" name="Password" id="Password" value="<%=user.Password%>"
+                            class="estiloForm3">
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="Categoria" class="estiloForm2">Categoría:</label>
+                        <select name="Categoria" id="Categoria" class="estiloForm3">
+                            <option value="user" <%user.Categoria=="user" ?"selected" : "" %>>Usuario</option>
+                            <option value="admin" <%user.Categoria=="admin" ?"selected" : "" %> >Administrador</option>
+                        </select>
+                    </div>
+                    <div class="estiloForm1">
+                        <label for="Imagen" class="estiloForm2">Imagen:</label>
+                        <input type="file" name="Imagen" id="Imagen" class="estiloForm3">
+                    </div>
+
+                    <div class="botones-registro">
+                        <button type="submit" class="botonForm">Modificar</button>
+
+                    </div>
+                </form>
+            </div>
+            <%- include("./partials/footer") %>
+    </body>
+
+    </html>
