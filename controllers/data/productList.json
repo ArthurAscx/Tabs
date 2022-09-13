@@ -6,18 +6,20 @@
   "genero": "Rock",
   "precio": "20.5",
   "image": "1662994723412-4016483-2752691_500x381.webp",
-  "ventas": "",
-  "año": "",
-  "categoría": ""
+  "ventas": 11,
+  "año": 2018,
+  "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
  },
  {
   "id": 2,
   "titulo": "Palaces",
   "artista": "Flume",
-  "genero": "EDM",
+  "genero": "Electro",
   "precio": 24.99,
   "image": "palaces.webp",
-  "ventas": "",
+  "ventas": 20,
+   "año": 2022,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -27,7 +29,8 @@
   "genero": "Rock",
   "precio": 19.99,
   "image": "trench.jpg",
-  "ventas": "",
+  "ventas": 5,
+   "año": 2015,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -37,17 +40,19 @@
   "genero": "Rap",
   "precio": 29.99,
   "image": "17.webp",
-  "ventas": "",
+  "ventas": 9,
+   "año": 2018,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
   "id": 5,
   "titulo": "So Far So Good",
   "artista": "The Chainsmokers",
-  "genero": "EDM",
+  "genero": "Electro",
   "precio": 24.99,
   "image": "sofarsogood.webp",
-  "ventas": "",
+  "ventas": 9,
+   "año": 2021,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -57,7 +62,8 @@
   "genero": "Pop",
   "precio": 24.99,
   "image": "evolve.webp",
-  "ventas": "",
+  "ventas": 16,
+   "año": 2015,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -67,7 +73,8 @@
   "genero": "Rock",
   "precio": 19.99,
   "image": "am.webp",
-  "ventas": "",
+  "ventas": 25,
+   "año": 2011,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -77,7 +84,8 @@
   "genero": "Pop",
   "precio": 19.99,
   "image": "=.png",
-  "ventas": "",
+  "ventas": 7,
+   "año": 2021,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -87,7 +95,8 @@
   "genero": "Pop",
   "precio": 24.99,
   "image": "dawnfm.png",
-  "ventas": "",
+  "ventas": 8,
+   "año": 2022,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -97,7 +106,8 @@
   "genero": "Rap",
   "precio": "20.50",
   "image": "lasobremesa.jpg",
-  "ventas": "",
+  "ventas": 11,
+   "año": 2021,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -107,7 +117,8 @@
   "genero": "Rock",
   "precio": 14.99,
   "image": "mercuryact1.jpg",
-  "ventas": "",
+  "ventas": 6,
+   "año": 2020,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -117,7 +128,8 @@
   "genero": "Rap",
   "precio": 14.99,
   "image": "montero.jpg",
-  "ventas": "",
+  "ventas": 8,
+   "año": 2019,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -127,7 +139,8 @@
   "genero": "Pop",
   "precio": 14.99,
   "image": "harryshouse.jpg",
-  "ventas": "",
+  "ventas": 20,
+   "año": 2022,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -137,7 +150,8 @@
   "genero": "Indie",
   "precio": 19.99,
   "image": "smallworld.jpg",
-  "ventas": "",
+  "ventas": 8,
+   "año": 2022,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -147,7 +161,8 @@
   "genero": "Pop",
   "precio": 19.99,
   "image": "solarpower.jpg",
-  "ventas": "",
+  "ventas": 8,
+   "año": 2022,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -157,7 +172,8 @@
   "genero": "Rock",
   "precio": 24.99,
   "image": "sour.jpg",
-  "ventas": "",
+  "ventas": 30,
+   "año": 2019,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -167,7 +183,8 @@
   "genero": "Rock",
   "precio": 19.99,
   "image": "unveranosinti.jpg",
-  "ventas": "",
+  "ventas": 50,
+   "año": 2022,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -177,7 +194,8 @@
   "genero": "Electro",
   "precio": 24.99,
   "image": "nurture.jpg",
-  "ventas": "",
+  "ventas": 9,
+   "año": 2019,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -187,7 +205,8 @@
   "genero": "Electro",
   "precio": 19.99,
   "image": "adventure.jpg",
-  "ventas": "",
+  "ventas": 8,
+   "año": 2015,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -197,7 +216,8 @@
   "genero": "Electro",
   "precio": 29.99,
   "image": "worldsremixed.jpg",
-  "ventas": "",
+  "ventas": 9,
+   "año": 2016,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -207,7 +227,8 @@
   "genero": "Electro",
   "precio": 24.99,
   "image": "goodfaith.jpg",
-  "ventas": "",
+  "ventas": 9,
+   "año": 2020,
   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
  },
  {
@@ -216,10 +237,10 @@
   "genero": "Pop",
   "artista": "The Weeknd",
   "image": "afterhours.jpg",
-  "año": "2017",
   "precio": "20",
-  "descripción": "",
-  "ano": "2017",
+  "ventas": 25,
+   "año": 2019,
+   "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   "categoría": "Internacional"
  },
  {
@@ -228,9 +249,9 @@
   "genero": "Probando",
   "artista": "Probando",
   "image": "1662994435205-Imagen para Facebook HK -0124.jpg",
-  "año": 2222,
+  "año": 1990,
   "precio": 555,
-  "descripción": "Probando",
+  "descripción": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   "ventas": 1
  }
 ]
