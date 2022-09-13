@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
-const rutaArchivo = path.join(__dirname, "/data/userList.json")
+const rutaArchivo = path.join(__dirname, "/data/userList.json");
+const bcryptjs = require("bcryptjs")
 
 const userHandler = {
     login: (req, res) => {
@@ -11,13 +12,14 @@ const userHandler = {
     },
     crear: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        let hasheov1 = bcryptjs.hashSync(req.body.password,10)
         let usr = {
             id: Date.now(),
             Nombreapellido: req.body.nombreApellido,
             Usuario: req.body.nombreDeUsuario,
             Nacimiento: req.body.fechaDeNacimiento,
             Email: req.body.correo,
-            Password: req.body.password,
+            Password: hasheov1,
             Categoria: req.body.categoria,
             Imagen: "OIP.jpg"
         };
@@ -63,6 +65,7 @@ const userHandler = {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         let modificado = req.body;
         let newavatar = req.file;
+        let hasheomodificado = bcryptjs.hashSync(modificado.Password,10)
         // Usar el find para encontrar el usuario y modificarlo
         let userid = parseInt(req.params.id);
         let user = usuarios.find((u) => u.id === userid);
@@ -71,7 +74,7 @@ const userHandler = {
             user.Usuario = modificado.Usuario
             user.Nacimiento = modificado.Nacimiento
             user.Email = modificado.Email
-            user.Password = modificado.Password
+            user.Password = hasheomodificado;
             user.Categoria = modificado.Categoria
             if (newavatar){
                 user.Imagen = req.file.filename

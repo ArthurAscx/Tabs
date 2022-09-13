@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
   const upload = multer({ storage });
 
-
+router.get("/find", rutasProducto.busqueda)
 router.get("/detalle/:id", rutasProducto.detalle);
 // router.get("/detalle", rutasProducto.detalleCatch) NECEISTAMOS UN CATCHH
 router.get("/carrito", rutasProducto.carrito);

@@ -88,6 +88,12 @@ const productHandler = {
 
         res.redirect("/producto/lista");
     },
+    busqueda: (req,res)=>{
+        const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8");
+        let searchword = req.query.find
+        let arrayBuscados = lista.filter((disco)=> disco.titulo.includes(searchword))
+        res.render("searchResults", {lista: arrayBuscados})
+    }
 
 }
 
