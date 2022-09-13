@@ -90,8 +90,8 @@ const productHandler = {
     },
     busqueda: (req,res)=>{
         const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8");
-        let searchword = req.query.find
-        let arrayBuscados = lista.filter((disco)=> disco.titulo.includes(searchword))
+        let searchword = req.query.find.toLowerCase()
+        let arrayBuscados = lista.filter((disco)=> disco.titulo.toLowerCase().includes(searchword))
         res.render("searchResults", {lista: arrayBuscados})
     }
 
