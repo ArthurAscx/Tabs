@@ -10,7 +10,13 @@ const userHandler = {
     },
    
     procesoDeRegistro: (req, res) => {
-    const resutlValidation = validationResult(req)
+    const resutlValidation = validationResult(req);
+        if(resutlValidation.errors.length > 0){
+           return res.render("login", {
+                errors: resutlValidation.mapped(),
+            });
+        }
+
    },
    
     register: (req, res) => {

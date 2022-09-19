@@ -1,52 +1,63 @@
-<%- include("./partials/head")  %>
-<body>
-    <%- include("./partials/header")  %>
-    <div class="container-login">
-    <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
-        <h3>Registro de usuario</h3>
-        <div class="estiloForm1">
-            <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
-            <input type="text" name="nombreApellido" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
-            <input type="text" name="nombreDeUsuario" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
-            <input type="date" name="fechaDeNacimiento" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="avatar" class="estiloForm2">Imagen de Perfil:</label>
-            <input type="file" name="avatar" id="avatar" class="estiloForm3" accept="image/*">
-        </div>
-        <div class="estiloForm1">
-            <label for="correo" class="estiloForm2">Correo Electronico:</label>
-            <input type="email" name="correo" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="categoria" class="estiloForm2">Categoría:</label>
-            <select name="categoria" class="estiloForm3">
-                <option value="user" selected>Usuario</option>
-                <option value="admin">Administrador</option>
-            </select>
-        </div>
-        <div class="estiloForm1">
-            <label for="password" class="estiloForm2">Contraseña: </label>
-            <input type="password" name="password" id="password" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="Confirmar Contraseña" class="estiloForm2">Confirmar Contraseña:</label>
-            <input type="password" name="pass2" class="estiloForm3" required>
-        </div>
+<%- include("./partials/head") %>
 
-        <div class="botones-registro">
-            <button type="reset" class="botonForm">Borrar</button>
-            <button type="submit" class="botonForm">Registrar</button>
-        </div>
-    </form>
-</div>
-    <%- include("./partials/footer")  %>
-</body>
+    <body>
+        <%- include("./partials/header") %>
+            <div class="container-login">
+                <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
+                    <h3>Registro de usuario</h3>
+                    <% if (locals.erros) { %>
+                        <% for ( let oneError in errors ) { %>
+                            <p>
+                                <%= errors[oneError].msg %>
+                            </p>
+                            <% } %>
+                                <% } %>
+                                    <div class="estiloForm1">
+                                        <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
+                                        <input type="text" name="nombreApellido" class="estiloForm3" required>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
+                                        <input type="text" name="nombreDeUsuario" class="estiloForm3" required>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
+                                        <input type="date" name="fechaDeNacimiento" class="estiloForm3" required>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="avatar" class="estiloForm2">Imagen de Perfil:</label>
+                                        <input type="file" name="avatar" id="avatar" class="estiloForm3"
+                                            accept="image/*">
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="correo" class="estiloForm2">Correo Electronico:</label>
+                                        <input type="email" name="correo" class="estiloForm3" required>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="categoria" class="estiloForm2">Categoría:</label>
+                                        <select name="categoria" class="estiloForm3">
+                                            <option value="user" selected>Usuario</option>
+                                            <option value="admin">Administrador</option>
+                                        </select>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="password" class="estiloForm2">Contraseña: </label>
+                                        <input type="password" name="password" id="password" class="estiloForm3"
+                                            required>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="Confirmar Contraseña" class="estiloForm2">Confirmar
+                                            Contraseña:</label>
+                                        <input type="password" name="pass2" class="estiloForm3" required>
+                                    </div>
 
-</html>
+                                    <div class="botones-registro">
+                                        <button type="reset" class="botonForm">Borrar</button>
+                                        <button type="submit" class="botonForm">Registrar</button>
+                                    </div>
+                </form>
+            </div>
+            <%- include("./partials/footer") %>
+    </body>
+
+    </html>
