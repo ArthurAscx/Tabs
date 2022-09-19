@@ -3,6 +3,8 @@ const router = express.Router();
 const rutasUsuario= require("../controllers/userHandler");
 const multer = require("multer");
 const path = require("path");
+const {body} = require("express-validator")
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname, '../public/img/Avatares'))
@@ -15,6 +17,10 @@ const storage = multer.diskStorage({
   })
  const upload = multer({storage});
 
+const validacion = [
+  body("nombreApellido").notEmpty().withMessage("Tenes que escribir un nombre")
+]
+
 
  // GETS de rutas
 router.get("/login", rutasUsuario.login);
@@ -23,7 +29,7 @@ router.get("/lista", rutasUsuario.lista)
 router.get("/edicion/:id", rutasUsuario.edicion)
 router.get("/detalle/:id", rutasUsuario.detalle)
 //POST de rutas
-router.post("/crear", upload.single("avatar"), rutasUsuario.crear)
+router.post("/crear", upload.single("avatar"),validacion, rutasUsuario.crear)
 
 // PUT de rutas
 router.put("/editar/:id", upload.single("Imagen"), rutasUsuario.editar)

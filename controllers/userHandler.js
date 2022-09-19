@@ -2,14 +2,21 @@ const path = require("path");
 const fs = require("fs");
 const rutaArchivo = path.join(__dirname, "/data/userList.json");
 const bcryptjs = require("bcryptjs")
+const {validationResult} = require("express-validator")
 
 const userHandler = {
     login: (req, res) => {
         res.render("login");
     },
+   
+    procesoDeRegistro: (req, res) => {
+    const resutlValidation = validationResult(req)
+   },
+   
     register: (req, res) => {
         res.render("register");
     },
+   
     crear: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         let hasheov1 = bcryptjs.hashSync(req.body.password,10)
