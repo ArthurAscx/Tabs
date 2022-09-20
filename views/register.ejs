@@ -3,53 +3,91 @@
     <body>
         <%- include("./partials/header") %>
             <div class="container-login">
-                <% if (locals && locals.mensajeDeError) { %>
-                    <% for ( let error in mensajeDeError ) { %>
-                        <p>
-                            <%= mensajeDeError[error].msg %>
-                        </p>
-                        <% } %>
-                            <% } %>
+              
                 <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
                     <h3>Registro de usuario</h3>
                    
                                     <div class="estiloForm1">
                                         <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
-                                        <input type="text" name="nombreApellido" id="nombreApellido" class="estiloForm3">
+                                        <input type="text" name="nombreApellido" id="nombreApellido" value="<%= locals.old && locals.nombreApellido ? old.nombreApellido : '' %>" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.nombreApellido) {%>
+                                        <div>
+                                           <%= mensajeDeError.nombreApellido.msg %>
+                                        </div>
+                                        <% } %>
                                     </div>
+                                    
                                     <div class="estiloForm1">
                                         <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
                                         <input type="text" name="nombreDeUsuario"id="nombreDeUsuario" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.nombreDeUsuario) {%>
+                                            <div>
+                                               <%= mensajeDeError.nombreDeUsuario.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
                                     <div class="estiloForm1">
                                         <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
                                         <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.fechaDeNacimiento) {%>
+                                            <div>
+                                               <%= mensajeDeError.fechaDeNacimiento.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
                                     <div class="estiloForm1">
                                         <label for="avatar" class="estiloForm2">Imagen de Perfil:</label>
                                         <input type="file" name="avatar" id="avatar" class="estiloForm3"
                                             accept="image/*">
-                                    </div>
+                                            <% if(locals.mensajeDeError && mensajeDeError.avatar) {%>
+                                                <div>
+                                                   <%= mensajeDeError.avatar.msg %>
+                                                </div>
+                                                <% } %>
+                                        </div>
                                     <div class="estiloForm1">
                                         <label for="correo" class="estiloForm2">Correo Electronico:</label>
                                         <input type="email" name="correo" id="correo" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.correo) {%>
+                                            <div>
+                                               <%= mensajeDeError.correo.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
                                     <div class="estiloForm1">
                                         <label for="categoria" class="estiloForm2">Categoría:</label>
+                                        <% if(locals.mensajeDeError && mensajeDeError.categoria) {%>
+                                            <div>
+                                               <%= mensajeDeError.categoria.msg %>
+                                            </div>
+                                            <% } %>
                                         <select name="categoria" id="categoria" class="estiloForm3">
-                                            <option value="user" selected>Usuario</option>
+                                            <option selected></option>
+                                            <option value="user">Usuario</option>
                                             <option value="admin">Administrador</option>
                                         </select>
+                                        
                                     </div>
                                     <div class="estiloForm1">
                                         <label for="password" class="estiloForm2">Contraseña: </label>
-                                        <input type="password" name="password" id="password" class="estiloForm3"
-                                            >
-                                    </div>
+                                        <input type="password" name="password" id="password" class="estiloForm3">
+                                            
+                                            <% if(locals.mensajeDeError && mensajeDeError.password) {%>
+                                                <div>
+                                                   <%= mensajeDeError.password.msg %>
+                                                </div>
+                                                <% } %>
+                                    
+                                        </div>
                                     <div class="estiloForm1">
                                         <label for="Confirmar Contraseña" class="estiloForm2">Confirmar
                                             Contraseña:</label>
                                         <input type="password" name="pass2" id="Confirmar Contraseña" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.password) {%>
+                                            <div>
+                                               <%= mensajeDeError.password.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
 
                                     <div class="botones-registro">

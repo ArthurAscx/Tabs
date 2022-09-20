@@ -20,7 +20,7 @@ const userHandler = {
         /* console.log(errores) */
         if(!errores.isEmpty()){
                return res.render("register", 
-               {mensajeDeError: errores.mapped()})
+               {mensajeDeError: errores.mapped(), old:req.body})
                 }; 
 
 

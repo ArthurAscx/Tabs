@@ -18,5 +18,15 @@
   "Password": "$2a$10$4lYFpTzeYysjtbfmD8HqUOCCeNBNAUEibfC2pVvqQs8Ulb4eLRtYS",
   "Categoria": "admin",
   "Imagen": "avatar-591476973.jpeg"
+ },
+ {
+  "id": 1663694035337,
+  "Nombreapellido": "fasf",
+  "Usuario": "fdsa",
+  "Nacimiento": "",
+  "Email": "",
+  "Password": "$2a$10$j7FDFAVfHLErNbdH4hhiR.Lydpfk.4x4GQfAbXh35kL.U9d./tUEu",
+  "Categoria": "user",
+  "Imagen": "OIP.jpg"
  }
 ]
