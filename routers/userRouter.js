@@ -3,7 +3,9 @@ const router = express.Router();
 const rutasUsuario= require("../controllers/userHandler");
 const multer = require("multer");
 const path = require("path");
-const {body} = require("express-validator")
+const validacion = require("../middlewares/userRegister");
+
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -17,9 +19,7 @@ const storage = multer.diskStorage({
   })
  const upload = multer({storage});
 
-const validacion = [
-  body("nombreApellido").notEmpty().withMessage("Tenes que escribir un nombre")
-]
+
 
 
  // GETS de rutas
