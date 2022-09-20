@@ -11,7 +11,7 @@
                                         <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
                                         <input type="text" name="nombreApellido" id="nombreApellido" value="<%= locals.old && locals.nombreApellido ? old.nombreApellido : '' %>" class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.nombreApellido) {%>
-                                        <div>
+                                        <div class="mensajeError">
                                            <%= mensajeDeError.nombreApellido.msg %>
                                         </div>
                                         <% } %>
@@ -21,7 +21,7 @@
                                         <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
                                         <input type="text" name="nombreDeUsuario"id="nombreDeUsuario" class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.nombreDeUsuario) {%>
-                                            <div>
+                                            <div class="mensajeError">
                                                <%= mensajeDeError.nombreDeUsuario.msg %>
                                             </div>
                                             <% } %>
@@ -30,7 +30,7 @@
                                         <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
                                         <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.fechaDeNacimiento) {%>
-                                            <div>
+                                            <div class="mensajeError">
                                                <%= mensajeDeError.fechaDeNacimiento.msg %>
                                             </div>
                                             <% } %>
@@ -40,7 +40,7 @@
                                         <input type="file" name="avatar" id="avatar" class="estiloForm3"
                                             accept="image/*">
                                             <% if(locals.mensajeDeError && mensajeDeError.avatar) {%>
-                                                <div>
+                                                <div class="mensajeError">
                                                    <%= mensajeDeError.avatar.msg %>
                                                 </div>
                                                 <% } %>
@@ -49,31 +49,30 @@
                                         <label for="correo" class="estiloForm2">Correo Electronico:</label>
                                         <input type="email" name="correo" id="correo" class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.correo) {%>
-                                            <div>
+                                            <div class="mensajeError">
                                                <%= mensajeDeError.correo.msg %>
                                             </div>
                                             <% } %>
                                     </div>
                                     <div class="estiloForm1">
                                         <label for="categoria" class="estiloForm2">Categoría:</label>
-                                        <% if(locals.mensajeDeError && mensajeDeError.categoria) {%>
-                                            <div>
-                                               <%= mensajeDeError.categoria.msg %>
-                                            </div>
-                                            <% } %>
                                         <select name="categoria" id="categoria" class="estiloForm3">
                                             <option selected></option>
                                             <option value="user">Usuario</option>
                                             <option value="admin">Administrador</option>
                                         </select>
-                                        
+                                        <% if(locals.mensajeDeError && mensajeDeError.categoria) {%>
+                                            <div class="mensajeError">
+                                               <%= mensajeDeError.categoria.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
                                     <div class="estiloForm1">
                                         <label for="password" class="estiloForm2">Contraseña: </label>
                                         <input type="password" name="password" id="password" class="estiloForm3">
                                             
                                             <% if(locals.mensajeDeError && mensajeDeError.password) {%>
-                                                <div>
+                                                <div class="mensajeError">
                                                    <%= mensajeDeError.password.msg %>
                                                 </div>
                                                 <% } %>
@@ -84,7 +83,7 @@
                                             Contraseña:</label>
                                         <input type="password" name="pass2" id="Confirmar Contraseña" class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.password) {%>
-                                            <div>
+                                            <div class="mensajeError">
                                                <%= mensajeDeError.password.msg %>
                                             </div>
                                             <% } %>

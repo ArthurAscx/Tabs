@@ -549,6 +549,10 @@ html {
    
 }
 
+.mensajeError{
+    color: red;
+}
+
 @media (min-width: 550px){ 
 
     .login-crear{
