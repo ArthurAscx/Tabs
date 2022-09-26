@@ -39,7 +39,7 @@ router.put("/editar/:id", upload.single("Imagen"), rutasUsuario.editar)
 router.delete("/borrar/:id", rutasUsuario.borrar)
 
 router.post("/login", [
-     body("pasword").isLength({min: 8}).withMessage("La contraseña debe tener 8 caracteres") 
+     body("contraseña").isLength({min: 8}).withMessage("La contraseña debe tener 8 caracteres") 
 ],rutasUsuario.logueado);
 /* router.get("/pruebaSession"), (req, res) =>{
   if(req.session.numeroVisitas == undefined){
