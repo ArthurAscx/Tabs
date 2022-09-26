@@ -7,7 +7,9 @@ const userHandler = {
     login: (req, res) => {
         res.render("login");
     },
-   
+    logueado:()=>{
+
+    },
  
    
     register: (req, res) => {

@@ -9,7 +9,7 @@
                    
                                     <div class="estiloForm1">
                                         <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
-                                        <input type="text" name="nombreApellido" id="nombreApellido" value="<%= locals.old && old.nombreApellido ? old.nombreApellido : '' %>" class="estiloForm3 <%= locals.mensajeDeError && mensajeDeError.nombreApellido ? 'is-invalid' : null %>">
+                                        <input type="text" name="nombreApellido" id="nombreApellido" value="<%= locals.old && old.nombreApellido ? old.nombreApellido : '' %>" class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.nombreApellido) {%>
                                         <div class="mensajeError">
                                            <%= mensajeDeError.nombreApellido.msg %>
