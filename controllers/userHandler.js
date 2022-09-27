@@ -8,7 +8,14 @@ const userHandler = {
         res.render("login");
     },
     logueado:(req, res)=>{
-        res.render("login")
+        const errores = validationResult(req);
+        if(!errores.isEmpty()){
+            return res.render("login", 
+            {mensajeDeError: errores.mapped(), old:req.body})
+             }; 
+
+             
+              
     },
  
    

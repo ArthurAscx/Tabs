@@ -4,6 +4,7 @@ const rutasUsuario= require("../controllers/userHandler");
 const multer = require("multer");
 const path = require("path");
 const validacion = require("../middlewares/userRegister");
+const validacion1 = require("../middlewares/loginRegister");
 const { body } = require("express-validator");
 
 
@@ -38,9 +39,7 @@ router.put("/editar/:id", upload.single("Imagen"), rutasUsuario.editar)
 // DELETE de rutas
 router.delete("/borrar/:id", rutasUsuario.borrar)
 
-router.post("/login", [
-     body("contraseña").isLength({min: 8}).withMessage("La contraseña debe tener 8 caracteres") 
-],rutasUsuario.logueado);
+router.post("/login",validacion1,rutasUsuario.logueado);
 /* router.get("/pruebaSession"), (req, res) =>{
   if(req.session.numeroVisitas == undefined){
     req.session.numeroVisitas = 0;

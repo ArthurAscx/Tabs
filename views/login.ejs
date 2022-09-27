@@ -6,11 +6,21 @@
                     <form action="/usuario/login" method="POST" class="estiloForm">
                         <div class="estiloForm1">
                             <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario</label>
-                            <input type="text" name="nombreDeUsuario" class="estiloForm3">
+                            <input type="text" name="nombreDeUsuario" value="<%= locals.old && old.nombreDeUsuario ? old.nombreDeUsuario : '' %>" class="estiloForm3">
+                            <% if(locals.mensajeDeError && mensajeDeError.nombreDeUsuario) {%>
+                                <div class="mensajeError">
+                                   <%= mensajeDeError.nombreDeUsuario.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="estiloForm1">
                             <label for="contraseña" class="estiloForm2">Contraseña</label>
                             <input type="password" name="contraseña" class="estiloForm3">
+                            <% if(locals.mensajeDeError && mensajeDeError.contraseña) {%>
+                                <div class="mensajeError">
+                                   <%= mensajeDeError.contraseña.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="estiloForm1">
                             <button type="reset" class="botonForm">Borrar</button>
