@@ -14,7 +14,7 @@ const userHandler = {
             {mensajeDeError: errores.mapped(), old:req.body})
              }; 
 
-             
+             res.redirect("/") 
               
     },
  

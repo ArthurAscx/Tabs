@@ -14,11 +14,11 @@
                                 <% } %>
                         </div>
                         <div class="estiloForm1">
-                            <label for="contraseña" class="estiloForm2">Contraseña</label>
-                            <input type="password" name="contraseña" class="estiloForm3">
-                            <% if(locals.mensajeDeError && mensajeDeError.contraseña) {%>
+                            <label for="password" class="estiloForm2">Contraseña</label>
+                            <input type="password" name="password" class="estiloForm3">
+                            <% if(locals.mensajeDeError && mensajeDeError.password) {%>
                                 <div class="mensajeError">
-                                   <%= mensajeDeError.contraseña.msg %>
+                                   <%= mensajeDeError.password.msg %>
                                 </div>
                                 <% } %>
                         </div>
