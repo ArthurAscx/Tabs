@@ -17,7 +17,7 @@ const userHandler = {
              res.redirect("/") 
 
              for(let i= 0; i < usuarios.length; i++){
-                if(usuarios[i].nombreDeUsuario === req.boddy.nombreDeUsuario){
+                if(usuarios[i].nombreDeUsuario === req.body.nombreDeUsuario){
                     if(bcrypt.compareSync(req.body.password, usuarios[i].password)){
                     let usuarioAlogueares = usuarios[i];
                     break
