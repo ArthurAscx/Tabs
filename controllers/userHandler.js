@@ -15,9 +15,26 @@ const userHandler = {
              }; 
 
              res.redirect("/") 
+
+             for(let i= 0; i < usuarios.length; i++){
+                if(usuarios[i].nombreDeUsuario === req.boddy.nombreDeUsuario){
+                    if(bcrypt.compareSync(req.body.password, usuarios[i].password)){
+                    let usuarioAlogueares = usuarios[i];
+                    break
+                }
+             }
               
-    },
- 
+         }
+            if(usuarioAlogueares == undefined){
+                return res.render("login", {errors:[
+                    {msg:"Credenciales invalidas"}
+                ]})
+             
+                req.session.usuarioAlogueado = usuarioAlogueares
+            } else {
+                return res.render("login", {errors: errors.errors})
+            }
+    },      
    
     register: (req, res) => {
         res.render("register");
