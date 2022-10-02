@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride("_method"));
 // NO PRESTAR ATENCION A ESTA LINEA app.set("views", __dirname +"/public/views");
-app.use(session({secret: "frase secreta"}));
+app.use(session({secret: "esta frase no la va a leer nadie nunca jamas nunca jamas ni nunca jamas"}));
 // Routers importados
 const rutasPrincipales = require("./routers/mainRouter");
 const rutasProducto = require("./routers/productRouter");

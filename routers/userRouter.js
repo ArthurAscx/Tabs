@@ -5,6 +5,8 @@ const multer = require("multer");
 const path = require("path");
 const validacion = require("../middlewares/userRegister");
 const validacion1 = require("../middlewares/loginRegister");
+const invitado = require("../middlewares/authGuests");
+const logeado = require("../middlewares/authUsers")
 const { body } = require("express-validator");
 
 
@@ -25,21 +27,21 @@ const storage = multer.diskStorage({
 
 
  // GETS de rutas
-router.get("/login", rutasUsuario.login);
-router.get("/register", rutasUsuario.register);
+router.get("/login", invitado,  rutasUsuario.login);
+router.get("/register",invitado, rutasUsuario.register);
 router.get("/lista", rutasUsuario.lista)
-router.get("/edicion/:id", rutasUsuario.edicion)
-router.get("/detalle/:id", rutasUsuario.detalle)
+router.get("/edicion/:id", logeado,  rutasUsuario.edicion)
+router.get("/detalle/:id", logeado,  rutasUsuario.detalle)
 //POST de rutas
-router.post("/crear", upload.single("avatar"),validacion, rutasUsuario.crear)
+router.post("/crear", upload.single("avatar"),validacion, invitado , rutasUsuario.crear)
 
 // PUT de rutas
-router.put("/editar/:id", upload.single("Imagen"), rutasUsuario.editar)
+router.put("/editar/:id", upload.single("Imagen"), logeado, rutasUsuario.editar)
 
 // DELETE de rutas
-router.delete("/borrar/:id", rutasUsuario.borrar)
+router.delete("/borrar/:id", logeado,  rutasUsuario.borrar)
 
-router.post("/login",validacion1,rutasUsuario.logueado);
+router.post("/login",validacion1, rutasUsuario.logueado);
 /* router.get("/pruebaSession"), (req, res) =>{
   if(req.session.numeroVisitas == undefined){
     req.session.numeroVisitas = 0;

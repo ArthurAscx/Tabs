@@ -1,32 +1,32 @@
 [
  {
-  "id": 1663028519214,
-  "Nombreapellido": "cambio todo",
-  "Usuario": "cambiado",
-  "Nacimiento": "1110-10-10",
-  "Email": "cambio3@cambiotodo.copom",
-  "Categoria": "user",
-  "Imagen": "Imagen-952982084.png",
-  "Password": "$2a$10$imbDNXkSerW3YByfrkPbgekHBfc1VmqkU0ex5gq.CABVc88nKUp62"
- },
- {
-  "id": 1663082730176,
-  "Nombreapellido": "hasheando el hachis",
-  "Usuario": "hash",
-  "Nacimiento": "1998-07-01",
-  "Email": "hash@hash.com",
-  "Password": "$2a$10$4lYFpTzeYysjtbfmD8HqUOCCeNBNAUEibfC2pVvqQs8Ulb4eLRtYS",
+  "id": 1664735206319,
+  "Nombreapellido": "lakra",
+  "Usuario": "lakrita",
+  "Nacimiento": "1997-11-07",
+  "Email": "asc@asc.com",
+  "Password": "$2a$10$lP8fEriFIL5B7cdWtcifmOwmCsw2TT24rKMWUIkvCk2Y1xrQ5HWwa",
   "Categoria": "admin",
-  "Imagen": "avatar-591476973.jpeg"
+  "Imagen": "avatar-278530011.jpg"
  },
  {
-  "id": 1663694035337,
-  "Nombreapellido": "fasf",
-  "Usuario": "fdsa",
-  "Nacimiento": "",
-  "Email": "",
-  "Password": "$2a$10$j7FDFAVfHLErNbdH4hhiR.Lydpfk.4x4GQfAbXh35kL.U9d./tUEu",
-  "Categoria": "user",
+  "id": 1664735580997,
+  "Nombreapellido": "lakrita2",
+  "Usuario": "lakritando",
+  "Nacimiento": "1233-12-23",
+  "Email": "asc7@asc.com",
+  "Password": "$2a$10$Sm0WEcEfeyyvdcVLv9/j..lEBxnq8TYKzPtMxhHxU3fX9xo8D8/HS",
+  "Categoria": "admin",
   "Imagen": "OIP.jpg"
+ },
+ {
+  "id": 1664738451143,
+  "Nombreapellido": "Arturito",
+  "Usuario": "lakramaster",
+  "Nacimiento": "1997-11-07",
+  "Email": "arthurasc@outlook.com",
+  "Password": "$2a$10$YygYGvBLSahEbs2NhmhPiO4u4RG5ndzWOnnYiixery5fG23445bIu",
+  "Categoria": "user",
+  "Imagen": "Imagen-412700494.jpg"
  }
 ]

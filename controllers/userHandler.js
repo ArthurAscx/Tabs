@@ -3,55 +3,58 @@ const fs = require("fs");
 const rutaArchivo = path.join(__dirname, "/data/userList.json");
 const bcryptjs = require("bcryptjs")
 const { validationResult } = require("express-validator");
+
+
 const userHandler = {
+
+
     login: (req, res) => {
         res.render("login");
     },
-    logueado:(req, res)=>{
+
+
+
+    logueado: (req, res) => {
+        const usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         const errores = validationResult(req);
-        if(!errores.isEmpty()){
-            return res.render("login", 
-            {mensajeDeError: errores.mapped(), old:req.body})
-             }; 
+        let usuariologeado = null;
+        if (!errores.isEmpty()) {
+            return res.render("login",
+                { mensajeDeError: errores.mapped(), old: req.body })
+        };
 
-             res.redirect("/") 
-
-             for(let i= 0; i < usuarios.length; i++){
-                if(usuarios[i].nombreDeUsuario === req.body.nombreDeUsuario){
-                    if(bcrypt.compareSync(req.body.password, usuarios[i].password)){
-                    let usuarioAlogueares = usuarios[i];
+        for (let user of usuarios) {
+            if (user.Email === req.body.email && bcryptjs.compareSync(req.body.password, user.Password)) {
+                    usuariologeado = user;
+                    console.log(user);
                     break
                 }
-             }
-              
-         }
-            if(usuarioAlogueares == undefined){
-                return res.render("login", {errors:[
-                    {msg:"Credenciales invalidas"}
-                ]})
-             
-                req.session.usuarioAlogueado = usuarioAlogueares
-            } else {
-                return res.render("login", {errors: errors.errors})
             }
-    },      
-   
+        console.log(usuariologeado);
+        if (!usuariologeado) {
+            return res.render("login", {errors: [{ msg: "Credenciales invalidas" }]})
+        }
+            req.session.userlogeado = usuariologeado
+            return res.render("userDetail", { user: usuariologeado, errors: errores.errors })
+        
+    },
+
     register: (req, res) => {
         res.render("register");
     },
-   
+
     crear: (req, res) => {
         //validaciones//
         const errores = validationResult(req);
-        /* console.log(errores) */
-        if(!errores.isEmpty()){
-               return res.render("register", 
-               {mensajeDeError: errores.mapped(), old:req.body})
-                }; 
+        if (!errores.isEmpty()) {
+   
+            console.log(errores)
+            return res.render("register", { mensajeDeError: errores.mapped(), old: req.body })
+        };
 
 
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        let hasheov1 = bcryptjs.hashSync(req.body.password,10)
+        let hasheov1 = bcryptjs.hashSync(req.body.password, 10)
         let usr = {
             id: Date.now(),
             Nombreapellido: req.body.nombreApellido,
@@ -69,10 +72,10 @@ const userHandler = {
         usuarios = JSON.stringify(usuarios, null, " ");
         fs.writeFileSync(rutaArchivo, usuarios);
         res.redirect("/usuario/login")
-       
+
     },
 
-    
+
     lista: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         res.render("userList", { users: usuarios })
@@ -107,7 +110,7 @@ const userHandler = {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         let modificado = req.body;
         let newavatar = req.file;
-        let hasheomodificado = bcryptjs.hashSync(modificado.Password,10)
+        let hasheomodificado = bcryptjs.hashSync(modificado.Password, 10)
         // Usar el find para encontrar el usuario y modificarlo
         let userid = parseInt(req.params.id);
         let user = usuarios.find((u) => u.id === userid);
@@ -118,7 +121,7 @@ const userHandler = {
             user.Email = modificado.Email
             user.Password = hasheomodificado;
             user.Categoria = modificado.Categoria
-            if (newavatar){
+            if (newavatar) {
                 user.Imagen = req.file.filename
             }
 

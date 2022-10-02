@@ -39,11 +39,7 @@
                                         <label for="avatar" class="estiloForm2">Imagen de Perfil:</label>
                                         <input type="file" name="avatar" id="avatar" value="<%= locals.old && old.avatar ? old.avatar : '' %>" class="estiloForm3"
                                             accept="image/*">
-                                            <% if(locals.mensajeDeError && mensajeDeError.avatar) {%>
-                                                <div class="mensajeError">
-                                                   <%= mensajeDeError.avatar.msg %>
-                                                </div>
-                                                <% } %>
+                                      
                                         </div>
                                     <div class="estiloForm1">
                                         <label for="correo" class="estiloForm2">Correo Electronico:</label>
@@ -76,18 +72,7 @@
                                                    <%= mensajeDeError.password.msg %>
                                                 </div>
                                                 <% } %>
-                                    
                                         </div>
-                                    <div class="estiloForm1">
-                                        <label for="Confirmar Contraseña" class="estiloForm2">Confirmar
-                                            Contraseña:</label>
-                                        <input type="password" name="pass2" id="Confirmar Contraseña" class="estiloForm3">
-                                        <% if(locals.mensajeDeError && mensajeDeError.password) {%>
-                                            <div class="mensajeError">
-                                               <%= mensajeDeError.password.msg %>
-                                            </div>
-                                            <% } %>
-                                    </div>
 
                                     <div class="botones-registro">
                                         <button type="reset" class="botonForm">Borrar</button>
