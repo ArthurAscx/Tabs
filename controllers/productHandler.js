@@ -27,9 +27,9 @@ const productHandler = {
             
             if(p.id == req.params.id){
                 p.titulo=req.body.nombreDelProducto
-                p.descripción=req.body.descripción
+                p.descripcion=req.body.descripcion
                 p.genero=req.body.genero
-                p.precio=req.body.precio
+                p.precio=Number(req.body.precio)
                 p.año=req.body.ano
                 p.categoría=req.body.categoria
 
@@ -61,12 +61,14 @@ const productHandler = {
 
 
     listado: (req, res) => {
+        const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
         res.render("productList", { lista: lista });
     },
     crearForm: (req, res) => {
         res.render("productCreateForm")
     },
     crear: (req, res) => {
+        const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
         let producto = {
             id: Date.now(),
             titulo: req.body.nombreProducto,
@@ -75,7 +77,7 @@ const productHandler = {
             image: "default-image.png",
             año: parseInt(req.body.ano),
             precio: Number(req.body.precio),
-            descripción: req.body.descripcion,
+            descripcion: req.body.descripcion,
             ventas: 1
         }
         if (req.file) {
