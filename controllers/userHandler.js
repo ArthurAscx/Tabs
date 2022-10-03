@@ -26,7 +26,10 @@ const userHandler = {
         for (let user of usuarios) {
             if (user.Email === req.body.email && bcryptjs.compareSync(req.body.password, user.Password)) {
                     usuariologeado = user;
-                    console.log(user);
+                    console.log(req.body.recordarUsuario);
+                    if(req.body.recordarUsuario === "true"){
+                        res.cookie("recuerdame","true",{ maxAge: 900000})
+                    }
                     break
                 }
             }
