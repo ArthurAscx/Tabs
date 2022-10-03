@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const methodOverride = require("method-override")
 const session = require("express-session")
+const userData= require("./middlewares/sessionData")
 var cookieParser = require('cookie-parser');
 
 // Motor de plantillas usado
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session({secret: "esta frase no la va a leer nadie nunca jamas nunca jamas ni nunca jamas"}));
 app.use(cookieParser());
+app.use(userData);
 // NO PRESTAR ATENCION A ESTA LINEA app.set("views", __dirname +"/public/views");
 
 

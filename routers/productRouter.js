@@ -1,5 +1,5 @@
 const express = require("express");
-
+const userData = require("../middlewares/sessionData");
 const router = express.Router();
 const multer = require("multer");
 const rutasProducto = require("../controllers/productHandler");
