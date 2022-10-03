@@ -1,7 +1,7 @@
 let cookieLogger = (req,res,next) =>{
-    if((req.cookie) && (req.cookie.recuerdame)){
-        console.log(req.cookie.recuerdame);
-        req.session.userlogeado = req.cookie.recuerdame;
+    console.log(req.cookies)
+    if(req.cookies && (req.cookies.recuerdame)){
+        req.session.userlogeado = req.cookies.recuerdame;
         next();
     } else {
         next();

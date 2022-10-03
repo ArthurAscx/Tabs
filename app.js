@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(session({secret: "esta frase no la va a leer nadie nunca jamas nunca jamas ni nunca jamas"}));
 app.use(cookieParser());
-app.use(userData);
 app.use(cookieLogger);
+app.use(userData);
 // NO PRESTAR ATENCION A ESTA LINEA app.set("views", __dirname +"/public/views");
 
 

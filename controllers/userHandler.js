@@ -28,12 +28,11 @@ const userHandler = {
                     usuariologeado = user;
                     console.log(req.body.recordarUsuario);
                     if(req.body.recordarUsuario === "true"){
-                        res.cookie("recuerdame", user ,{ maxAge: 900000})
+                        res.cookie("recuerdame", user ,{ maxAge: 90000, httpOnly: true})
                     }
                     break
                 }
             }
-        console.log(usuariologeado);
         if (!usuariologeado) {
             return res.render("login", {errors: [{ msg: "Credenciales invalidas" }]})
         }
