@@ -5,7 +5,7 @@ let userData = (req,res,next) =>{
     } else {
         next();
     }
-
+    /* next(); */ //aca debería ir
 }
 
 module.exports = userData

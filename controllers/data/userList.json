@@ -28,5 +28,25 @@
   "Password": "$2a$10$YygYGvBLSahEbs2NhmhPiO4u4RG5ndzWOnnYiixery5fG23445bIu",
   "Categoria": "user",
   "Imagen": "Imagen-412700494.jpg"
+ },
+ {
+  "id": 1665102400901,
+  "Nombreapellido": "Pablo Brizuela",
+  "Usuario": "Pablete",
+  "Nacimiento": "2022-10-06",
+  "Email": "PabloBrizuela81@gmail.com",
+  "Password": "$2a$10$rGHMzA92dSv8lEzQBgNNNu82QzVIu81ru68mJJuUPPHrasCy8o0HG",
+  "Categoria": "user",
+  "Imagen": "OIP.jpg"
+ },
+ {
+  "id": 1665106902295,
+  "Nombreapellido": "Pablo Brizuela",
+  "Usuario": "Pablete",
+  "Nacimiento": "2022-10-06",
+  "Email": "josema@hotmail.com",
+  "Password": "$2a$10$I9SZwYcO59tipKlZHc3kt.4BmpnCweDbSW6h.K5fGxnNkyHA2gSQW",
+  "Categoria": "user",
+  "Imagen": "OIP.jpg"
  }
 ]
