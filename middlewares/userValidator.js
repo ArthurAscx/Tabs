@@ -1,7 +1,7 @@
 const { body } = require("express-validator");
 const passUnencripted = body.password
 //validaciones
-const validacion = [
+const validacionRegister = [
     body("nombreApellido").notEmpty().withMessage("Tenes que escribir un nombre"),
     body("nombreDeUsuario").notEmpty().withMessage("Tienes que escribir un nombre de usuario"),
     body("fechaDeNacimiento").notEmpty().withMessage("Tienes que escribir una fecha de nacimiento"), 
@@ -13,5 +13,5 @@ const validacion = [
         .isLength({min: 8}).withMessage("La contraseña debe contener 8 caracteres"),
   ];
   
-  module.exports = validacion;
+  module.exports = validacionRegister;
   
