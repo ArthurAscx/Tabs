@@ -82,6 +82,7 @@ const userHandler = {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         res.render("userList", { users: usuarios })
     },
+
     detalle: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         // Usar el find para encontrar el usuario y luego mandarlo a la página
@@ -95,6 +96,7 @@ const userHandler = {
             res.send(user)
         }
     },
+    
     edicion: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         // Usar el find para encontrar el usuario y luego mandarlo a la página
