@@ -15,18 +15,18 @@ const userHandler = {
 
 
     logueado: (req, res) => {
-        const usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        
         const errores = validationResult(req);
-        let usuariologeado = null;
+        
         if (!errores.isEmpty()) {
             return res.render("login",
                 { mensajeDeError: errores.mapped(), old: req.body })
         };
-
+        let usuariologeado = null;
+        const usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         for (let user of usuarios) {
             if (user.Email === req.body.email && bcryptjs.compareSync(req.body.password, user.Password)) {
                     usuariologeado = user;
-                    console.log(req.body.recordarUsuario);
                     if(req.body.recordarUsuario === "true"){
                         res.cookie("recuerdame", user ,{ maxAge: 90000, httpOnly: true})
                     }

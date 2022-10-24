@@ -3,8 +3,8 @@ const router = express.Router();
 const rutasUsuario= require("../controllers/userHandler");
 const multer = require("multer");
 const path = require("path");
-const validacion = require("../middlewares/userRegister");
-const validacion1 = require("../middlewares/loginRegister");
+const validacionRegister = require("../middlewares/userValidator");
+const validacionLogin = require("../middlewares/loginValidator");
 const invitado = require("../middlewares/authGuests");
 const logeado = require("../middlewares/authUsers")
 const { body } = require("express-validator");
@@ -33,7 +33,7 @@ router.get("/lista", rutasUsuario.lista)
 router.get("/edicion/:id", logeado,  rutasUsuario.edicion)
 router.get("/detalle/:id", logeado,  rutasUsuario.detalle)
 //POST de rutas
-router.post("/crear", upload.single("avatar"),validacion, invitado , rutasUsuario.crear)
+router.post("/crear", upload.single("avatar"),validacionRegister, invitado , rutasUsuario.crear)
 
 // PUT de rutas
 router.put("/editar/:id", upload.single("Imagen"), logeado, rutasUsuario.editar)
@@ -41,7 +41,7 @@ router.put("/editar/:id", upload.single("Imagen"), logeado, rutasUsuario.editar)
 // DELETE de rutas
 router.delete("/borrar/:id", logeado,  rutasUsuario.borrar)
 
-router.post("/login",validacion1, rutasUsuario.logueado);
+router.post("/login",validacionLogin, rutasUsuario.logueado);
 /* router.get("/pruebaSession"), (req, res) =>{
   if(req.session.numeroVisitas == undefined){
     req.session.numeroVisitas = 0;
