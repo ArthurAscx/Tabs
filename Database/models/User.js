@@ -9,7 +9,7 @@ const cols = {
            allowNull: false,
            unique: true
         },
-		firstName:{
+		   firstName:{
             type: Sequelize.STRING,
             defaultValue: "John",
             allowNull: false,
@@ -38,9 +38,6 @@ const cols = {
          },
          idCategory:{
             type:Sequelize.INTEGER
-         },
-         idUserDisc:{
-            type:Sequelize.INTEGER
          }
 }
 
@@ -53,12 +50,6 @@ user.associate = (models)=>{
     user.belongsTo(models.Category, {
         as: "category",
         foreignKey: "idCategory"
-    }),
-    user.belongsToMany(models.UserDisc, {
-        as: "transaction",
-        through: "UserDisc",
-        foreignKey: "idUserDisc",
-        timestamps:false
     })
 }
 

@@ -9,7 +9,7 @@ const cols = {
            allowNull: false,
            unique: true
         },
-		name: {
+		   name: {
             type: Sequelize.STRING,
             defaultValue: "Placeholder Band",
             allowNull: false,

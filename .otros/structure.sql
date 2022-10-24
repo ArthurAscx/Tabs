@@ -1,3 +1,5 @@
+CREATE SCHEMA ladoa;
+
 CREATE TABLE User (
   idUser INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT ,
   firstName VARCHAR(60) NOT NULL,
@@ -5,36 +7,28 @@ CREATE TABLE User (
   birthDate DATE NOT NULL,
   email VARCHAR(60) NOT NULL UNIQUE,
   password VARCHAR(100) NOT NULL,
-  avatar VARCHAR(100) NOT NULL);
+  avatar VARCHAR(100) NOT NULL
+  );
 
-ALTER TABLE User ADD idCategory INT;
- 
 CREATE TABLE category(
 	idCategory INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
-    name VARCHAR(60) NOT NULL UNIQUE);
+    name VARCHAR(60) NOT NULL UNIQUE
+    );
     
-ALTER TABLE User ADD FOREIGN KEY (idCategory) REFERENCES category(idCategory);
-
 CREATE TABLE Disc (
   idDisc INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT ,
   title VARCHAR(100) NOT NULL,
-  price DOUBLE NOT NULL,
+  price FLOAT(5,3) NOT NULL,
   artwork VARCHAR(100) NOT NULL,
   sales INT NOT NULL,
   releaseYear YEAR NOT NULL,
-  description MEDIUMTEXT NOT NULL);
-  
-  ALTER TABLE Disc ADD idArtist INT;
-  ALTER TABLE Disc ADD idGenre INT;
-  ALTER TABLE Disc ADD FOREIGN KEY (idGenre) REFERENCES Genre(idGenre);
-  ALTER TABLE Disc ADD FOREIGN KEY (idArtist) REFERENCES Artist(idArtist);
+  description MEDIUMTEXT NOT NULL
+  );
   
   CREATE TABLE Artist(
 	idArtist INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL UNIQUE);
-    
-    ALTER TABLE artist ADD idGenre INT;
-    ALTER TABLE Artist ADD FOREIGN KEY (idGenre) REFERENCES Genre(idGenre);
+    name VARCHAR(100) NOT NULL UNIQUE
+    );
     
     CREATE TABLE Genre(
     idGenre INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
@@ -44,10 +38,20 @@ CREATE TABLE Disc (
 CREATE TABLE UserDisc(
 	idUserDisc INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
     traceId INT NOT NULL UNIQUE,
+    totalPrice FLOAT(10,4) NOT NULL,
     idUser INT NOT NULL,
     idDisc INT NOT NULL,
     FOREIGN KEY (idUser) REFERENCES User(idUser),
     FOREIGN KEY (idDisc) REFERENCES Disc(idDisc)
 );
-    
-    
+  
+  ALTER TABLE User ADD idCategory INT;
+  ALTER TABLE User ADD FOREIGN KEY (idCategory) REFERENCES category(idCategory);
+
+  ALTER TABLE artist ADD idGenre INT;
+  ALTER TABLE Artist ADD FOREIGN KEY (idGenre) REFERENCES Genre(idGenre);
+
+  ALTER TABLE Disc ADD idArtist INT;
+  ALTER TABLE Disc ADD idGenre INT;
+  ALTER TABLE Disc ADD FOREIGN KEY (idGenre) REFERENCES Genre(idGenre);
+  ALTER TABLE Disc ADD FOREIGN KEY (idArtist) REFERENCES Artist(idArtist);

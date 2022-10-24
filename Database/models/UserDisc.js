@@ -9,10 +9,13 @@ const cols = {
            allowNull: false,
            unique: true
         },
-		traceId:{
+		 traceId:{
             type: Sequelize.INTEGER,
             allowNull: false,
             unique: true
+         },
+         totalPrice:{
+            type:Sequelize.DOUBLE
          },
          idUser:{
             type: Sequelize.INTEGER,
