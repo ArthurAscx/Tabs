@@ -1,45 +1,44 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../database'); 
-
+const Sequelize = require("sequelize")
+module.exports = (sequelize, DataTypes)=>{
 const cols = {
         idDisc: {
-           type: Sequelize.INTEGER,
+           type: DataTypes.INTEGER,
            autoIncrement: true,
            primaryKey: true,
            allowNull: false,
            unique: true
         },
 		title:{
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             defaultValue: "Disc Name",
             allowNull: false,
          },
          price:{
-            type: Sequelize.DOUBLE,
+            type: DataTypes.DOUBLE,
             defaultValue: 25,
             allowNull: false,
          },
          artwork:{
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
          },
          sales:{
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
          },
          releaseYear:{
-            type: Sequelize.DATEONLY,
+            type: DataTypes.DATEONLY,
             allowNull: false
          },
          description:{
-            type: Sequelize.TEXT,
+            type: DataTypes.TEXT,
             allowNull: false
          },
          idArtist:{
-            type:Sequelize.INTEGER
+            type:DataTypes.INTEGER
          },
          idGenre:{
-            type:Sequelize.INTEGER
+            type:DataTypes.INTEGER
          }
 }
 
@@ -48,7 +47,7 @@ const Disc = sequelize.define("Disc", cols, {
     timestamps: false
 });
 
-Disc.associate = (models) =>{
+Disc.Associate = (models) =>{
     Disc.belongsTo(models.Artist, {
         as: "artist",
         foreignKey: "idArtist"
@@ -58,5 +57,5 @@ Disc.associate = (models) =>{
         foreignKey: "idGenre"
     })
 }
-
-module.exports = Disc;
+return Disc;
+}

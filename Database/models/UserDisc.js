@@ -1,28 +1,28 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../database'); 
+const { DataTypes } = require("sequelize");
 
+module.exports = (sequelize, DataTypes)=>{
 const cols = {
         idUserDisc: {
-           type: Sequelize.INTEGER,
+           type: DataTypes.INTEGER,
            autoIncrement: true,
            primaryKey: true,
            allowNull: false,
            unique: true
         },
 		 traceId:{
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             unique: true
          },
          totalPrice:{
-            type:Sequelize.DOUBLE
+            type:DataTypes.DOUBLE
          },
          idUser:{
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
          },
          idDisc:{
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
          }
 }
@@ -31,5 +31,5 @@ const userDisc = sequelize.define("userDisc", cols, {
     tableName: "userdisc",
     timestamps: false
 });
-
-module.exports = userDisc;
+return userDisc;
+}

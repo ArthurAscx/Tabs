@@ -1,43 +1,42 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../database'); 
+module.exports = (sequelize,DataTypes)=>{
 
 const cols = {
         idUser: {
-           type: Sequelize.INTEGER,
+           type: DataTypes.INTEGER,
            autoIncrement: true,
            primaryKey: true,
            allowNull: false,
            unique: true
         },
 		   firstName:{
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             defaultValue: "John",
             allowNull: false,
          },
          lastName:{
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             defaultValue: "Doe",
             allowNull: false,
          },
          birthDate:{
-            type: Sequelize.DATEONLY,
+            type: DataTypes.DATEONLY,
             allowNull: false,
          },
          email:{
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true
          },
          password:{
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
          },
          avatar:{
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false
          },
          idCategory:{
-            type:Sequelize.INTEGER
+            type: DataTypes.INTEGER
          }
 }
 
@@ -46,11 +45,11 @@ const user = sequelize.define("user", cols, {
     timestamps: false
 });
 
-user.associate = (models)=>{
+user.Associate = (models)=>{
     user.belongsTo(models.Category, {
         as: "categories",
         foreignKey: "idCategory"
     })
 }
-
-module.exports = user;
+return user;
+}

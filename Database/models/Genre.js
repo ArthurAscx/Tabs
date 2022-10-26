@@ -1,16 +1,16 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../database'); 
+const { DataTypes } = require("sequelize");
 
+module.exports = (sequelize, DataTypes)=>{
 const cols = {
         idGenre: {
-           type: Sequelize.INTEGER,
+           type: DataTypes.INTEGER,
            autoIncrement: true,
            primaryKey: true,
            allowNull: false,
            unique: true
         },
 		name: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             defaultValue: "Placeholder Genre",
             allowNull: false,
             unique: true
@@ -22,7 +22,7 @@ const Genre = sequelize.define("Genre", cols, {
     timestamps: false
 });
 
-Genre.associate = (models)=>{
+Genre.Associate = (models)=>{
     Genre.hasMany(models.Disc, {
         as: "discs",
         foreignKey: "idGenre"
@@ -32,5 +32,5 @@ Genre.associate = (models)=>{
         foreignKey: "idGenre"
     })
 }
-
-module.exports = Genre;
+return Genre;
+}

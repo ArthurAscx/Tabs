@@ -1,16 +1,17 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../database'); 
+const { DataTypes } = require("sequelize");
+
+module.exports = (sequelize, DataTypes)=>{
 
 const cols = {
         idCategory: {
-           type: Sequelize.INTEGER,
+           type: DataTypes.INTEGER,
            autoIncrement: true,
            primaryKey: true,
            allowNull: false,
            unique: true
         },
 		name: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             defaultValue: "Placeholder Category",
             allowNull: false,
             unique: true
@@ -22,10 +23,11 @@ const category = sequelize.define("Category", cols, {
     timestamps: false
 });
 
-category.associate = (models)=>{
+category.Associate = (models)=>{
     category.hasMany(models.User, {
         as: "users",
         foreignKey: "idCategory"
     })
 }
-module.exports = category;
+return category;
+}

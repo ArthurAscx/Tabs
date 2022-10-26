@@ -26,7 +26,7 @@ app.use(userData);
 const rutasPrincipales = require("./routers/mainRouter");
 const rutasProducto = require("./routers/productRouter");
 const rutasUsuario = require("./routers/userRouter");
-
+const rutasAPI = require("./routers/apiRouter")
 
 // Rutas Principales
 
@@ -39,6 +39,22 @@ app.use("/producto" , rutasProducto);
 // Rutas de Usuario
 
 app.use("/usuario" , rutasUsuario);
+
+// Rutas de API
+
+app.use("/api", rutasAPI);
+
+//Test coneccion BASE
+
+// sequelize.authenticate().then(function () {
+//     console.log('Database connected and authenticated!');
+//     return true;
+// }).catch(function (err) {
+//     console.error('Failed to connect and authenticate', err);
+//     return false;
+// });
+
+
 
 // Puerto escucha en el Numero:
 

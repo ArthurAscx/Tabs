@@ -1,25 +1,28 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../database'); 
+const { dataTypes } = require("sequelize");
+const { sequelize } = require(".");
+
+module.exports = (sequelize, dataTypes) =>{
+
 
 const cols = {
         idArtist: {
-           type: Sequelize.INTEGER,
+           type: dataTypes.INTEGER,
            autoIncrement: true,
            primaryKey: true,
            allowNull: false,
            unique: true
         },
 		   name: {
-            type: Sequelize.STRING,
+            type: dataTypes.STRING,
             defaultValue: "Placeholder Band",
             allowNull: false,
          },
          idGenre:{
-            type: Sequelize.INTEGER
+            type: dataTypes.INTEGER
          }
 }
 
-const artist = sequelize.define("Artist", cols, {
+const artist = sequelize.define("artist", cols, {
     tableName: "artist",
     timestamps: false
 });
@@ -34,5 +37,5 @@ artist.Associate = (models)=>{
         foreignKey: "idGenre"
     })
 }
-
-module.exports = artist;
+return artist;
+}
