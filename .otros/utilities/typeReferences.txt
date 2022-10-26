@@ -43,3 +43,7 @@ Dates
 DataTypes.DATE       // DATETIME for mysql / sqlite, TIMESTAMP WITH TIME ZONE for postgres
 DataTypes.DATE(6)    // DATETIME(6) for mysql 5.6.4+. Fractional seconds support with up to 6 digits of precision
 DataTypes.DATEONLY   // DATE without time
+
+
+
+FUNCION PARA PASAR DATES A formato util en SQL this.to_date.strftime("%Y-%m-%d")
