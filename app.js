@@ -6,6 +6,7 @@ const session = require("express-session")
 const userData = require("./middlewares/sessionData");
 const cookieLogger= require("./middlewares/cookielogger")
 var cookieParser = require('cookie-parser');
+const Sequelize = require("sequelize");
 
 // Motor de plantillas usado
 app.set("view engine" , "ejs");
@@ -46,13 +47,17 @@ app.use("/api", rutasAPI);
 
 //Test coneccion BASE
 
-// sequelize.authenticate().then(function () {
-//     console.log('Database connected and authenticated!');
-//     return true;
-// }).catch(function (err) {
-//     console.error('Failed to connect and authenticate', err);
-//     return false;
-// });
+var sequelize = new Sequelize('ladoa', 'root', '', {
+    host: 'localhost',
+    dialect: "mysql",
+  })
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
 
 
 

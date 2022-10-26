@@ -7,6 +7,7 @@ const rutasAPI = require("../api/discs")
 router.get("/discs/all", rutasAPI.all);
 router.get("/discs/:id", rutasAPI.disc);
 router.post("/discs/create", rutasAPI.newDisc)
+router.put("/discs/edit/:id", rutasAPI.editDisc)
 //router.get("/contacto", rutasPrincipales.contacto);
 //router.get("/ayuda", rutasPrincipales.ayuda);
 
