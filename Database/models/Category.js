@@ -18,8 +18,14 @@ const cols = {
 }
 
 const category = sequelize.define("Category", cols, {
-    tableName: "Category",
+    tableName: "category",
     timestamps: false
 });
 
+category.associate = (models)=>{
+    category.hasMany(models.User, {
+        as: "users",
+        foreignKey: "idCategory"
+    })
+}
 module.exports = category;

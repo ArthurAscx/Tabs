@@ -18,8 +18,19 @@ const cols = {
 }
 
 const Genre = sequelize.define("Genre", cols, {
-    tableName: "Genre",
+    tableName: "genre",
     timestamps: false
 });
+
+Genre.associate = (models)=>{
+    Genre.hasMany(models.Disc, {
+        as: "discs",
+        foreignKey: "idGenre"
+    }),
+    Genre.hasMany(models.Artist, {
+        as: "Artists",
+        foreignKey: "idGenre"
+    })
+}
 
 module.exports = Genre;

@@ -48,7 +48,7 @@ const user = sequelize.define("user", cols, {
 
 user.associate = (models)=>{
     user.belongsTo(models.Category, {
-        as: "category",
+        as: "categories",
         foreignKey: "idCategory"
     })
 }

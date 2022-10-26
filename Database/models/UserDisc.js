@@ -28,7 +28,7 @@ const cols = {
 }
 
 const userDisc = sequelize.define("userDisc", cols, {
-    tableName: "userDisc",
+    tableName: "userdisc",
     timestamps: false
 });
 

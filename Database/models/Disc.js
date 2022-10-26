@@ -44,8 +44,19 @@ const cols = {
 }
 
 const Disc = sequelize.define("Disc", cols, {
-    tableName: "Disc",
+    tableName: "disc",
     timestamps: false
 });
+
+Disc.associate = (models) =>{
+    Disc.belongsTo(models.Artist, {
+        as: "artist",
+        foreignKey: "idArtist"
+    }),
+    Disc.belongsTo(models.Genre, {
+        as: "genre",
+        foreignKey: "idGenre"
+    })
+}
 
 module.exports = Disc;
