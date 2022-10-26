@@ -55,3 +55,5 @@ CREATE TABLE UserDisc(
   ALTER TABLE Disc ADD idGenre INT;
   ALTER TABLE Disc ADD FOREIGN KEY (idGenre) REFERENCES Genre(idGenre);
   ALTER TABLE Disc ADD FOREIGN KEY (idArtist) REFERENCES Artist(idArtist);
+
+  
