@@ -51,7 +51,7 @@ let disc = {
 
     editDisc: async (req,res) =>{
         try {
-            let discToEdit = await db.Disc.update({
+                await db.Disc.update({
                 price: Number(req.body.price),
                 title: req.body.title,
                 artwork: req.body.artwork,
@@ -69,7 +69,8 @@ let disc = {
                 //     fs.unlinkSync("./public/img/productos/" + p.image);
                 //     p.image = req.file.filename;
                 // }
-                res.send(discToEdit)
+                let discEdited =  await db.Disc.findByPk(req.params.id);
+                res.send(discEdited)
         } catch (error) {
             res.send("There is an error: "+ error)
         }
