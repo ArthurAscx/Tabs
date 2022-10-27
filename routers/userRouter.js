@@ -3,6 +3,14 @@ const router = express.Router();
 const rutasUsuario= require("../controllers/userHandler");
 const multer = require("multer");
 const path = require("path");
+const validacionRegister = require("../middlewares/userValidator");
+const validacionLogin = require("../middlewares/loginValidator");
+const invitado = require("../middlewares/authGuests");
+const logeado = require("../middlewares/authUsers")
+const { body } = require("express-validator");
+
+
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname, '../public/img/Avatares'))
@@ -16,21 +24,34 @@ const storage = multer.diskStorage({
  const upload = multer({storage});
 
 
+
+
  // GETS de rutas
-router.get("/login", rutasUsuario.login);
-router.get("/register", rutasUsuario.register);
+router.get("/login", invitado,  rutasUsuario.login);
+router.get("/register",invitado, rutasUsuario.register);
 router.get("/lista", rutasUsuario.lista)
-router.get("/edicion/:id", rutasUsuario.edicion)
-router.get("/detalle/:id", rutasUsuario.detalle)
+router.get("/edicion/:id", logeado,  rutasUsuario.edicion)
+router.get("/detalle/:id", logeado,  rutasUsuario.detalle)
 //POST de rutas
-router.post("/crear", upload.single("avatar"), rutasUsuario.crear)
+router.post("/crear", upload.single("avatar"),validacionRegister, invitado , rutasUsuario.crear)
 
 // PUT de rutas
-router.put("/editar/:id", upload.single("Imagen"), rutasUsuario.editar)
+router.put("/editar/:id", upload.single("Imagen"), logeado, rutasUsuario.editar)
 
 // DELETE de rutas
-router.delete("/borrar/:id", rutasUsuario.borrar)
-module.exports = router;
+router.delete("/borrar/:id", logeado,  rutasUsuario.borrar)
+
+router.post("/login",validacionLogin, rutasUsuario.logueado);
+/* router.get("/pruebaSession"), (req, res) =>{
+  if(req.session.numeroVisitas == undefined){
+    req.session.numeroVisitas = 0;
+  }
+    req.session.numeroVisitas++;
+    res.send("sesion tiene el numero:" + req.session.numeroVisitas)
+  }, */
+ 
+  module.exports = router;
+
 
 /* Luego chequear esto
 router.get("/user/:id", rutasUsuario.perfil);

@@ -1,52 +1,86 @@
-<%- include("./partials/head")  %>
-<body>
-    <%- include("./partials/header")  %>
-    <div class="container-login">
-    <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
-        <h3>Registro de usuario</h3>
-        <div class="estiloForm1">
-            <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
-            <input type="text" name="nombreApellido" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
-            <input type="text" name="nombreDeUsuario" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
-            <input type="date" name="fechaDeNacimiento" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="avatar" class="estiloForm2">Imagen de Perfil:</label>
-            <input type="file" name="avatar" id="avatar" class="estiloForm3" accept="image/*">
-        </div>
-        <div class="estiloForm1">
-            <label for="correo" class="estiloForm2">Correo Electronico:</label>
-            <input type="email" name="correo" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="categoria" class="estiloForm2">Categoría:</label>
-            <select name="categoria" class="estiloForm3">
-                <option value="user" selected>Usuario</option>
-                <option value="admin">Administrador</option>
-            </select>
-        </div>
-        <div class="estiloForm1">
-            <label for="password" class="estiloForm2">Contraseña: </label>
-            <input type="password" name="password" id="password" class="estiloForm3" required>
-        </div>
-        <div class="estiloForm1">
-            <label for="Confirmar Contraseña" class="estiloForm2">Confirmar Contraseña:</label>
-            <input type="password" name="pass2" class="estiloForm3" required>
-        </div>
+<%- include("./partials/head") %>
 
-        <div class="botones-registro">
-            <button type="reset" class="botonForm">Borrar</button>
-            <button type="submit" class="botonForm">Enviar</button>
-        </div>
-    </form>
-</div>
-    <%- include("./partials/footer")  %>
-</body>
+    <body>
+        <%- include("./partials/header") %>
+            <div class="container-login">
+              
+                <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
+                    <h3>Registro de usuario</h3>
+                   
+                                    <div class="estiloForm1">
+                                        <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
+                                        <input type="text" name="nombreApellido" id="nombreApellido" value="<%= locals.old && old.nombreApellido ? old.nombreApellido : '' %>" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.nombreApellido) {%>
+                                        <div class="mensajeError">
+                                           <%= mensajeDeError.nombreApellido.msg %>
+                                        </div>
+                                        <% } %>
+                                    </div>
+                                    
+                                    <div class="estiloForm1">
+                                        <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
+                                        <input type="text" name="nombreDeUsuario"id="nombreDeUsuario" value="<%= locals.old && old.nombreDeUsuario ? old.nombreDeUsuario : '' %>"class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.nombreDeUsuario) {%>
+                                            <div class="mensajeError">
+                                               <%= mensajeDeError.nombreDeUsuario.msg %>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
+                                        <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" value="<%= locals.old && old.fechaDeNacimiento ? old.fechaDeNacimiento : '' %>" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.fechaDeNacimiento) {%>
+                                            <div class="mensajeError">
+                                               <%= mensajeDeError.fechaDeNacimiento.msg %>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="avatar" class="estiloForm2">Imagen de Perfil:</label>
+                                        <input type="file" name="avatar" id="avatar" value="<%= locals.old && old.avatar ? old.avatar : '' %>" class="estiloForm3"
+                                            accept="image/*">
+                                      
+                                        </div>
+                                    <div class="estiloForm1">
+                                        <label for="correo" class="estiloForm2">Correo Electronico:</label>
+                                        <input type="text" name="correo" id="correo" value="<%= locals.old && old.correo ? old.correo : '' %>" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.correo) {%>
+                                            <div class="mensajeError">
+                                               <%= mensajeDeError.correo.msg %>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="categoria" class="estiloForm2">Categoría:</label>
+                                        <select name="categoria" id="categoria" class="estiloForm3">
+                                            <option ></option>
+                                            <option  value="user">Usuario</option>
+                                            <option  value="admin">Administrador</option>
+                                        </select>
+                                        <% if(locals.mensajeDeError && mensajeDeError.categoria) {%>
+                                            <div class="mensajeError">
+                                               <%= mensajeDeError.categoria.msg %>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                    <div class="estiloForm1">
+                                        <label for="password" class="estiloForm2">Contraseña: </label>
+                                        <input type="password" name="password" id="password" class="estiloForm3">
+                                            
+                                            <% if(locals.mensajeDeError && mensajeDeError.password) {%>
+                                                <div class="mensajeError">
+                                                   <%= mensajeDeError.password.msg %>
+                                                </div>
+                                                <% } %>
+                                        </div>
 
-</html>
+                                    <div class="botones-registro">
+                                        <button type="reset" class="botonForm">Borrar</button>
+                                        <button type="submit" class="botonForm">Registrar</button>
+                                    </div>
+                </form>
+            </div>
+            <%- include("./partials/footer") %>
+    </body>
+
+    </html>

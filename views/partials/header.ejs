@@ -6,8 +6,12 @@
       <input type="submit" value="Buscar">
     </form>
     <ul class="user-panel">
+      <% if(locals.userData) { %> 
+        <li><i class="gg-calendar-next"></i><a href="/usuario/detalle/<%=locals.userData.id%>">Hola! <%=locals.userData.Nombreapellido%></a></li>
+        <% } else { %> 
       <li><i class="gg-calendar-next"></i><a href="/usuario/login">Ingresar</a></li>
       <li><i class="gg-add-r"></i><a href="/usuario/register">Registro</a></li>
+      <% } %>
       <li><i class="gg-shopping-cart"></i><a href="/producto/carrito">Carrito</a></li>
     </ul>
   </div>

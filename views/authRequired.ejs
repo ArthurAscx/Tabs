@@ -1,0 +1,12 @@
+<%- include("./partials/head") %>
+
+            <body>     
+                <%- include("./partials/header") %> 
+                <div class="container-login">
+                    <h1>Ya estas logeado en el sitio</h1>
+                    <a href="/usuario/detalle/<%=locals.userData.id%>"><h2>Haz click aquí para ir a tu perfil</h2></a>
+                </div>
+            <%- include("./partials/footer") %>
+    </body>
+
+    </html>

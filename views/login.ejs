@@ -1,30 +1,41 @@
 <%- include("./partials/head") %>
 
-    <body>
-        <%- include("./partials/header") %>
-            <div class="container-login">
+            <body>     
+                <%- include("./partials/header") %> 
+                <div class="container-login">
                 <div class="login-crear">
-                    <form action="/" method="get" class="estiloForm">
-
+                    <form action="/usuario/login" method="POST" class="estiloForm">
                         <div class="estiloForm1">
-                            <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario</label>
-                            <input type="text" name="nombreDeUsuario" class="estiloForm3">
+                            <label for="email" class="estiloForm2">Email</label>
+                            <input type="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" class="estiloForm3">
+                            <% if(locals.mensajeDeError && mensajeDeError.nombreDeUsuario) {%>
+                                <div class="mensajeError">
+                                   <%= mensajeDeError.email.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="estiloForm1">
-                            <label for="contraseña" class="estiloForm2">Contraseña</label>
-                            <input type="password" name="contraseña" minlength="10" class="estiloForm3">
+                            <label for="password" class="estiloForm2">Contraseña</label>
+                            <input type="password" name="password" class="estiloForm3">
+                            <% if(locals.mensajeDeError && mensajeDeError.password) {%>
+                                <div class="mensajeError">
+                                   <%= mensajeDeError.password.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="estiloForm1">
+                            <div class="recordarUsuario">
+                                <label for="recordarUsuario" class="">Recordar usuario</label>
+                                <input type="checkbox" name="recordarUsuario" value="true">
+                            </div>
                             <button type="reset" class="botonForm">Borrar</button>
-                            <button type="submit" class="botonForm">Enviar</button>
+                            <button type="submit" class="botonForm">Ingresar</button>
                             <div class="recuperarContraseña">
                                 <li><a href="#">¿Olvidaste tu contraseña?</a></li>
                             </div>
-                            <div class="recordarUsuario">
-                                <label for="recordarUsuario" class="">Recordar usuario</label>
-                                <input type="checkbox" name="recordarUsuario">
-                            </div>
-
+                            <% if(locals.errors) { %> 
+                                <h4 style="color: red"><%=errors[0].msg%></h4>
+                             <% } %> 
                         </div>
                     </form>
 
@@ -37,10 +48,11 @@
                             <li>Obtener ofertas especiales</li>
                         </ul>
                         <p style="font-style:italic">NOTA:Las cuentas creadas no recibiran publicidad por mail</p>
-                        <a href="/usuario/register"><button type="submit" class="botonForm">Enviar</button></a>
+                        <a href="/usuario/register"><button type="submit" class="botonForm">Crear</button></a>
                     </section>
                 </div>
             </div>
+        </div>
             <%- include("./partials/footer") %>
     </body>
 
