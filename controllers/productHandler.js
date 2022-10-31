@@ -63,8 +63,10 @@ const productHandler = {
 
 
     listado: (req, res) => {
-        const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
-        res.render("productList", { lista: lista });
+    db.Disc.findAll() 
+    .then(()=>{
+        res.render("productList",{Disc:Disc})
+    })  
     },
     crearForm: (req, res) => {
         db.Disc.findAll()
@@ -73,17 +75,16 @@ const productHandler = {
         })
     },
     crear: (req, res) => {
-        const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
+        db.disc.create()
         let producto = {
-            id: Date.now(),
-            titulo: req.body.nombreProducto,
-            genero: req.body.genero,
-            artista: req.body.artista,
-            image: "default-image.png",
-            año: parseInt(req.body.ano),
-            precio: Number(req.body.precio),
-            descripcion: req.body.descripcion,
-            ventas: 1
+            title: req.body.title,
+            idGenre: req.body.idGenre,
+            idArtist: req.body.idArtist,
+            artwork: "default-image.png",
+            releaseYear: parseInt(req.body.releaseYear),
+            price: Number(req.body.price),
+            description: req.body.description,
+            sales: 1
         }
         if (req.file) {
             producto.image = req.file.filename
