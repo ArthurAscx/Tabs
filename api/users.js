@@ -1,5 +1,5 @@
 const db = require("../Database/models")
-const sequelize = require("sequelize");
+const Op = db.Sequelize.Op
 let user = {
 
     all: async function (req, res) {
@@ -104,7 +104,7 @@ let user = {
             let searchword = req.query.finder.toLowerCase()
             let userFound = await db.User.findAll({
                 where: {
-                    firstName: searchword
+                    firstName:  {[Op.like]: "%"+ searchword +"%"}
                 }
             })
             userFound ?

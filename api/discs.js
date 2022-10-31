@@ -1,5 +1,5 @@
 const db = require("../Database/models")
-const sequelize = require("sequelize");
+const Op = db.Sequelize.Op
 let disc = {
 
     all: async function (req, res) {
@@ -96,7 +96,7 @@ let disc = {
             let searchword = req.query.finder.toLowerCase()
             let discsFound = await db.Disc.findAll({
                 where: {
-                    title: searchword
+                    title: {[Op.like]: "%"+ searchword +"%"}
                 }
             })
             discsFound ?
@@ -109,7 +109,7 @@ let disc = {
                 res.send("No se recibió informacion")
            // res.send("La búsqueda de "+ searchword+ " es: "+ discsFound.title)
         } catch (error) {
-            res.send("No se encontro la pelicula. Razón: "+ error)
+            res.send("No se encontro el disco. Razón: "+ error)
         }
     }
 }
