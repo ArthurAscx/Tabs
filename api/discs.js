@@ -70,7 +70,10 @@ let disc = {
             //     p.image = req.file.filename;
             // }
             let discEdited = await db.Disc.findByPk(req.params.id);
-            res.send(discEdited)
+            res.json({
+                data: discEdited,
+                status: 200
+            })
         } catch (error) {
             res.send("There is an error: " + error)
         }
@@ -82,7 +85,7 @@ let disc = {
                     idDisc: req.params.id
                 }
             })
-            res.redirect("/producto")
+            res.redirect("/")
         } catch (error) {
             res.send("Hubo un error al eliminar la película. Error: " + error)
         }
@@ -91,12 +94,20 @@ let disc = {
     find: async (req,res)=>{
         try {
             let searchword = req.query.finder.toLowerCase()
-            let discFound = await db.Disc.findOne({
+            let discsFound = await db.Disc.findAll({
                 where: {
                     title: searchword
                 }
             })
-            res.send("Tu película es: "+ discFound.title)
+            discsFound ?
+                res.json({
+                    total: discsFound.length,
+                    data: discsFound,
+                    status: 200
+                })
+                :
+                res.send("No se recibió informacion")
+           // res.send("La búsqueda de "+ searchword+ " es: "+ discsFound.title)
         } catch (error) {
             res.send("No se encontro la pelicula. Razón: "+ error)
         }

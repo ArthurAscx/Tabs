@@ -40,7 +40,7 @@ const cols = {
          }
 }
 
-const user = sequelize.define("user", cols, {
+const user = sequelize.define("User", cols, {
     tableName: "User",
     timestamps: false
 });
