@@ -67,7 +67,10 @@ const productHandler = {
         res.render("productList", { lista: lista });
     },
     crearForm: (req, res) => {
-        res.render("productCreateForm")
+        db.Disc.findAll()
+        .then((disc)=>{
+            return res.render("productCreateForm",{disc:disc})
+        })
     },
     crear: (req, res) => {
         const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
