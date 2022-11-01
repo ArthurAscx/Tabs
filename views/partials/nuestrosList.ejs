@@ -1,13 +1,13 @@
 <% for (const disco of nuestros) { %>
     <article>
-        <a href="/producto/detalle/<%= disco.id%>"><img src="/img/productos/<%= disco.image %>"></a>
+        <a href="/producto/detalle/<%= disco.idDisc%>"><img src="/img/productos/<%= disco.artist %>"></a>
         <br><span>
-            <%=disco.titulo %>
+            <%=disco.title %>
         </span>
         <br><span>
-            <%=disco.artista %>
+            <%=disco.artist %>
         </span>
-        <br><span>$<%=disco.precio %></span>
+        <br><span>$<%=disco.price %></span>
     </article>
     <% } %>
         </section>

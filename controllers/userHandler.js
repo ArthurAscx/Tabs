@@ -3,6 +3,7 @@ const fs = require("fs");
 const rutaArchivo = path.join(__dirname, "/data/userList.json");
 const bcryptjs = require("bcryptjs")
 const { validationResult } = require("express-validator");
+const db = require("../Database/models");
 
 
 const userHandler = {
@@ -14,31 +15,34 @@ const userHandler = {
 
 
 
-    logueado: (req, res) => {
-        
-        const errores = validationResult(req);
-        
+    logueado: async (req, res) => {
+        const errores = validationResult(req); 
         if (!errores.isEmpty()) {
             return res.render("login",
                 { mensajeDeError: errores.mapped(), old: req.body })
         };
+        try {
         let usuariologeado = null;
-        const usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        for (let user of usuarios) {
-            if (user.Email === req.body.email && bcryptjs.compareSync(req.body.password, user.Password)) {
-                    usuariologeado = user;
-                    if(req.body.recordarUsuario === "true"){
-                        res.cookie("recuerdame", user ,{ maxAge: 90000, httpOnly: true})
-                    }
-                    break
-                }
+        let userToLogin = await db.User.findOne({
+            where: {
+                email: req.body.email
             }
+        })
+        console.log(userToLogin);
+        if(bcryptjs.compareSync(req.body.password, userToLogin.password)){
+            usuariologeado = userToLogin;
+            if(req.body.recordarUsuario === "true"){
+                res.cookie("recuerdame", usuariologeado ,{ maxAge: 90000, httpOnly: true})
+            }
+        }
         if (!usuariologeado) {
             return res.render("login", {errors: [{ msg: "Credenciales invalidas" }]})
         }
             req.session.userlogeado = usuariologeado
             return res.redirect("/")
-        
+        } catch (error) {
+            res.send("Hubo un error en la ejecucion del query: "+error)
+        }
     },
 
     register: (req, res) => {

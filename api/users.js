@@ -1,5 +1,6 @@
 const db = require("../Database/models")
 const Op = db.Sequelize.Op
+const bcryptjs = require("bcryptjs") 
 let user = {
 
     all: async function (req, res) {
@@ -40,7 +41,7 @@ let user = {
             lastName: req.body.lastName,
             birthDate: req.body.birthDate, 
             email: req.body.email, 
-            password: req.body.password,
+            password: bcryptjs.hashSync(req.body.password,10),
             avatar: req.body.avatar,
             idCategory:Number(req.body.idCategory)
         };

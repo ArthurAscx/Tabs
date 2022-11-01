@@ -3,20 +3,20 @@ const fs = require("fs");
 const rutaArchivo = path.join(__dirname, "/data/productList.json")
 const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
 const db = require("../Database/models")
-const axios = require('axios').default;
+const axios = require('axios')
 
 const productHandler = {
     detalle:async (req, res) => {
         try {
             let idDisco = parseInt(req.params.id);
-            let disco = await axios.get("127.0.0.1:3000/api/discs/detail/34")
-
+            let disco = await axios.get("http://127.0.0.1:3000/api/discs/detail/"+idDisco)
             // UN TRY CATCH en caso de que este undefined el params id
-            res.render("productDetail", { disco: disco });
+            res.render("productDetail", { disco: disco.data.data });
         } catch (error) {
             res.send("Error en el llamado al procedimiento: "+ error)
         }
     },
+
     carrito: (req, res) => {
         res.render("productCart", { lista: lista });
     },
@@ -66,12 +66,15 @@ const productHandler = {
 
 
 
-    listado: (req, res) => {
-        db.Disc.findAll()
-            .then(() => {
-                res.render("productList", { Disc: Disc })
-            })
+    listado: async (req, res) => {
+        try {
+            let listica = await axios.get("http://127.0.0.1:3000/api/discs/all") 
+            res.render("productList", { lista: listica.data.data })
+        } catch (error) {
+            res.send("Hubo un error al intentar crear la lista: "+error)
+        }   
     },
+
     crearForm: (req, res) => {
         db.Disc.findAll()
             .then((disc) => {
