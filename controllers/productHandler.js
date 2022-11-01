@@ -84,7 +84,8 @@ const productHandler = {
     crearForm: async(req, res) => {
         try {
             let tableGenre = await axios.get("http://127.0.0.1:3000/api/genres/all")
-            return res.render("productCreateForm", {idGenre: tableGenre.data.data})
+            let tableArtist = await axios.get("http://127.0.0.1:3000/api/artists/all")
+            return res.render("productCreateForm", {idGenre: tableGenre.data.data, idArtist: tableArtist.data.data})
         } catch (error) {
             res.send("Error en al traer un elemento de opción del formulario: "+error)
         }
