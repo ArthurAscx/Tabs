@@ -27,7 +27,7 @@ const cols = {
             allowNull: false,
          },
          releaseYear:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.DATEONLY,
             allowNull: false
          },
          description:{

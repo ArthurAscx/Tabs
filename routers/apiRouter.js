@@ -3,6 +3,7 @@ const router = express.Router();
 
 const rutasApiDisc = require("../api/discs")
 const rutasApiUser = require("../api/users")
+const rutasApiGenres = require("../api/genres")
 
 // DISCOS
 router.get("/discs/all", rutasApiDisc.all);
@@ -19,5 +20,8 @@ router.post("/users/create", rutasApiUser.newUser)
 router.put("/users/edit/:id", rutasApiUser.editUser)
 router.get("/users/find", rutasApiUser.find);
 router.delete("/users/kill/:id", rutasApiUser.delete);
+
+//GENRE
+router.get("/genres/all", rutasApiGenres.all);
 
 module.exports = router;

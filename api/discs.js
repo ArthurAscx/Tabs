@@ -85,7 +85,10 @@ let disc = {
                     idDisc: req.params.id
                 }
             })
-            res.redirect("/")
+            res.json({
+                data: null,
+                status: 200
+            })
         } catch (error) {
             res.send("Hubo un error al eliminar la película. Error: " + error)
         }

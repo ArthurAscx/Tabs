@@ -16,32 +16,33 @@ const userHandler = {
 
 
     logueado: async (req, res) => {
-        const errores = validationResult(req); 
+        const errores = validationResult(req);
         if (!errores.isEmpty()) {
             return res.render("login",
                 { mensajeDeError: errores.mapped(), old: req.body })
         };
         try {
-        let usuariologeado = null;
-        let userToLogin = await db.User.findOne({
-            where: {
-                email: req.body.email
+            let usuariologeado = null;
+            let userToLogin = await db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            if (userToLogin) {
+                if (bcryptjs.compareSync(req.body.password, userToLogin.password)) {
+                    usuariologeado = userToLogin;
+                    if (req.body.recordarUsuario === "true") {
+                        res.cookie("recuerdame", usuariologeado, { maxAge: 90000, httpOnly: true })
+                    }
+                }
             }
-        })
-        console.log(userToLogin);
-        if(bcryptjs.compareSync(req.body.password, userToLogin.password)){
-            usuariologeado = userToLogin;
-            if(req.body.recordarUsuario === "true"){
-                res.cookie("recuerdame", usuariologeado ,{ maxAge: 90000, httpOnly: true})
+            if (!usuariologeado) {
+                return res.render("login", { errors: [{ msg: "Credenciales invalidas" }] })
             }
-        }
-        if (!usuariologeado) {
-            return res.render("login", {errors: [{ msg: "Credenciales invalidas" }]})
-        }
             req.session.userlogeado = usuariologeado
             return res.redirect("/")
         } catch (error) {
-            res.send("Hubo un error en la ejecucion del query: "+error)
+            res.send("Hubo un error en la ejecucion del query: " + error)
         }
     },
 
@@ -53,7 +54,7 @@ const userHandler = {
         //validaciones//
         const errores = validationResult(req);
         if (!errores.isEmpty()) {
-   
+
             console.log(errores)
             return res.render("register", { mensajeDeError: errores.mapped(), old: req.body })
         };
@@ -100,7 +101,7 @@ const userHandler = {
             res.send(user)
         }
     },
-    
+
     edicion: (req, res) => {
         let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         // Usar el find para encontrar el usuario y luego mandarlo a la página

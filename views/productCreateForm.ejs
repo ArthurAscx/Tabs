@@ -11,13 +11,13 @@
                     </div>
                     <div class="estiloForm1">
                         <label for="idArtist" class="estiloForm2">Artista</label>
-                        <input type="text" name="idArtist" id="idArtist" class="estiloForm3">
+                        <input type="number" name="idArtist" id="idArtist" class="estiloForm3">
                     </div>
                     <div class="estiloForm1">
                         <label for="idGenre" class="estiloForm2">Género</label>
-                        <select type="text" name="idGenre"  id="idGenre" class="estiloForm3">
+                        <select type="number" name="idGenre"  id="idGenre" class="estiloForm3">
                                 <% for(let i = 0; i < idGenre.length; i++) {%>
-                                    <option value="<%=idGenre[i]%>">
+                                    <option value="<%=idGenre[i].idGenre%>">
                                         <%=idGenre[i].name%>
                                     </option>
                                   <% } %>  

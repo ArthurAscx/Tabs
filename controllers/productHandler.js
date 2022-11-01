@@ -1,115 +1,126 @@
 const path = require("path");
-const fs = require("fs");
-const rutaArchivo = path.join(__dirname, "/data/productList.json")
-const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
-const db = require("../Database/models")
+// const fs = require("fs");
+// const rutaArchivo = path.join(__dirname, "/data/productList.json")
+// const db = require("../Database/models")
 const axios = require('axios')
 
 const productHandler = {
-    detalle:async (req, res) => {
+    detalle: async (req, res) => {
         try {
             let idDisco = parseInt(req.params.id);
-            let disco = await axios.get("http://127.0.0.1:3000/api/discs/detail/"+idDisco)
+            let disco = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
             // UN TRY CATCH en caso de que este undefined el params id
             res.render("productDetail", { disco: disco.data.data });
         } catch (error) {
-            res.send("Error en el llamado al procedimiento: "+ error)
+            res.send("Error en el llamado al procedimiento: " + error)
         }
     },
 
-    carrito: (req, res) => {
-        res.render("productCart", { lista: lista });
+    carrito: async (req, res) => {
+        try {
+            let lista = await axios.get("http://127.0.0.1:3000/api/discs/all")
+            res.render("productCart", { lista: lista.data.data });
+        } catch (error) {
+            res.send("Error en la consulta: " + error)
+        }
     },
 
-    creacionEdicion: (req, res) => {
-        const lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        const listas = lista.find((p) => p.id == req.params.id)
-        res.render("productEdit", { disco: listas });
-
+    creacionEdicion: async (req, res) => {
+        try {
+            let idDisco = req.params.id;
+            let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
+            res.render("productEdit", { disco: discToEdit.data.data });
+        } catch (error) {
+            res.send("Error en el query: " + error)
+        }
     },
-    editar: (req, res) => {
-        const lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        const listas = lista.forEach((p) => {
-
-            if (p.id == req.params.id) {
-                p.titulo = req.body.nombreDelProducto
-                p.descripcion = req.body.descripcion
-                p.genero = req.body.genero
-                p.precio = Number(req.body.precio)
-                p.año = req.body.ano
-                p.categoría = req.body.categoria
-
-                if (req.file) {
-                    fs.unlinkSync("./public/img/productos/" + p.image);
-                    p.image = req.file.filename;
-                }
-
+    editar: async (req, res) => {
+        try {
+            let idDisco = req.params.id;
+            let filler = req.body
+            await axios.put("http://127.0.0.1:3000/api/discs/edit/" + idDisco, {
+                "price": Number(filler.price),
+                "title": filler.title,
+                "artwork": filler.artwork,
+                "sales": filler.sales,
+                "releaseYear": filler.releaseYear,
+                "description": filler.description,
+                "idArtist": filler.idArtist,
+                "idGenre": filler.idGenre
+            })
+            let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
+            if (req.file) {
+                fs.unlinkSync("./public/img/productos/" + discToEdit.data.data.artwork);
+                discToEdit.data.data.artwork = req.file.filename;
             }
-
-        })
-
-        const data = JSON.stringify(lista, null, " ");
-        fs.writeFileSync(rutaArchivo, data);
-        res.redirect("/producto/lista")
+            res.redirect("/producto/lista")
+            
+        } catch (error) {
+            res.send("Error al editar el disco: "+error)
+        }
     },
 
-    borrar: (req, res) => {
-        let lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        lista = lista.filter((p) => p.id != req.params.id);
-
-        const data = JSON.stringify(lista, null, " ");
-        fs.writeFileSync(rutaArchivo, data);
-
-        res.redirect("/producto/lista");
+    borrar:async (req, res) => {
+        try {
+            let idDisco = req.params.id
+            //let discToDelete = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
+            //alert("Estas seguro de borrar  el disco: "+ discToDelete.data.data.title) Luego implementar esto 
+            await axios.delete("http://127.0.0.1:3000/api/discs/kill/" + idDisco)
+            res.redirect("/producto/lista");
+        } catch (error) {
+            res.send("Error al borrar el disco: "+error)
+        }
     },
-
-
-
 
     listado: async (req, res) => {
         try {
-            let listica = await axios.get("http://127.0.0.1:3000/api/discs/all") 
+            let listica = await axios.get("http://127.0.0.1:3000/api/discs/all")
             res.render("productList", { lista: listica.data.data })
         } catch (error) {
-            res.send("Hubo un error al intentar crear la lista: "+error)
-        }   
+            res.send("Hubo un error al intentar crear la lista: " + error)
+        }
     },
 
-    crearForm: (req, res) => {
-        db.Disc.findAll()
-            .then((disc) => {
-                return res.render("productCreateForm", { disc: disc })
-            })
-    },
-    crear: (req, res) => {
-        db.disc.create()
-        let producto = {
-            title: req.body.title,
-            idGenre: req.body.idGenre,
-            idArtist: req.body.idArtist,
-            artwork: "default-image.png",
-            releaseYear: parseInt(req.body.releaseYear),
-            price: Number(req.body.price),
-            description: req.body.description,
-            sales: 1
+    crearForm: async(req, res) => {
+        try {
+            let tableGenre = await axios.get("http://127.0.0.1:3000/api/genres/all")
+            return res.render("productCreateForm", {idGenre: tableGenre.data.data})
+        } catch (error) {
+            res.send("Error en al traer un elemento de opción del formulario: "+error)
         }
+    },
+
+    crear: async (req, res) => {
+        let discArtwork = "default-image.png";
         if (req.file) {
-            producto.image = req.file.filename
+            discArtwork = req.file.filename;
         }
-        lista.push(producto)
-
-        const data = JSON.stringify(lista, null, " ");
-        fs.writeFileSync(rutaArchivo, data);
-
-        res.redirect("/producto/lista");
+        try {
+            let filler = req.body;
+            await axios.post("http://127.0.0.1:3000/api/discs/create", {
+                "price": Number(filler.price),
+                "title": filler.title,
+                "artwork": discArtwork,
+                "sales": filler.sales,
+                "releaseYear": filler.releaseYear,
+                "description": filler.description,
+                "idArtist": filler.idArtist,
+                "idGenre": filler.idGenre
+            })
+            res.redirect("/producto/lista");
+        } catch (error) {
+            res.send("Error en el query de creacion: "+error)
+        }
     },
-    busqueda: (req, res) => {
-        const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8");
-        let searchword = req.query.find.toLowerCase()
-        let arrayBuscados = lista.filter((disco) => disco.titulo.toLowerCase().includes(searchword))
-        res.render("searchResults", { lista: arrayBuscados })
+    
+    busqueda:async (req, res) => {
+        try {
+            let arrayBuscados = await axios.get("http://127.0.0.1:3000/api/discs/find?finder="+req.query.finder)
+            res.render("searchResults", { lista: arrayBuscados.data.data })
+        } catch (error) {
+            res.send("Error en los parámetros de la búsqueda: "+error)
+        }
     }
-
 }
 
 
