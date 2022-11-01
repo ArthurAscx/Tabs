@@ -3,7 +3,7 @@ const fs = require("fs");
 const rutaArchivo = path.join(__dirname, "/data/productList.json")
 const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
 const db = require("../Database/models")
-
+//const Disc = require('../Database/models/Disc')
 
 const productHandler = {
     detalle: (req, res) => {
@@ -20,34 +20,34 @@ const productHandler = {
     creacionEdicion: (req, res) => {
         const lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         const listas = lista.find((p) => p.id == req.params.id)
-          res.render("productEdit", { disco: listas });
-        
+        res.render("productEdit", { disco: listas });
+
     },
     editar: (req, res) => {
         const lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
         const listas = lista.forEach((p) => {
-            
-            if(p.id == req.params.id){
-                p.titulo=req.body.nombreDelProducto
-                p.descripcion=req.body.descripcion
-                p.genero=req.body.genero
-                p.precio=Number(req.body.precio)
-                p.año=req.body.ano
-                p.categoría=req.body.categoria
+
+            if (p.id == req.params.id) {
+                p.titulo = req.body.nombreDelProducto
+                p.descripcion = req.body.descripcion
+                p.genero = req.body.genero
+                p.precio = Number(req.body.precio)
+                p.año = req.body.ano
+                p.categoría = req.body.categoria
 
                 if (req.file) {
                     fs.unlinkSync("./public/img/productos/" + p.image);
                     p.image = req.file.filename;
                 }
-                
+
             }
-        
+
         })
-        
+
         const data = JSON.stringify(lista, null, " ");
         fs.writeFileSync(rutaArchivo, data);
-            res.redirect("/producto/lista")
-    }, 
+        res.redirect("/producto/lista")
+    },
 
     borrar: (req, res) => {
         let lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
@@ -63,44 +63,44 @@ const productHandler = {
 
 
     listado: (req, res) => {
-    db.Disc.findAll() 
-    .then(()=>{
-        res.render("productList",{Disc:Disc})
-    })  
+        db.Disc.findAll()
+            .then((discos) => {
+                res.render("productList", { Disc: discos })
+            })
     },
     crearForm: (req, res) => {
         db.Disc.findAll()
-        .then((disc)=>{
-            return res.render("productCreateForm",{disc:disc})
-        })
+            .then((disc) => {
+                return res.render("productCreateForm", { disc: disc })
+            })
     },
-    crear: (req, res) => {
-        db.disc.create()
-        let producto = {
-            title: req.body.title,
-            idGenre: req.body.idGenre,
-            idArtist: req.body.idArtist,
-            artwork: "default-image.png",
-            releaseYear: parseInt(req.body.releaseYear),
-            price: Number(req.body.price),
-            description: req.body.description,
-            sales: 1
-        }
-        if (req.file) {
-            producto.image = req.file.filename
-        }
-        lista.push(producto)
+    crear: async (req, res) => {
+        try {
+            let producto = {
+                title: req.body.title,
+                idGenre: 1,//req.body.idGenre,
+                idArtist: 1,//req.body.idArtist,
+                artwork: "default-image.png",
+                releaseYear: req.body.releaseYear,
+                price: parseInt(req.body.price),
+                description: req.body.description,
+                sales: 1
+            }
 
-        const data = JSON.stringify(lista, null, " ");
-        fs.writeFileSync(rutaArchivo, data);
+            await db.Disc.create({ ...producto });
 
-        res.redirect("/producto/lista");
+            const discos = await db.Disc.findAll()
+
+            res.render("productList", { Disc: discos })
+        } catch (error) {
+            console.log('error', error)
+        }
     },
-    busqueda: (req,res)=>{
+    busqueda: (req, res) => {
         const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8");
         let searchword = req.query.find.toLowerCase()
-        let arrayBuscados = lista.filter((disco)=> disco.titulo.toLowerCase().includes(searchword))
-        res.render("searchResults", {lista: arrayBuscados})
+        let arrayBuscados = lista.filter((disco) => disco.titulo.toLowerCase().includes(searchword))
+        res.render("searchResults", { lista: arrayBuscados })
     }
 
 }

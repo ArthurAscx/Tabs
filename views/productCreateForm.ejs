@@ -1,5 +1,4 @@
 <%- include("./partials/head") %>
-
     <body>
         <%- include("./partials/header") %>
             <div class="container-login">
@@ -14,16 +13,6 @@
                         <input type="text" name="idArtist" id="idArtist" class="estiloForm3">
                     </div>
                     <div class="estiloForm1">
-                        <label for="idGenre" class="estiloForm2">Género</label>
-                        <select type="text" name="idGenre"  id="idGenre" class="estiloForm3">
-                                <% for(let i = 0; i < idGenre.length; i++) {%>
-                                    <option value="<%=idGenre[i]%>">
-                                        <%=idGenre[i].name%>
-                                    </option>
-                                  <% } %>  
-                        </select>            
-                    </div>
-                    <div class="estiloForm1">
                         <label for="releaseYear" class="estiloForm2">Año</label>
                         <input type="number" name="releaseYear" id="releaseYear" class="estiloForm3">
                     </div>
@@ -32,8 +21,6 @@
                         <label for="precio" class="estiloForm2">Precio</label>
                         <input type="number" name="price" id="price" class="estiloForm3" step="any">
                     </div>
-                    
-                    
                     <div class="estiloForm1">
                         <label for="description" class="estiloForm2">Descripcion</label>
                         <textarea name="description" id="description" class="estiloForm3" rows="4" cols="50"></textarea>
