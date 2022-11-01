@@ -5,17 +5,17 @@
             <div class="container-login">
                 <div class="detalle">
                     <article>
-                        <img src="/img/productos/<%= disco.image %>">
+                        <img src="/img/productos/<%= disco.artwork %>">
                         <div class="info-producto">
                             <h1>
-                                <%= disco.titulo %>
+                                <%= disco.title %>
                             </h1>
                             <div class="precio-artista-genero">
                                 <h3>
-                                    <%= disco.precio %>
+                                    <%= disco.price %>
                                 </h3>
                                 <h3>
-                                    <%= disco.genero %> - <%= disco.artista %>
+                                    <%= disco.idGenere %> - <%= disco.artist %>
                                 </h3>
                             </div>
                             <div class="botones-detalle">
@@ -23,7 +23,7 @@
                                 <button class="botonAñadir">Añadir a lista de destacado</button>
                             </div>
                             <p>
-                                <%= disco.descripcion %>
+                                <%= disco.description %>
                             </p>
                         </div>
                         <form action="/producto/borrar/<%= disco.id %>?_method=DELETE" method="POST">

@@ -4,14 +4,18 @@ const rutaArchivo = path.join(__dirname, "/data/productList.json")
 const lista = JSON.parse(fs.readFileSync(rutaArchivo), "utf-8")
 const db = require("../Database/models")
 //const Disc = require('../Database/models/Disc')
+const axios = require("axios");
 
 const productHandler = {
-    detalle: (req, res) => {
-        let idDisco = parseInt(req.params.id);
-        // UN TRY CATCH en caso de que este undefined el params id
-        let disco = lista.find((disco) => disco.id === idDisco)
-
-        res.render("productDetail", { disco: disco });
+    detalle:async (req, res) => {
+        try {
+            let idDisco = parseInt(req.params.id);
+            let disco = await axios.get("http://127.0.0.1:3000/api/discs/detail/"+idDisco)
+            // UN TRY CATCH en caso de que este undefined el params id
+            res.render("productDetail", { disco: disco.data.data });
+        } catch (error) {
+            res.send("Error en el llamado al procedimiento: "+ error)
+        }
     },
     carrito: (req, res) => {
         res.render("productCart", { lista: lista });
