@@ -5,36 +5,36 @@
     <form action="/producto/edicion/<%= disco.id %>?_method=PUT"  method="POST" enctype="multipart/form-data" class="estiloForm">
         <h3>Creación y edición de productos</h3>
         <div class="estiloForm1">
-            <label for="nombreDelProducto" class="estiloForm2">Nombre del Producto :</label>
-            <input type="text" name="nombreDelProducto" id="nombreDelProducto" value="<%=disco.titulo%>" class="estiloForm3">
+            <label for="title" class="estiloForm2">Nombre del Producto :</label>
+            <input type="text" name="title" id="title" value="<%=disco.titulo%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
-            <label for="artista" class="estiloForm2">Artista:</label>
-            <input type="text" name="artista"id="artista" value="<%=disco.artista%>" class="estiloForm3">
+            <label for="idArtist" class="estiloForm2">Artista:</label>
+            <input type="text" name="idArtist"id="idArtist" value="<%=disco.artista%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
-            <label for="genero" class="estiloForm2">Genero:</label>
-            <input type="text" name="genero"id="genero" value="<%=disco.genero%>" class="estiloForm3">
+            <label for="idGenre" class="estiloForm2">Genero:</label>
+            <input type="text" name="idGenre"id="idGenre" value="<%=disco.genero%>" class="estiloForm3">
         </div>
-        <div class="estiloForm1">
+        <!-- <div class="estiloForm1">
             <label for="categoria" class="estiloForm2">Categoría:</label>
             <input type="text" name="categoria" id="categoria"value="<%=disco.categoría%>" class="estiloForm3">
-        </div>
+        </div> -->
         <div class="estiloForm1">
-            <label for="ano" class="estiloForm2">Año:</label>
-            <input type="number" name="ano" id="ano"value="<%=disco.año%>" class="estiloForm3">
+            <label for="releaseYear" class="estiloForm2">Año:</label>
+            <input type="number" name="releaseYear" id="releaseYear"value="<%=disco.año%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
             <label for="precio" class="estiloForm2">Precio:</label>
             <input type="text" name="precio" id="precio" value="<%=disco.precio%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
-            <label for="descripcion" class="estiloForm2">Descripción:</label>
-            <textarea type="text" name="descripcion" id="descripcion" class="estiloForm3" rows="4" cols="50"><%=disco.descripcion%></textarea>
+            <label for="description" class="estiloForm2">Descripción:</label>
+            <textarea type="text" name="description" id="description" class="estiloForm3" rows="4" cols="50"><%=disco.descripcion%></textarea>
         </div>
         <div class="estiloForm1">
-            <label for="imagenProducto" class="estiloForm2">Imagen:</label>
-            <input type="file" name="imagenProducto" id="imagenProducto" class="estiloForm3">
+            <label for="artwork" class="estiloForm2">Imagen:</label>
+            <input type="file" name="artwork" id="artwork" class="estiloForm3">
         </div>
         
        

@@ -22,36 +22,44 @@ const productHandler = {
     },
 
     creacionEdicion: (req, res) => {
-        const lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        const listas = lista.find((p) => p.id == req.params.id)
-        res.render("productEdit", { disco: listas });
-
+        db.Disc.findAll()
+            .then((discos) => {
+                res.render("productEdit", { Disc: discos })
+            })
     },
-    editar: (req, res) => {
-        const lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        const listas = lista.forEach((p) => {
-
-            if (p.id == req.params.id) {
-                p.titulo = req.body.nombreDelProducto
-                p.descripcion = req.body.descripcion
-                p.genero = req.body.genero
-                p.precio = Number(req.body.precio)
-                p.año = req.body.ano
-                p.categoría = req.body.categoria
-
-                if (req.file) {
-                    fs.unlinkSync("./public/img/productos/" + p.image);
-                    p.image = req.file.filename;
-                }
-
-            }
-
-        })
-
-        const data = JSON.stringify(lista, null, " ");
-        fs.writeFileSync(rutaArchivo, data);
-        res.redirect("/producto/lista")
+    editar:async (req, res) => {
+        try {
+            await db.Disc.update({
+                price: Number(req.body.price),
+                title: req.body.title,
+                artwork: req.body.artwork,
+                sales: Number(req.body.sales),
+                releaseYear: req.body.releaseYear,
+                description: req.body.description,
+                idArtist: Number(req.body.idArtist),
+                idGenre: Number(req.body.idGenre)
+            },
+                {
+                    where: { idDisc: req.params.id }
+                })
+            // REVISAR ESTO PARA PODER CARGAR LAS FOTOS Y AÑADIRLAS
+            //if (req.file) {
+            //     fs.unlinkSync("./public/img/productos/" + p.image);
+            //     p.image = req.file.filename;
+            // }
+            let discEdited = await db.Disc.findByPk(req.params.id);
+            res.json({
+                data: discEdited,
+                status: 200
+            })
+        } catch (error) {
+            res.send("There is an error: " + error)
+        }
     },
+
+        
+
+       
 
     borrar: (req, res) => {
         let lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
