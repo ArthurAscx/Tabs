@@ -24,12 +24,12 @@ router.get("/detalle/:id", rutasProducto.detalle);
 router.get("/carrito",logeado, rutasProducto.carrito);
 
 router.get("/edicion/:id",logeado, rutasProducto.creacionEdicion);
-router.put("/edicion/:id", upload.single("imagenProducto"),rutasProducto.editar); 
+router.put("/edicion/:id", upload.single("artwork"),rutasProducto.editar); 
 
 router.get("/lista", rutasProducto.listado);
 
 router.get("/crear", /* logeado, */ rutasProducto.crearForm)
-router.post("/crear", upload.single("imagenProducto"),rutasProducto.crear)
+router.post("/crear", upload.single("artwork"),rutasProducto.crear)
 
 router.delete("/borrar/:id", logeado, rutasProducto.borrar);
 
