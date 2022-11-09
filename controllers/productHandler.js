@@ -1,5 +1,5 @@
 const path = require("path");
-// const fs = require("fs");
+const fs = require("fs");
 // const rutaArchivo = path.join(__dirname, "/data/productList.json")
 // const db = require("../Database/models")
 const axios = require('axios')
@@ -35,8 +35,14 @@ const productHandler = {
         }
     },
     editar: async (req, res) => {
+        let idDisco = req.params.id;
+        let albumArtwork = null;
+        if (req.file) {
+            let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
+            discToEdit.data.data.artwork != "default-image.png" ? fs.unlinkSync("./public/img/productos/" + discToEdit.data.data.artwork) : "";
+            albumArtwork = req.file.filename;
+        }
         try {
-            let idDisco = req.params.id;
             let filler = req.body
             await axios.put("http://127.0.0.1:3000/api/discs/edit/" + idDisco, {
                 "price": Number(filler.price),
@@ -46,15 +52,10 @@ const productHandler = {
                 "releaseYear": filler.releaseYear,
                 "description": filler.description,
                 "idArtist": filler.idArtist,
-                "idGenre": filler.idGenre
+                "idGenre": filler.idGenre,
+                "artwork": albumArtwork ? albumArtwork : "default-image.png"
             })
-            let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
-            if (req.file) {
-                fs.unlinkSync("./public/img/productos/" + discToEdit.data.data.artwork);
-                discToEdit.data.data.artwork = req.file.filename;
-            }
             res.redirect("/producto/lista")
-            
         } catch (error) {
             res.send("Error al editar el disco: "+error)
         }
@@ -92,16 +93,14 @@ const productHandler = {
     },
 
     crear: async (req, res) => {
-        let discArtwork = "default-image.png";
-        if (req.file) {
-            discArtwork = req.file.filename;
-        }
+        let albumArtwork = null;
+        req.file ? albumArtwork = req.file.filename : albumArtwork = albumArtwork = "default-image.png";
         try {
             let filler = req.body;
             await axios.post("http://127.0.0.1:3000/api/discs/create", {
                 "price": Number(filler.price),
                 "title": filler.title,
-                "artwork": discArtwork,
+                "artwork": albumArtwork ? albumArtwork : "default-image.png",
                 "sales": filler.sales,
                 "releaseYear": filler.releaseYear,
                 "description": filler.description,
