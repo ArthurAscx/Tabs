@@ -28,7 +28,7 @@ router.put("/edicion/:id", upload.single("imagenProducto"),rutasProducto.editar)
 
 router.get("/lista", rutasProducto.listado);
 
-router.get("/crear", /* logeado, */ rutasProducto.crearForm)
+router.get("/crear", logeado, rutasProducto.crearForm)
 router.post("/crear", upload.single("imagenProducto"),rutasProducto.crear)
 
 router.delete("/borrar/:id", logeado, rutasProducto.borrar);

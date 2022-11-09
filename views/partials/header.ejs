@@ -7,7 +7,7 @@
     </form>
     <ul class="user-panel">
       <% if(locals.userData) { %> 
-        <li><i class="gg-calendar-next"></i><a href="/usuario/detalle/<%=locals.userData.id%>">Hola! <%=locals.userData.Nombreapellido%></a></li>
+        <li><i class="gg-calendar-next"></i><a href="/usuario/detalle/<%=locals.userData.idUser%>">Hola! <%=locals.userData.firstName%></a></li>
         <% } else { %> 
       <li><i class="gg-calendar-next"></i><a href="/usuario/login">Ingresar</a></li>
       <li><i class="gg-add-r"></i><a href="/usuario/register">Registro</a></li>
