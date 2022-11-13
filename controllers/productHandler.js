@@ -36,6 +36,48 @@ const productHandler = {
             res.send("Error en el query: " + error)
         }
     },
+    editar:async (req, res) => {
+        try {
+            await db.Disc.update({
+                price: Number(req.body.price),
+                title: req.body.title,
+                artwork: req.body.artwork,
+                sales: Number(req.body.sales),
+                releaseYear: req.body.releaseYear,
+                description: req.body.description,
+                idArtist: Number(req.body.idArtist),
+                idGenre: Number(req.body.idGenre)
+            },
+                {
+                    where: { idDisc: req.params.id }
+                })
+            // REVISAR ESTO PARA PODER CARGAR LAS FOTOS Y AÑADIRLAS
+            //if (req.file) {
+            //     fs.unlinkSync("./public/img/productos/" + p.image);
+            //     p.image = req.file.filename;
+            // }
+            let discEdited = await db.Disc.findByPk(req.params.id);
+            res.json({
+                data: discEdited,
+                status: 200
+            })
+        } catch (error) {
+            res.send("There is an error: " + error)
+        }
+    },
+
+        
+
+       
+
+    borrar: (req, res) => {
+        let lista = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+        lista = lista.filter((p) => p.id != req.params.id);
+
+        const data = JSON.stringify(lista, null, " ");
+        fs.writeFileSync(rutaArchivo, data);
+
+        res.redirect("/producto/lista");
     editar: async (req, res) => {
         let idDisco = req.params.id;
         let albumArtwork = null;
@@ -63,6 +105,14 @@ const productHandler = {
         }
     },
 
+
+
+
+    listado: (req, res) => {
+        db.Disc.findAll()
+            .then((discos) => {
+                res.render("productList", { Disc: discos })
+            })
     borrar:async (req, res) => {
         try {
             let idDisco = req.params.id
