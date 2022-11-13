@@ -4,6 +4,7 @@ const rutaArchivo = path.join(__dirname, "/data/userList.json");
 const bcryptjs = require("bcryptjs")
 const { validationResult } = require("express-validator");
 const db = require("../Database/models");
+const axios = require('axios')
 
 
 const userHandler = {
@@ -46,107 +47,111 @@ const userHandler = {
         }
     },
 
-    register: (req, res) => {
-        res.render("register");
+    register: async (req, res) => {
+        try {
+            let tableCategory = await axios.get("http://127.0.0.1:3000/api/categories/all")
+            res.render("register", {idCategory: tableCategory.data.data});
+        } catch (error) {
+            res.send("Error en al traer un elemento de opción del formulario: "+error)
+        }
     },
 
-    crear: (req, res) => {
+    crear: async (req, res) => {
         //validaciones//
-        const errores = validationResult(req);
-        if (!errores.isEmpty()) {
-
-            console.log(errores)
-            return res.render("register", { mensajeDeError: errores.mapped(), old: req.body })
-        };
-
-
-        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        let hasheov1 = bcryptjs.hashSync(req.body.password, 10)
-        let usr = {
-            id: Date.now(),
-            Nombreapellido: req.body.nombreApellido,
-            Usuario: req.body.nombreDeUsuario,
-            Nacimiento: req.body.fechaDeNacimiento,
-            Email: req.body.correo,
-            Password: hasheov1,
-            Categoria: req.body.categoria,
-            Imagen: "OIP.jpg"
-        };
-        if (req.file) {
-            usr.Imagen = req.file.filename
+        // const errores = validationResult(req);
+        // if (!errores.isEmpty()) {
+        //     console.log(errores)
+        //     return res.render("register", { mensajeDeError: errores.mapped(), old: req.body })
+        // };
+        try {
+            let userAvatar = null;
+            req.file ? userAvatar = req.file.filename : userAvatar = "default-avatar.png";
+            let hasheov1 = bcryptjs.hashSync(req.body.password, 10);
+            let usr = {
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                birthDate: req.body.birthDate,
+                email: req.body.email,
+                avatar: userAvatar,
+                password: hasheov1,
+                idCategory: Number(req.body.idCategory)
+            };
+            await db.User.create(usr);
+            res.redirect("/usuario/login")
+        } catch (error) {
+            res.send("Error al momento de crear un usuario " + error)
         }
-        usuarios.push(usr);
-        usuarios = JSON.stringify(usuarios, null, " ");
-        fs.writeFileSync(rutaArchivo, usuarios);
-        res.redirect("/usuario/login")
-
     },
 
 
-    lista: (req, res) => {
-        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        res.render("userList", { users: usuarios })
+    lista:async (req, res) => {
+        try {
+            let listaUser = await axios.get("http://127.0.0.1:3000/api/users/all")
+            res.render("userList", { users: listaUser.data.data })
+        } catch (error) {
+            res.send("Hubo un error al intentar crear la lista de usuarios: " + error)
+        }
     },
 
-    detalle: (req, res) => {
-        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
+    detalle:async (req, res) => {
+        try {
+            let idUser = Number(req.params.id);
+            let user = await db.User.findByPk(idUser);
+            console.log(user);
+            res.render("userDetail", { user: user });
+        } catch (error) {
+            res.send("Error intentando traer el usuario a la vista: " + error)
+        }
         // Usar el find para encontrar el usuario y luego mandarlo a la página
-        let userid = parseInt(req.params.id);
-        let user = usuarios.find((u) => u.id === userid);
-        if (user) {
-            res.render("userDetail", { user })
-        }
-        else {
-            console.log(userid);
-            res.send(user)
+    },
+
+    edicion:async (req, res) => {
+        // Usar el find para encontrar el usuario y luego mandarlo a la página
+        try {
+            let userId = parseInt(req.params.id);
+            let user = await db.User.findByPk(userId)
+            let idCategory = await axios.get("http://127.0.0.1:3000/api/categories/all")
+            res.render("userEdit", { user, idCategory: idCategory.data.data })
+        } catch (error) {
+            res.send("Error al traer los datos para la edición: " + error)
         }
     },
 
-    edicion: (req, res) => {
-        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        // Usar el find para encontrar el usuario y luego mandarlo a la página
-        let userid = parseInt(req.params.id);
-        let user = usuarios.find((u) => u.id === userid);
-        if (user) {
-            res.render("userEdit", { user })
-        }
-        else {
-            console.log(userid);
-            res.send(user)
-        }
-    },
-    editar: (req, res) => {
-        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        let modificado = req.body;
-        let newavatar = req.file;
-        let hasheomodificado = bcryptjs.hashSync(modificado.Password, 10)
-        // Usar el find para encontrar el usuario y modificarlo
-        let userid = parseInt(req.params.id);
-        let user = usuarios.find((u) => u.id === userid);
-        if (user && modificado) {
-            user.Nombreapellido = modificado.Nombreapellido
-            user.Usuario = modificado.Usuario
-            user.Nacimiento = modificado.Nacimiento
-            user.Email = modificado.Email
-            user.Password = hasheomodificado;
-            user.Categoria = modificado.Categoria
-            if (newavatar) {
-                user.Imagen = req.file.filename
+    editar:async (req, res) => {
+        let newAvatar = null;
+        let hasheomodificado = bcryptjs.hashSync(req.body.password, 10)
+        req.file ? newAvatar = req.file.filename : newAvatar = "default-avatar.png";
+        try {
+            await db.User.update({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            birthDate: req.body.birthDate, 
+            email: req.body.email, 
+            password: hasheomodificado,
+            avatar: newAvatar,
+            idCategory:Number(req.body.idCategory)
+            },
+            {
+                where: {idUser: req.params.id}
+            }) 
+            res.redirect("/usuario/lista")
             }
-
+            catch (error) {
+            res.send("Error al editar el usuario: "+error)
         }
-        usuarios = JSON.stringify(usuarios, null, " ");
-        fs.writeFileSync(rutaArchivo, usuarios);
-
-        res.redirect("/usuario/lista")
+        // Usar el find para encontrar el usuario y modificarlo
     },
-    borrar: (req, res) => {
-        let usuarios = JSON.parse(fs.readFileSync(rutaArchivo, "utf-8"));
-        let userid = parseInt(req.params.id);
-        let usuariossineliminado = usuarios.filter((u) => u.id !== userid);
-        usuariossineliminado = JSON.stringify(usuariossineliminado, null, " ");
-        fs.writeFileSync(rutaArchivo, usuariossineliminado);
-        res.redirect("/usuario/lista")
+    borrar: async(req, res) => {
+        try {
+            await db.User.destroy({
+                where: {
+                    idUser: req.params.id
+                }
+            })
+            res.redirect("/")
+        } catch (error) {
+            res.send("Hubo un error al eliminar el usuario. Error: " + error)
+        }
     }
 };
 

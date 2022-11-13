@@ -96,7 +96,7 @@ let user = {
             })
             res.redirect("/")
         } catch (error) {
-            res.send("Hubo un error al eliminar el usuario. Error: " + error)
+            
         }
     },
 

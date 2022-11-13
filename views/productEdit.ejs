@@ -10,11 +10,23 @@
         </div>
         <div class="estiloForm1">
             <label for="idArtist" class="estiloForm2">Artista:</label>
-            <input type="number" name="idArtist"id="idArtist" value="<%=disco.idArtist%>" class="estiloForm3">
+            <select type="number" name="idArtist" id="idArtist" value="<%=disco.idArtist%>" class="estiloForm3">
+                <% for(let i = 0; i < idArtist.length; i++) {%>
+                    <option value="<%=idArtist[i].idArtist%>">
+                        <%=idArtist[i].name%>
+                    </option>
+                  <% } %> 
+            </select>   
         </div>
         <div class="estiloForm1">
             <label for="idGenre" class="estiloForm2">Genero:</label>
-            <input type="number" name="idGenre"id="idGenre" value="<%=disco.idGenre%>" class="estiloForm3">
+            <select type="number" name="idGenre" id="idGenre" value="<%=disco.idGenre%>" class="estiloForm3">
+                <% for(let i = 0; i < idGenre.length; i++) {%>
+                    <option value="<%=idGenre[i].idGenre%>">
+                        <%=idGenre[i].name%>
+                    </option>
+                  <% } %> 
+            </select>  
         </div>
         <div class="estiloForm1">
             <label for="sales" class="estiloForm2">Ventas:</label>
@@ -34,7 +46,7 @@
         </div>
         <div class="estiloForm1">
             <label for="artwork" class="estiloForm2">Imagen:</label>
-            <input type="file" name="artwork" id="artwork" class="estiloForm3">
+            <input type="file" name="artwork" id="artwork" class="estiloForm3" accept="image/*">
         </div>
         <div class="botones-registro">
             <button type="submit" class="botonForm">Modificar</button>

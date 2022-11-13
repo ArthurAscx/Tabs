@@ -5,6 +5,7 @@ const rutasApiDisc = require("../api/discs")
 const rutasApiUser = require("../api/users")
 const rutasApiGenres = require("../api/genres")
 const rutasApiArtists = require("../api/artists")
+const rutasApiCategories = require("../api/categories")
 
 // DISCOS
 router.get("/discs/all", rutasApiDisc.all);
@@ -26,5 +27,6 @@ router.delete("/users/kill/:id", rutasApiUser.delete);
 router.get("/genres/all", rutasApiGenres.all);
 //ARTIST
 router.get("/artists/all", rutasApiArtists.all);
-
+// CATEGORY
+router.get("/categories/all", rutasApiCategories.all);
 module.exports = router;

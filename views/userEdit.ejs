@@ -3,42 +3,45 @@
     <body>
         <%- include("./partials/header") %>
             <div class="container-login">
-                <form action="/usuario/editar/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
+                <form action="/usuario/editar/<%= user.idUser%>?_method=PUT" method="POST" enctype="multipart/form-data"
                     class="estiloForm">
                     <h3>Edición de Usuarios Registrados</h3>
                     <div class="estiloForm1">
-                        <label for="Nombreapellido" class="estiloForm2">Nombre y Apellido :</label>
-                        <input type="text" name="Nombreapellido" id="Nombreapellido" value="<%=user.Nombreapellido%>"
+                        <label for="firstName" class="estiloForm2">Nombre: </label>
+                        <input type="text" name="firstName" id="firstName" value="<%=user.firstName%>"
                             class="estiloForm3">
                     </div>
                     <div class="estiloForm1">
-                        <label for="Usuario" class="estiloForm2">Usuario:</label>
-                        <input type="text" name="Usuario" id="Usuario" value="<%=user.Usuario%>" class="estiloForm3">
+                        <label for="lastName" class="estiloForm2">Apellido: </label>
+                        <input type="text" name="lastName" id="lastName" value="<%=user.lastName%>" class="estiloForm3">
                     </div>
                     <div class="estiloForm1">
-                        <label for="Nacimiento" class="estiloForm2">Nacimiento:</label>
-                        <input type="date" name="Nacimiento" id="Nacimiento" value="<%=user.Nacimiento%>"
+                        <label for="birthDate" class="estiloForm2">Fecha de nacimiento: </label>
+                        <input type="date" name="birthDate" id="birthDate" value="<%=user.birthDate%>"
                             class="estiloForm3">
                     </div>
                     <div class="estiloForm1">
-                        <label for="Email" class="estiloForm2">Email:</label>
-                        <input type="email" name="Email" id="Email" value="<%=user.Email%>" class="estiloForm3">
+                        <label for="email" class="estiloForm2">Email: </label>
+                        <input type="email" name="email" id="email" value="<%=user.email%>" class="estiloForm3">
                     </div>
                     <div class="estiloForm1">
-                        <label for="Password" class="estiloForm2">Contraseña:</label>
-                        <input type="password" name="Password" id="Password""
+                        <label for="password" class="estiloForm2">Contraseña: </label>
+                        <input type="password" name="password" id="password""
                             class="estiloForm3">
                     </div>
                     <div class="estiloForm1">
-                        <label for="Categoria" class="estiloForm2">Categoría:</label>
-                        <select name="Categoria" id="Categoria" class="estiloForm3">
-                            <option value="user" <%user.Categoria=="user" ?"selected" : "" %>>Usuario</option>
-                            <option value="admin" <%user.Categoria=="admin" ?"selected" : "" %> >Administrador</option>
+                        <label for="idCategory" class="estiloForm2">Categoría:</label>
+                        <select type="number" name="idCategory" id="idCategory" class="estiloForm3">
+                            <% for(let i = 0; i < idCategory.length; i++) {%>
+                                <option value="<%=idCategory[i].idCategory%>">
+                                    <%=idCategory[i].name%>
+                                </option>
+                              <% } %>  
                         </select>
                     </div>
                     <div class="estiloForm1">
-                        <label for="Imagen" class="estiloForm2">Imagen:</label>
-                        <input type="file" name="Imagen" id="Imagen" class="estiloForm3">
+                        <label for="avatar" class="estiloForm2">Imagen de Perfil: </label>
+                        <input type="file" name="avatar" id="avatar" class="estiloForm3" accept="image/*">
                     </div>
 
                     <div class="botones-registro">

@@ -5,29 +5,36 @@
             <div class="container-login">
                 <div class="detalle">
                     <article>
-                        <img src="/img/Avatares/<%= user.Imagen %>">
+                        <img src="/img/Avatares/<%= user.avatar %>">
                         <div>
-                            <h1>
-                                <%= user.nombreApellido %>
-                            </h1>
-                            <div class="precio-artista-genero">
-                                <h3>
-                                    <%= user.Usuario %>
-                                </h3>
-                                <h3>
-                                    <%= user.Email %> - <%= user.fechaDeNacimiento %>
-                                </h3>
-                                <h3>
-                                    <%= user.Categoria %>
-                                </h3>
-                            </div>
-                               <a href="/usuario/edicion/<%= user.id%>"><button class="botonAñadir">Editar Usuario</button></a>
+                            <h2>
+                                Nombre:
+                                <%= user.firstName %>
+                            </h2>
+                            <h2>
+                                Apellido:
+                                <%= user.lastName %>
+                            </h2>
                         </div>
-                        <form action="/usuario/borrar/<%= user.id %>?_method=DELETE" method="POST">
-                            <button type="submit" class="botonAñadir">ELIMINAR USUARIO</button>
-                        </form>
-                    </article>
+                        <div class="precio-artista-genero">
+                            <h3>
+                                Email: <br>
+                                <%= user.email %> <br>
+                                    - <br>
+                                    Fecha de Nacimiento: <br>
+                                    <%= user.birthDate %><br>
+                                        Categoría del usuario: <br>
+                                        <%= user.idCategory %>
+                            </h3>
+                        </div>
+                        <a href="/usuario/edicion/<%= user.idUser%>"><button class="botonAñadir">Editar
+                                Usuario</button></a>
                 </div>
+                <form action="/usuario/borrar/<%= user.idUser%>?_method=DELETE" method="POST">
+                    <button type="submit" class="botonAñadir">ELIMINAR USUARIO</button>
+                </form>
+                </article>
+            </div>
             </div>
             <%- include("./partials/footer") %>
 

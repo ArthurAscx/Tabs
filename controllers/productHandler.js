@@ -29,7 +29,9 @@ const productHandler = {
         try {
             let idDisco = req.params.id;
             let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
-            res.render("productEdit", { disco: discToEdit.data.data });
+            let idArtist = await axios.get("http://127.0.0.1:3000/api/artists/all")
+            let idGenre = await axios.get("http://127.0.0.1:3000/api/genres/all")
+            res.render("productEdit", { disco: discToEdit.data.data, idArtist: idArtist.data.data, idGenre: idGenre.data.data });
         } catch (error) {
             res.send("Error en el query: " + error)
         }
