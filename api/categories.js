@@ -1,14 +1,14 @@
 const db = require("../Database/models")
 const Op = db.Sequelize.Op
-let artist = {
+let category = {
 
     all: async function (req, res) {
         try {
-            let allArtists = await db.artist.findAll();
-            allArtists ?
+            let allCategories = await db.Category.findAll();
+            allCategories ?
                 res.json({
-                    total: allArtists.length,
-                    data: allArtists,
+                    total: allCategories.length,
+                    data: allCategories,
                     status: 200
                 })
                 :
@@ -18,4 +18,4 @@ let artist = {
         }
     }
 }
-module.exports = artist;
+module.exports = category;

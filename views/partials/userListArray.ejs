@@ -1,23 +1,20 @@
 <% for (const user of users) { %>
     <article>
-        <a href="/usuario/detalle/<%= user.id%>"><img src="/img/Avatares/<%= user.Imagen %>"></a>
+        <a href="/usuario/detalle/<%= user.idUser%>"><img src="/img/Avatares/<%= user.avatar %>"></a>
         <div class="datosDisco">
-            <a href="/usuario/detalle/<%= user.id%>" style="text-decoration: none; color:black">
+            <a href="/usuario/detalle/<%= user.idUser%>" style="text-decoration: none; color:black">
                 <h3>
-                    <%= user.Nombreapellido%>
+                    Nombre: <%= user.firstName%>, Apellido: <%= user.lastName%>
                 </h3>
             </a>
-            <h4>
-                <%= user.Usuario%>
-            </h4>
-            <span>ID:<%= user.id%></span>
-            <span>Email: <%= user.Email %></span>
-            <span>Permisos de Usuario: <%= user.Categoria %></span>
-            <span>Fecha de Nacimiento: <%= user.Nacimiento %></span>
+            <span>ID:<%= user.idUser%></span>
+            <span>Email: <%= user.email %></span>
+            <span>Permisos de Usuario: <%= user.idCategory %></span>
+            <span>Fecha de Nacimiento: <%= user.birthDate %></span>
         </div>
-        <form action="/usuario/borrar/<%= user.id %>?_method=DELETE" method="POST">
+        <form action="/usuario/borrar/<%= user.idUser %>?_method=DELETE" method="POST">
             <button class="botonEliminar" type="submit">Eliminar</button></a>
         </form>
-<a href=" /usuario/edicion/<%=user.id%>"><button class="botonEliminar">Editar</button></a>
+<a href=" /usuario/edicion/<%=user.idUser%>"><button class="botonEliminar">Editar</button></a>
     </article>
     <% } %>

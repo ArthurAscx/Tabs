@@ -8,72 +8,72 @@
                     <h3>Registro de usuario</h3>
                    
                                     <div class="estiloForm1">
-                                        <label for="nombreApellido" class="estiloForm2">Nombre y Apellido:</label>
-                                        <input type="text" name="nombreApellido" id="nombreApellido" value="<%= locals.old && old.nombreApellido ? old.nombreApellido : '' %>" class="estiloForm3">
-                                        <% if(locals.mensajeDeError && mensajeDeError.nombreApellido) {%>
+                                        <label for="firstName" class="estiloForm2">Nombre: </label>
+                                        <input type="text" name="firstName" id="firstName" value="<%= locals.old && old.firstName ? old.firstName : '' %>" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.firstName) {%>
                                         <div class="mensajeError">
-                                           <%= mensajeDeError.nombreApellido.msg %>
+                                           <%= mensajeDeError.firstName.msg %>
                                         </div>
                                         <% } %>
                                     </div>
                                     
                                     <div class="estiloForm1">
-                                        <label for="nombreDeUsuario" class="estiloForm2">Nombre de Usuario:</label>
-                                        <input type="text" name="nombreDeUsuario"id="nombreDeUsuario" value="<%= locals.old && old.nombreDeUsuario ? old.nombreDeUsuario : '' %>"class="estiloForm3">
-                                        <% if(locals.mensajeDeError && mensajeDeError.nombreDeUsuario) {%>
+                                        <label for="lastName" class="estiloForm2">Apellido: </label>
+                                        <input type="text" name="lastName"id="lastName" value="<%= locals.old && old.lastName ? old.lastName : '' %>"class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.lastName) {%>
                                             <div class="mensajeError">
-                                               <%= mensajeDeError.nombreDeUsuario.msg %>
+                                               <%= mensajeDeError.lastName.msg %>
                                             </div>
                                             <% } %>
                                     </div>
                                     <div class="estiloForm1">
-                                        <label for="fechaDeNacimiento" class="estiloForm2">Fecha de Nacimiento:</label>
-                                        <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" value="<%= locals.old && old.fechaDeNacimiento ? old.fechaDeNacimiento : '' %>" class="estiloForm3">
-                                        <% if(locals.mensajeDeError && mensajeDeError.fechaDeNacimiento) {%>
+                                        <label for="birthDate" class="estiloForm2">Fecha de Nacimiento: </label>
+                                        <input type="date" name="birthDate" id="birthDate" value="<%= locals.old && old.birthDate ? old.birthDate : '' %>" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.birthDate) {%>
                                             <div class="mensajeError">
-                                               <%= mensajeDeError.fechaDeNacimiento.msg %>
+                                               <%= mensajeDeError.birthDate.msg %>
                                             </div>
                                             <% } %>
                                     </div>
                                     <div class="estiloForm1">
-                                        <label for="avatar" class="estiloForm2">Imagen de Perfil:</label>
+                                        <label for="avatar" class="estiloForm2">Imagen de Perfil: </label>
                                         <input type="file" name="avatar" id="avatar" value="<%= locals.old && old.avatar ? old.avatar : '' %>" class="estiloForm3"
                                             accept="image/*">
                                       
                                         </div>
                                     <div class="estiloForm1">
-                                        <label for="correo" class="estiloForm2">Correo Electronico:</label>
-                                        <input type="text" name="correo" id="correo" value="<%= locals.old && old.correo ? old.correo : '' %>" class="estiloForm3">
-                                        <% if(locals.mensajeDeError && mensajeDeError.correo) {%>
+                                        <label for="email" class="estiloForm2">Correo Electronico: </label>
+                                        <input type="text" name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>" class="estiloForm3">
+                                        <% if(locals.mensajeDeError && mensajeDeError.email) {%>
                                             <div class="mensajeError">
-                                               <%= mensajeDeError.correo.msg %>
+                                               <%= mensajeDeError.email.msg %>
                                             </div>
                                             <% } %>
                                     </div>
                                     <div class="estiloForm1">
-                                        <label for="categoria" class="estiloForm2">Categoría:</label>
-                                        <select name="categoria" id="categoria" class="estiloForm3">
-                                            <option ></option>
-                                            <option  value="user">Usuario</option>
-                                            <option  value="admin">Administrador</option>
+                                        <label for="idCategory" class="estiloForm2">Categoría: </label>
+                                        <select name="idCategory" id="idCategory" class="estiloForm3">
+                                            <% for(let i = 0; i < idCategory.length; i++) {%>
+                                                <option value="<%=idCategory[i].idCategory%>">
+                                                    <%=idCategory[i].name%>
+                                                </option>
+                                              <% } %>  
                                         </select>
-                                        <% if(locals.mensajeDeError && mensajeDeError.categoria) {%>
+                                        <% if(locals.mensajeDeError && mensajeDeError.idCategory) {%>
                                             <div class="mensajeError">
-                                               <%= mensajeDeError.categoria.msg %>
+                                               <%= mensajeDeError.idCategory.msg %>
                                             </div>
                                             <% } %>
                                     </div>
                                     <div class="estiloForm1">
                                         <label for="password" class="estiloForm2">Contraseña: </label>
                                         <input type="password" name="password" id="password" class="estiloForm3">
-                                            
                                             <% if(locals.mensajeDeError && mensajeDeError.password) {%>
                                                 <div class="mensajeError">
                                                    <%= mensajeDeError.password.msg %>
                                                 </div>
                                                 <% } %>
                                         </div>
-
                                     <div class="botones-registro">
                                         <button type="reset" class="botonForm">Borrar</button>
                                         <button type="submit" class="botonForm">Registrar</button>

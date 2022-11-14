@@ -2,44 +2,52 @@
 <body>
     <%- include("./partials/header")  %>
     <div class="container-login">
-    <form action="/producto/edicion/<%= disco.id %>?_method=PUT"  method="POST" enctype="multipart/form-data" class="estiloForm">
+    <form action="/producto/edicion/<%= disco.idDisc %>?_method=PUT"  method="POST" enctype="multipart/form-data" class="estiloForm">
         <h3>Creación y edición de productos</h3>
         <div class="estiloForm1">
-            <label for="nombreDelProducto" class="estiloForm2">Nombre del Producto :</label>
-            <input type="text" name="nombreDelProducto" id="nombreDelProducto" value="<%=disco.titulo%>" class="estiloForm3">
+            <label for="title" class="estiloForm2">Nombre del Disco:</label>
+            <input type="text" name="title" id="title" value="<%=disco.title%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
-            <label for="artista" class="estiloForm2">Artista:</label>
-            <input type="text" name="artista"id="artista" value="<%=disco.artista%>" class="estiloForm3">
+            <label for="idArtist" class="estiloForm2">Artista:</label>
+            <select type="number" name="idArtist" id="idArtist" value="<%=disco.idArtist%>" class="estiloForm3">
+                <% for(let i = 0; i < idArtist.length; i++) {%>
+                    <option value="<%=idArtist[i].idArtist%>">
+                        <%=idArtist[i].name%>
+                    </option>
+                  <% } %> 
+            </select>   
         </div>
         <div class="estiloForm1">
-            <label for="genero" class="estiloForm2">Genero:</label>
-            <input type="text" name="genero"id="genero" value="<%=disco.genero%>" class="estiloForm3">
+            <label for="idGenre" class="estiloForm2">Genero:</label>
+            <select type="number" name="idGenre" id="idGenre" value="<%=disco.idGenre%>" class="estiloForm3">
+                <% for(let i = 0; i < idGenre.length; i++) {%>
+                    <option value="<%=idGenre[i].idGenre%>">
+                        <%=idGenre[i].name%>
+                    </option>
+                  <% } %> 
+            </select>  
         </div>
         <div class="estiloForm1">
-            <label for="categoria" class="estiloForm2">Categoría:</label>
-            <input type="text" name="categoria" id="categoria"value="<%=disco.categoría%>" class="estiloForm3">
+            <label for="sales" class="estiloForm2">Ventas:</label>
+            <input type="number" name="sales" id="sales"value="<%=disco.sales%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
-            <label for="ano" class="estiloForm2">Año:</label>
-            <input type="number" name="ano" id="ano"value="<%=disco.año%>" class="estiloForm3">
+            <label for="releaseYear" class="estiloForm2">Año de lanzamiento:</label>
+            <input type="date" name="releaseYear" id="releaseYear" value="<%=disco.releaseYear%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
-            <label for="precio" class="estiloForm2">Precio:</label>
-            <input type="text" name="precio" id="precio" value="<%=disco.precio%>" class="estiloForm3">
+            <label for="price" class="estiloForm2">Precio:</label>
+            <input type="number" name="price" id="price" value="<%=disco.price%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
-            <label for="descripcion" class="estiloForm2">Descripción:</label>
-            <textarea type="text" name="descripcion" id="descripcion" class="estiloForm3" rows="4" cols="50"><%=disco.descripcion%></textarea>
+            <label for="description" class="estiloForm2">Descripción:</label>
+            <textarea type="text" name="description" id="description" class="estiloForm3" rows="4" cols="50"><%=disco.description%></textarea>
         </div>
         <div class="estiloForm1">
-            <label for="imagenProducto" class="estiloForm2">Imagen:</label>
-            <input type="file" name="imagenProducto" id="imagenProducto" class="estiloForm3">
+            <label for="artwork" class="estiloForm2">Imagen:</label>
+            <input type="file" name="artwork" id="artwork" class="estiloForm3" accept="image/*">
         </div>
-        
-       
-        
-       
         <div class="botones-registro">
             <button type="submit" class="botonForm">Modificar</button>
             

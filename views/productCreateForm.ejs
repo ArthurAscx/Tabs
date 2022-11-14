@@ -6,41 +6,52 @@
                 <form action="/producto/crear" method="POST" enctype="multipart/form-data" class="estiloForm">
                     <h3>Creacion de productos</h3>
                     <div class="estiloForm1">
-                        <label for="nombreProducto" class="estiloForm2">Nombre del producto:</label>
-                        <input type="text" name="nombreProducto" id="nombreProducto" class="estiloForm3">
+                        <label for="title" class="estiloForm2">Nombre del producto:</label>
+                        <input type="text" name="title" id="title" class="estiloForm3">
                     </div>
                     <div class="estiloForm1">
-                        <label for="artista" class="estiloForm2">Artista</label>
-                        <input type="text" name="artista" id="artista" class="estiloForm3">
+                        <label for="idArtist" class="estiloForm2">Artista:</label>
+                        <select type="number" name="idArtist"  id="idArtist" class="estiloForm3">
+                            <% for(let i = 0; i < idArtist.length; i++) {%>
+                                <option value="<%=idArtist[i].idArtist%>">
+                                    <%=idArtist[i].name%>
+                                </option>
+                              <% } %>  
+                    </select>  
                     </div>
                     <div class="estiloForm1">
-                        <label for="genero" class="estiloForm2">Género</label>
-                        <input type="text" name="genero" id="genero" class="estiloForm3">
+                        <label for="idGenre" class="estiloForm2">Género</label>
+                        <select type="number" name="idGenre"  id="idGenre" class="estiloForm3">
+                                <% for(let i = 0; i < idGenre.length; i++) {%>
+                                    <option value="<%=idGenre[i].idGenre%>">
+                                        <%=idGenre[i].name%>
+                                    </option>
+                                  <% } %>  
+                        </select>            
                     </div>
                     <div class="estiloForm1">
-                        <label for="categoria" class="estiloForm2">Categoría:</label>
-                        <input type="text" name="categoria" id="categoria"  class="estiloForm3">
-                    </div>
-                    <div class="estiloForm1">
-                        <label for="ano" class="estiloForm2">Año</label>
-                        <input type="number" name="ano" id="ano" class="estiloForm3">
+                        <label for="releaseYear" class="estiloForm2">Año</label>
+                        <input type="number" name="releaseYear" id="releaseYear" class="estiloForm3">
                     </div>
                    
                     <div class="estiloForm1">
                         <label for="precio" class="estiloForm2">Precio</label>
-                        <input type="number" name="precio" id="precio" class="estiloForm3" step="any">
+                        <input type="number" name="price" id="price" class="estiloForm3" step="any">
                     </div>
                     
                     
                     <div class="estiloForm1">
-                        <label for="descripcion" class="estiloForm2">Descripcion</label>
-                        <textarea name="descripcion" id="descripcion" class="estiloForm3" rows="4" cols="50"></textarea>
+                        <label for="description" class="estiloForm2">Descripcion</label>
+                        <textarea name="description" id="description" class="estiloForm3" rows="4" cols="50"></textarea>
                     </div>
                     <div class="estiloForm1">
-                        <label for="imagenProducto" class="estiloForm2">Imagen</label>
-                        <input type="file" name="imagenProducto" id="imagenProducto" class="estiloForm3">
+                        <label for="artwork" class="estiloForm2">Imagen</label>
+                        <input type="file" name="artwork" id="artwork" class="estiloForm3" accept="image/*">
                     </div>
-
+                    <div class="estiloForm1">
+                        <label for="sales" class="estiloForm2">Ventas</label>
+                        <input type="number" name="sales" id="sales" class="estiloForm3" step="any">
+                    </div>
                     <div class="botones-registro">
                         <button type="submit" class="botonForm">Crear</button>
                     </div>
