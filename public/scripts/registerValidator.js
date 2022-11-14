@@ -7,7 +7,6 @@ window.addEventListener('load', function () {
     let correo = document.querySelector("#email");
     let contra = document.querySelector("#password");
     let profileImg = document.querySelector("#avatar");
-
     nombre.addEventListener("blur", (e) => {
         if (nombre.value == "") {
             console.log("El nombre no puede estar vacío")
@@ -36,28 +35,26 @@ window.addEventListener('load', function () {
     })
 
     correo.addEventListener("blur", async (e) => {
-        let regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/
-        let searchMail = correo.value;
-        let emaiVsDb = null
+        let regExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
+        let emailVsDb = null
         if (correo.value == "") {
             console.log("El email no puede estar vacío")
         }
-        if (regExp.test(correo.value)) {
+        if (!regExp.test(correo.value)) {
             console.log("El email debe contener un formato válido")
         }
         try {
-            let emailVsDb = await axios.get("http://127.0.0.1:3000/api/users/mailing/"+correo.value)
-            console.log(emailVsDb.data.data);
+            emailVsDb = await axios.get("http://127.0.0.1:3000/api/users/mailing/"+correo.value)
         } catch (error) {
             console.log("Pasa algo con el axios");
         }
-        if (emailVsDb.data.data != null) {
+        if ((emailVsDb != null)&&(emailVsDb.data.data != null)) {
             console.log("Este mail ya esta registrado en la base de datos");
         }
     })
 
     contra.addEventListener("blur", (e) => {
-        let regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+        let regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/
         if (contra.value == "") {
             console.log("La contraseña no puede estar vacío")
         }
