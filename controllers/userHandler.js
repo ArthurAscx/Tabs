@@ -55,6 +55,19 @@ const userHandler = {
             res.send("Error en al traer un elemento de opción del formulario: "+error)
         }
     },
+    
+   /*   let users = User.findByField('email', req.body.email);
+
+    if (users) {
+        return res.render('register', {
+            errors: {
+                email: {
+                    msg: 'Este email ya está registrado'
+                }
+            },
+            oldData: req.body
+        });
+    },  */
 
     crear: async (req, res) => {
         //validaciones//
