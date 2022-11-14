@@ -7,6 +7,7 @@ window.addEventListener('load', function () {
     let correo = document.querySelector("#email");
     let contra = document.querySelector("#password");
     let profileImg = document.querySelector("#avatar");
+
     nombre.addEventListener("blur", (e) => {
         if (nombre.value == "") {
             console.log("El nombre no puede estar vacío")
@@ -63,6 +64,16 @@ window.addEventListener('load', function () {
         }
         if (!regularExpression.test(contra.value)) {
             console.log("La contraseña deberá tener letras mayúsculas, minúsculas, un número y un carácter especial.")
+        }
+    })
+
+    profileImg.addEventListener("blur", (e)=>{
+        let extFile = profileImg.value.split("."); // (JPG, JPEG, PNG, GIF).
+        let iValue = (extFile.length) - 1;
+        console.log(extFile);
+        console.log(extFile[iValue])
+        if((extFile[iValue]!="jpeg")&&(extFile[iValue]!="png")&&(extFile[iValue]!="jpg")&&extFile[iValue]!="gif"){
+            console.log("El tipo de extensión del archivo no es valido")
         }
     })
 
