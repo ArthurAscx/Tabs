@@ -44,6 +44,10 @@ const productHandler = {
             discToEdit.data.data.artwork != "default-image.png" ? fs.unlinkSync("./public/img/productos/" + discToEdit.data.data.artwork) : "";
             albumArtwork = req.file.filename;
         }
+        else{
+            let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
+            albumArtwork = discToEdit.data.data.artwork
+        }
         try {
             let filler = req.body
             await axios.put("http://127.0.0.1:3000/api/discs/edit/" + idDisco, {
@@ -55,7 +59,7 @@ const productHandler = {
                 "description": filler.description,
                 "idArtist": filler.idArtist,
                 "idGenre": filler.idGenre,
-                "artwork": albumArtwork ? albumArtwork : "default-image.png"
+                "artwork": albumArtwork
             })
             res.redirect("/producto/lista")
         } catch (error) {

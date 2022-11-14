@@ -22,6 +22,7 @@ router.post("/users/create", rutasApiUser.newUser)
 router.put("/users/edit/:id", rutasApiUser.editUser)
 router.get("/users/find", rutasApiUser.find);
 router.delete("/users/kill/:id", rutasApiUser.delete);
+router.get("/users/mailing/:email", rutasApiUser.findEmail)
 
 //GENRE
 router.get("/genres/all", rutasApiGenres.all);

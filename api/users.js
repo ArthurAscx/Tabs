@@ -120,7 +120,29 @@ let user = {
         } catch (error) {
             res.send("No se encontro el usuario. Razón: "+ error)
         }
+    },
+
+    findEmail: async (req,res) =>{
+        let mailToFind = req.params.email
+        try {
+            let found = await db.User.findOne({
+                where:{
+                    "email": mailToFind
+                }
+            })
+            found ?
+            res.json({
+                data: found,
+                status: 200
+            })
+            :
+            res.json({
+                data: null,
+                status: 404
+            })
+        } catch (error) {
+            res.send("Error buscando mail en la base de datos: "+error)
+        }
     }
 }
-
 module.exports = user;
