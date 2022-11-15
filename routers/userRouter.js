@@ -33,7 +33,7 @@ router.get("/lista", rutasUsuario.lista)
 router.get("/edicion/:id", logeado,  rutasUsuario.edicion)
 router.get("/detalle/:id", logeado,  rutasUsuario.detalle)
 //POST de rutas
-router.post("/crear", upload.single("avatar"),validacionRegister, invitado , rutasUsuario.crear)
+router.post("/crear", upload.single("avatar"), validacionRegister, invitado , rutasUsuario.crear)
 
 // PUT de rutas
 router.put("/editar/:id", upload.single("avatar"), logeado, rutasUsuario.editar)
@@ -42,13 +42,6 @@ router.put("/editar/:id", upload.single("avatar"), logeado, rutasUsuario.editar)
 router.delete("/borrar/:id", logeado,  rutasUsuario.borrar)
 
 router.post("/login",validacionLogin, rutasUsuario.logueado);
-/* router.get("/pruebaSession"), (req, res) =>{
-  if(req.session.numeroVisitas == undefined){
-    req.session.numeroVisitas = 0;
-  }
-    req.session.numeroVisitas++;
-    res.send("sesion tiene el numero:" + req.session.numeroVisitas)
-  }, */
  
   module.exports = router;
 

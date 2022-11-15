@@ -18,7 +18,6 @@ window.addEventListener('load', function () {
     let desc = false;
     let img = false;
 
-
     titulo.addEventListener("blur", (e) => {
         tituloLabel.innerHTML = originalTitulo;
         if (titulo.value == "") {

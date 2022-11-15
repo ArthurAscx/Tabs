@@ -41,7 +41,11 @@
                                         <label id="imgErr" for="avatar" class="estiloForm2">Imagen de Perfil: </label>
                                         <input type="file" name="avatar" id="avatar" value="<%= locals.old && old.avatar ? old.avatar : '' %>" class="estiloForm3"
                                             accept="image/*">
-                                      
+                                            <% if(locals.mensajeDeError && mensajeDeError.avatar) {%>
+                                                <div class="mensajeError">
+                                                   <%= mensajeDeError.avatar.msg %>
+                                                </div>
+                                                <% } %>
                                         </div>
                                     <div class="estiloForm1">
                                         <label id="cErr" for="email" class="estiloForm2">Correo Electronico: </label>

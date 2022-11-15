@@ -57,12 +57,15 @@ const userHandler = {
     },
 
     crear: async (req, res) => {
-        //validaciones//
-        // const errores = validationResult(req);
-        // if (!errores.isEmpty()) {
-        //     console.log(errores)
-        //     return res.render("register", { mensajeDeError: errores.mapped(), old: req.body })
-        // };
+         const errores = validationResult(req);
+         if (!errores.isEmpty()) {
+            try {
+                let tableCategory = await axios.get("http://127.0.0.1:3000/api/categories/all")
+                return res.render("register", { mensajeDeError: errores.mapped(), old: req.body, idCategory: tableCategory.data.data })
+            } catch (error) {
+                res.send("Error en al traer un elemento de opción del formulario: "+error)
+            }
+         };
         try {
             let userAvatar = null;
             req.file ? userAvatar = req.file.filename : userAvatar = "default-avatar.png";
