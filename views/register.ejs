@@ -6,7 +6,7 @@
         <script src="/scripts/registerValidator.js"></script>
             <div class="container-login">
               
-                <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
+                <form id="registroForm" action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
                     <h3 id="titulo">Registro de usuario</h3>
                    
                                     <div class="estiloForm1">
@@ -78,7 +78,7 @@
                                         </div>
                                     <div class="botones-registro">
                                         <button type="reset" class="botonForm">Borrar</button>
-                                        <button id="submitero" type="submit" class="botonForm">Registrar</button>
+                                        <input id="submitero" type="submit" class="botonForm" name="submit1" value="Registrar">
                                     </div>
                 </form>
             </div>

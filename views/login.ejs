@@ -2,12 +2,14 @@
 
             <body>     
                 <%- include("./partials/header") %> 
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+                <script src="/scripts/loginValidator.js"></script>
                 <div class="container-login">
                 <div class="login-crear">
-                    <form action="/usuario/login" method="POST" class="estiloForm">
+                    <form id="loginForm" action="/usuario/login" method="POST" class="estiloForm">
                         <div class="estiloForm1">
-                            <label for="email" class="estiloForm2">Email</label>
-                            <input type="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" class="estiloForm3">
+                            <label id="cErr" for="email" class="estiloForm2">Email</label>
+                            <input id="email" type="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" class="estiloForm3">
                             <% if(locals.mensajeDeError && mensajeDeError.nombreDeUsuario) {%>
                                 <div class="mensajeError">
                                    <%= mensajeDeError.email.msg %>
@@ -15,8 +17,8 @@
                                 <% } %>
                         </div>
                         <div class="estiloForm1">
-                            <label for="password" class="estiloForm2">Contraseña</label>
-                            <input type="password" name="password" class="estiloForm3">
+                            <label id="pwdErr" for="password" class="estiloForm2">Contraseña</label>
+                            <input id="password" type="password" name="password" class="estiloForm3">
                             <% if(locals.mensajeDeError && mensajeDeError.password) {%>
                                 <div class="mensajeError">
                                    <%= mensajeDeError.password.msg %>
@@ -29,7 +31,7 @@
                                 <input type="checkbox" name="recordarUsuario" value="true">
                             </div>
                             <button type="reset" class="botonForm">Borrar</button>
-                            <button type="submit" class="botonForm">Ingresar</button>
+                            <button id="ingresador" type="submit" class="botonForm">Ingresar</button>
                             <div class="recuperarContraseña">
                                 <li><a href="#">¿Olvidaste tu contraseña?</a></li>
                             </div>

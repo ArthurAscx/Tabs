@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
 
 
     let registro = document.getElementById("submitero");
-    let formulario = document.querySelector("form")
+    let formulario = document.querySelector("#registroForm")
     let nombre = document.querySelector("#firstName");
     let nombreLabel = document.querySelector("#fNerr");
     let apellido = document.querySelector("#lastName");
@@ -15,10 +15,10 @@ window.addEventListener('load', function () {
     let imgLabel = document.querySelector("#imgErr");
 
     let originalNombre = nombreLabel.innerHTML
-    let originalApellido= apellidoLabel.innerHTML
-    let originalCorreo= correoLabel.innerHTML
-    let originalContra= contraLabel.innerHTML
-    let originalImg= imgLabel.innerHTML
+    let originalApellido = apellidoLabel.innerHTML
+    let originalCorreo = correoLabel.innerHTML
+    let originalContra = contraLabel.innerHTML
+    let originalImg = imgLabel.innerHTML
 
     let name = false;
     let lstName = false;
@@ -27,7 +27,7 @@ window.addEventListener('load', function () {
     let img = false;
 
     nombre.addEventListener("blur", (e) => {
-        nombreLabel.innerHTML = originalNombre; 
+        nombreLabel.innerHTML = originalNombre;
         if (nombre.value == "") {
             nombreLabel.innerHTML += "<p>El nombre no puede estar vacío</p>"
             nombre.style.borderColor = "red"
@@ -39,10 +39,10 @@ window.addEventListener('load', function () {
             nombre.style.backgroundColor = "orange"
         }
         else {
-        nombreLabel.innerHTML = originalNombre;    
-        nombre.style.borderColor = "green"
-        nombre.style.backgroundColor = "lightgreen"
-        name = true
+            nombreLabel.innerHTML = originalNombre;
+            nombre.style.borderColor = "green"
+            nombre.style.backgroundColor = "lightgreen"
+            name = true
         }
     })
 
@@ -59,10 +59,10 @@ window.addEventListener('load', function () {
             apellido.style.backgroundColor = "orange"
         }
         else {
-        apellidoLabel.innerHTML = originalApellido;
-        apellido.style.borderColor = "green"
-        apellido.style.backgroundColor = "lightgreen"
-        lstName = true
+            apellidoLabel.innerHTML = originalApellido;
+            apellido.style.borderColor = "green"
+            apellido.style.backgroundColor = "lightgreen"
+            lstName = true
         }
     })
 
@@ -70,16 +70,6 @@ window.addEventListener('load', function () {
         correoLabel.innerHTML = originalCorreo
         let regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
         let emailVsDb = null
-        try {
-            emailVsDb ? await axios.get("http://127.0.0.1:3000/api/users/mailing/"+correo.value) : ""
-            if ((emailVsDb != null)&&(emailVsDb.data.data != null)) {
-                correoLabel.innerHTML += "<p>El correo ya esta registrado</p>"
-                correo.style.borderColor = "red"
-                correo.style.backgroundColor = "orange"
-            }
-        } catch (error) {
-            console.log("Pasa algo con el axios");
-        }
         if (correo.value == "") {
             correoLabel.innerHTML += "<p>El correo no puede estar vacío</p>"
             correo.style.borderColor = "red"
@@ -95,9 +85,24 @@ window.addEventListener('load', function () {
             correo.style.borderColor = "green"
             correo.style.backgroundColor = "lightgreen"
             mail = true;
+        }
+        if (correo.value) {
+            try {
+                emailVsDb = await axios.get("http://127.0.0.1:3000/api/users/mailing/" + correo.value)
+                console.log(emailVsDb);
+                if (emailVsDb.data.data != null) {
+                    correoLabel.innerHTML += "<p>El correo ya esta registrado</p>"
+                    correo.style.borderColor = "red"
+                    correo.style.backgroundColor = "orange"
+                    mail = false;
+                }
+            } catch (error) {
+                console.log("Pasa algo con el axios");
             }
-        })
-    
+        }
+    })
+
+
     contra.addEventListener("blur", (e) => {
         contraLabel.innerHTML = originalContra;
         let regularExpression = /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})$/
@@ -116,24 +121,24 @@ window.addEventListener('load', function () {
             contra.style.borderColor = "red"
             contra.style.backgroundColor = "orange"
         }
-        else{
-        contraLabel.innerHTML = originalContra;
-        contra.style.borderColor = "green"
-        contra.style.backgroundColor = "lightgreen"
-        pwd = true
+        else {
+            contraLabel.innerHTML = originalContra;
+            contra.style.borderColor = "green"
+            contra.style.backgroundColor = "lightgreen"
+            pwd = true
         }
     })
 
-    profileImg.addEventListener("blur", (e)=>{
+    profileImg.addEventListener("blur", (e) => {
         imgLabel.innerHTML = originalImg;
         let extFile = profileImg.value.split("."); // (JPG, JPEG, PNG, GIF).
         let iValue = (extFile.length) - 1;
-        if((extFile[iValue]!="jpeg")&&(extFile[iValue]!="png")&&(extFile[iValue]!="jpg")&&extFile[iValue]!="gif"){
+        if ((extFile[iValue] != "jpeg") && (extFile[iValue] != "png") && (extFile[iValue] != "jpg") && extFile[iValue] != "gif") {
             imgLabel.innerHTML += "<p>La imagen debe de contener una extensión jpeg, jpg, png o gif</p>"
             profileImg.style.borderColor = "red"
             profileImg.style.backgroundColor = "orange"
         }
-        else{
+        else {
             imgLabel.innerHTML = originalImg;
             profileImg.style.borderColor = "green"
             profileImg.style.backgroundColor = "lightgreen"
@@ -141,13 +146,10 @@ window.addEventListener('load', function () {
         }
     })
 
-    // registro.addEventListener("click", function(event){
-    //     event.preventDefault()
-    //     if(!name&&!lstName&&!pwd&&!mail&&!img){
-    //         document.querySelector("#titulo").innerText = "No se puede mandar formularios con errores"
-    //     }
-    //     else{
-    //         registro.click()
-    //     }
-    //   });
+    registro.addEventListener("click", (e)=>{
+        e.preventDefault()
+        if(name&&lstName&&mail&&img&&pwd){
+            formulario.submit()
+        }
+    })
 })
