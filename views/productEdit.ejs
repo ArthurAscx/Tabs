@@ -1,11 +1,13 @@
 <%- include("./partials/head")  %>
 <body>
     <%- include("./partials/header")  %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="/scripts/editValidator.js"></script>
     <div class="container-login">
-    <form action="/producto/edicion/<%= disco.idDisc %>?_method=PUT"  method="POST" enctype="multipart/form-data" class="estiloForm">
+    <form id="editForm" action="/producto/edicion/<%= disco.idDisc %>?_method=PUT"  method="POST" enctype="multipart/form-data" class="estiloForm">
         <h3>Creación y edición de productos</h3>
         <div class="estiloForm1">
-            <label for="title" class="estiloForm2">Nombre del Disco:</label>
+            <label id="tErr" for="title" class="estiloForm2">Nombre del Disco:</label>
             <input type="text" name="title" id="title" value="<%=disco.title%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
@@ -41,15 +43,15 @@
             <input type="number" name="price" id="price" value="<%=disco.price%>" class="estiloForm3">
         </div>
         <div class="estiloForm1">
-            <label for="description" class="estiloForm2">Descripción:</label>
+            <label id="descErr" for="description" class="estiloForm2">Descripción:</label>
             <textarea type="text" name="description" id="description" class="estiloForm3" rows="4" cols="50"><%=disco.description%></textarea>
         </div>
         <div class="estiloForm1">
-            <label for="artwork" class="estiloForm2">Imagen:</label>
+            <label id="imgErr" for="artwork" class="estiloForm2">Imagen:</label>
             <input type="file" name="artwork" id="artwork" class="estiloForm3" accept="image/*">
         </div>
         <div class="botones-registro">
-            <button type="submit" class="botonForm">Modificar</button>
+            <button id="editador" type="submit" class="botonForm">Modificar</button>
             
         </div>
     </form>

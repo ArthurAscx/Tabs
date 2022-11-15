@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
 
-    let registro = document.getElementById("creador");
-    let formulario = document.querySelector("#productForm")
+    let registro = document.getElementById("editador");
+    let formulario = document.querySelector("#editForm")
     let titulo = document.querySelector("#title");
     let tituloLabel = document.querySelector("#tErr");
     let description = document.querySelector("#description");
