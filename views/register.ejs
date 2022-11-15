@@ -7,10 +7,10 @@
             <div class="container-login">
               
                 <form action="/usuario/crear" method="POST" class="estiloForm" enctype="multipart/form-data">
-                    <h3>Registro de usuario</h3>
+                    <h3 id="titulo">Registro de usuario</h3>
                    
                                     <div class="estiloForm1">
-                                        <label for="firstName" class="estiloForm2">Nombre: </label>
+                                        <label id="fNerr" for="firstName" class="estiloForm2">Nombre: </label>
                                         <input type="text" name="firstName" id="firstName" value="<%= locals.old && old.firstName ? old.firstName : '' %>" class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.firstName) {%>
                                         <div class="mensajeError">
@@ -20,7 +20,7 @@
                                     </div>
                                     
                                     <div class="estiloForm1">
-                                        <label for="lastName" class="estiloForm2">Apellido: </label>
+                                        <label id="lNerr" for="lastName" class="estiloForm2">Apellido: </label>
                                         <input type="text" name="lastName"id="lastName" value="<%= locals.old && old.lastName ? old.lastName : '' %>"class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.lastName) {%>
                                             <div class="mensajeError">
@@ -38,13 +38,13 @@
                                             <% } %>
                                     </div>
                                     <div class="estiloForm1">
-                                        <label for="avatar" class="estiloForm2">Imagen de Perfil: </label>
+                                        <label id="imgErr" for="avatar" class="estiloForm2">Imagen de Perfil: </label>
                                         <input type="file" name="avatar" id="avatar" value="<%= locals.old && old.avatar ? old.avatar : '' %>" class="estiloForm3"
                                             accept="image/*">
                                       
                                         </div>
                                     <div class="estiloForm1">
-                                        <label for="email" class="estiloForm2">Correo Electronico: </label>
+                                        <label id="cErr" for="email" class="estiloForm2">Correo Electronico: </label>
                                         <input type="text" name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>" class="estiloForm3">
                                         <% if(locals.mensajeDeError && mensajeDeError.email) {%>
                                             <div class="mensajeError">
@@ -68,7 +68,7 @@
                                             <% } %>
                                     </div>
                                     <div class="estiloForm1">
-                                        <label for="password" class="estiloForm2">Contraseña: </label>
+                                        <label id="pwdErr"" for="password" class="estiloForm2">Contraseña: </label>
                                         <input type="password" name="password" id="password" class="estiloForm3">
                                             <% if(locals.mensajeDeError && mensajeDeError.password) {%>
                                                 <div class="mensajeError">
@@ -78,7 +78,7 @@
                                         </div>
                                     <div class="botones-registro">
                                         <button type="reset" class="botonForm">Borrar</button>
-                                        <button type="submit" class="botonForm">Registrar</button>
+                                        <button id="submitero" type="submit" class="botonForm">Registrar</button>
                                     </div>
                 </form>
             </div>
