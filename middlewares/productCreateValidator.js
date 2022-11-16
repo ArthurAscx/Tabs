@@ -1,7 +1,7 @@
 const { body } = require("express-validator");
 
 //validaciones
-const validacionLogin =  [
+const validacionProducto =  [
     body("email").notEmpty().withMessage("Tienes que escribir un email actualmente registrado").bail()
     .isEmail().withMessage("Tiene que ser un formato de email").bail()
     .custom(async (val, {req}) =>  {
