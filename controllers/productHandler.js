@@ -3,6 +3,7 @@ const fs = require("fs");
 // const rutaArchivo = path.join(__dirname, "/data/productList.json")
 // const db = require("../Database/models")
 const axios = require('axios')
+const db = require("../Database/models")
 
 const productHandler = {
     detalle: async (req, res) => {
@@ -103,7 +104,7 @@ const productHandler = {
         req.file ? albumArtwork = req.file.filename : albumArtwork = albumArtwork = "default-image.png";
         try {
             let filler = req.body;
-            await axios.post("http://127.0.0.1:3000/api/discs/create", {
+             await db.Disc.create({            
                 "price": Number(filler.price),
                 "title": filler.title,
                 "artwork": albumArtwork ? albumArtwork : "default-image.png",
