@@ -41,7 +41,7 @@ const validacionRegister = [
         }),
     
         body("avatar").custom((val, {req}) =>{
-            let img = req.file;
+            let img = req.file; // VER URGENTE CAMBIAR A MIME TYPE
             let ext = path.extname(img.originalname)
             let extensiones = [".jpg",".png",".gif",".jpeg"];
             if(!img) {

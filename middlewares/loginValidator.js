@@ -1,18 +1,23 @@
 const { body } = require("express-validator");
+const db = require("../Database/models");
 
 //validaciones
 const validacionLogin =  [
     body("email").notEmpty().withMessage("Tienes que escribir un email actualmente registrado").bail()
     .isEmail().withMessage("Tiene que ser un formato de email").bail()
     .custom(async (val, {req}) =>  {
-      let mailCompare = req.body.email
-          let exists = await axios.get("http://127.0.0.1:3000/api/users/mailing/"+ mailCompare )
-          if(exists.data.data != null){
-              return true
-          }
-          else{
-               throw new Error("El mail no esta registrado")
-          }
+        let mailCompare = req.body.email
+        let userExists = await db.User.findOne({
+            where:{
+                "email": mailCompare
+            }
+        })
+        if (userExists){
+             return true
+        }
+        else{
+            throw new error("El mail no existe en la base de datos");
+        } 
     }),
 
     
