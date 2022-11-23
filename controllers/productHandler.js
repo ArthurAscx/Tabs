@@ -40,13 +40,13 @@ const productHandler = {
     editar: async (req, res) => {
         let idDisco = req.params.id;
         let albumArtwork = null;
+        let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
         if (req.file) {
-            let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
             discToEdit.data.data.artwork != "default-image.png" ? fs.unlinkSync("./public/img/productos/" + discToEdit.data.data.artwork) : "";
             albumArtwork = req.file.filename;
         }
         else{
-            let discToEdit = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
+           
             albumArtwork = discToEdit.data.data.artwork
         }
         try {
@@ -104,12 +104,14 @@ const productHandler = {
         req.file ? albumArtwork = req.file.filename : albumArtwork = albumArtwork = "default-image.png";
         try {
             let filler = req.body;
-             await db.Disc.create({            
+            console.log("filler:", filler) 
+            console.log("price:", Number(filler.price))
+            await db.Disc.create({            
                 "price": Number(filler.price),
                 "title": filler.title,
                 "artwork": albumArtwork ? albumArtwork : "default-image.png",
                 "sales": filler.sales,
-                "releaseYear": filler.releaseYear,
+                "releaseYear": Number(filler.releaseYear),
                 "description": filler.description,
                 "idArtist": filler.idArtist,
                 "idGenre": filler.idGenre
