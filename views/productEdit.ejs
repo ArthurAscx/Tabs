@@ -31,10 +31,6 @@
             </select>  
         </div>
         <div class="estiloForm1">
-            <label for="sales" class="estiloForm2">Ventas:</label>
-            <input type="number" name="sales" id="sales"value="<%=disco.sales%>" class="estiloForm3">
-        </div>
-        <div class="estiloForm1">
             <label for="releaseYear" class="estiloForm2">Año:</label>
             <input type="number" name="releaseYear" id="releaseYear" value="<%=disco.releaseYear%>" class="estiloForm3">
         </div>
@@ -49,6 +45,10 @@
         <div class="estiloForm1">
             <label id="imgErr" for="artwork" class="estiloForm2">Imagen:</label>
             <input type="file" name="artwork" id="artwork" class="estiloForm3" value="<%=disco.artwork%>" accept="image/*">
+        </div>
+        <div class="estiloForm1">
+            <label for="sales" class="estiloForm2">Ventas:</label>
+            <input type="number" name="sales" id="sales"value="<%=disco.sales%>" class="estiloForm3">
         </div>
         <div class="botones-registro">
             <button id="editador" type="submit" class="botonForm">Modificar</button>
