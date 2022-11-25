@@ -19,17 +19,17 @@
                                 </h3>
                             </div>
                             <div class="botones-detalle">
-                                <button class="botonAñadir">Añadir al carrito</button>
-                                <button class="botonAñadir">Añadir a lista de destacado</button>
+                                <button class="botonForm">Añadir al carrito</button>
+                                <button class="botonForm">Añadir a lista de destacado</button>
                             </div>
                             <p>
                                 <%= disco.description %>
                             </p>
                         </div>
                         <form action="/producto/borrar/<%= disco.idDisc %>?_method=DELETE" method="POST">
-                            <button type="submit" class="botonAñadir">Eliminar</button>
+                            <button type="submit" class="botonForm">Eliminar</button>
                         </form>
-                        <a href="/producto/edicion/<%= disco.idDisc %>"><button class="botonAñadir">Editar</button></a>
+                        <a href="/producto/edicion/<%= disco.idDisc %>"><button class="botonForm">Editar</button></a>
                     </article>
                 </div>
             </div>
