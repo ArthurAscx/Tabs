@@ -17,6 +17,8 @@ body {
 
  .dropdown{
     position: relative;
+    display:flex;
+    
  } 
 
 header {
