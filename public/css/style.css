@@ -626,6 +626,10 @@ html {
         width: 500px;
         height: 350px;
      }
+
+     .dropdown{
+        display:none;
+     } 
      
 
 }
