@@ -15,7 +15,9 @@ body {
     min-height: 600px;
  }
 
- 
+ .dropdown{
+    position: relative;
+ } 
 
 header {
     padding: 10px;
