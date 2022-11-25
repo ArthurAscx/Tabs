@@ -71,6 +71,7 @@ header ul li i {
     
 }
 
+
 .top-header {
     text-align: center;
 }
@@ -93,7 +94,7 @@ header ul {
 
 .navegador ul a {
     margin: 5px;
-    color:blueviolet
+    color:rgb(152, 97, 202)
 }
 
 .navegador ul a:hover{
@@ -450,8 +451,8 @@ html {
 .formularioCompra article button{
     margin-right: 50px;
     margin-top: 20px;
-    background-color: gainsboro;
-    color: black;
+    /* background-color: gainsboro; */
+    /* color: black; */
     border-radius: 8px;
     padding: 5px;
 }

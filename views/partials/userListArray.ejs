@@ -13,8 +13,8 @@
             <span>Fecha de Nacimiento: <%= user.birthDate %></span>
         </div>
         <form action="/usuario/borrar/<%= user.idUser %>?_method=DELETE" method="POST">
-            <button class="botonEliminar" type="submit">Eliminar</button></a>
+            <button class="botonForm" type="submit">Eliminar</button></a>
         </form>
-<a href=" /usuario/edicion/<%=user.idUser%>"><button class="botonEliminar">Editar</button></a>
+<a href=" /usuario/edicion/<%=user.idUser%>"><button class="botonForm">Editar</button></a>
     </article>
     <% } %>
