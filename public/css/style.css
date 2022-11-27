@@ -138,6 +138,7 @@ footer {
     justify-content: space-evenly;
     color: white;
     background-color: black ;
+    text-align: center;
 }
 
 footer ul {
@@ -358,6 +359,7 @@ html {
 
 .register-login{
     margin: 10px;
+    text-align: center;
 }
 
 .register-login button{
@@ -398,6 +400,7 @@ html {
 
 .botones-registro{
     width: 90%;
+    padding: 50px;
 }
 
 .botonForm{
@@ -407,6 +410,7 @@ html {
     border-radius: 5px;
     transition: 0.5s;
     background-color: rgb(152, 97, 202);
+    
 }
 
 .botonForm:hover{
