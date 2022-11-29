@@ -43,6 +43,7 @@ function removeItem(index) {
   
   if (localStorage.carrito && localStorage.carrito != "[]") {
     carrito = JSON.parse(localStorage.carrito);
+    
     carrito.forEach((item, index) => {
       fetch(`/api/discs/detail/${item.id}`)
       
