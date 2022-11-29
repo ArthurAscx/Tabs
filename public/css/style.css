@@ -123,6 +123,14 @@ header button {
     background-color: rgb(248, 193, 10);
 }
 
+header span{
+    color:white;
+    background-color: red;
+    width:20px;
+    height:20px;
+    border-radius: 5px;
+    
+}
 
 
 .logo-footer {
@@ -582,6 +590,8 @@ html {
 .mensajeError{
     color: red;
 }
+
+
 
 @media (min-width: 550px){ 
 
