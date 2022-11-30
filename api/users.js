@@ -6,15 +6,25 @@ let user = {
     all: async function (req, res) {
         try {
             let allUsers = await db.User.findAll();
-            allUsers ?
+            if(allUsers){ 
+                let userFiltered = []
+                for(let i = 0;i<allUsers.length;i++){
+                    let userObj = {
+                        firstName: allUsers[i].firstName, 
+                        lastName: allUsers[i].lastName,
+                        email: allUsers[i].email
+                    }
+                    userFiltered[i] = userObj
+                }
                 res.json({
                     total: allUsers.length,
-                    data: allUsers,
+                    data: userFiltered,
                     status: 200
                 })
-                :
+            }
+             else{
                 res.send("No se recibió informacion")
-
+             }
         } catch (error) {
             res.send("Error en la consulta " + error)
         }
@@ -23,14 +33,20 @@ let user = {
     user: async (req, res) => {
         try {
             let userFound = await db.User.findByPk(req.params.id);
-            userFound ? res.json({
+            if (userFound){
+            userFound.password = null
+            userFound.idCategory = null
+            res.json({
                 data: userFound,
-                status: 200
+                status: 200,
+                detail: "http://localhost:3000/usuario/detalle/"+userFound.idUser
             })
-                :
+        }
+            else{
                 res.send("El usuario no existe")
+            }
         } catch (error) {
-            res.send("Error en la consulta")
+            res.send("Error en la consulta" + error)
         }
     },
 
