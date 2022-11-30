@@ -26,7 +26,7 @@ function productosEnElCarrito() {
     productos.forEach((producto) => {
         console.log("productos:", producto)
       producto.addEventListener("click", function (e) {
-        console.log("paso por aqui3")
+        
         if (localStorage.carrito) {
           let carrito = JSON.parse(localStorage.carrito);
           let index = carrito.findIndex((prod) => prod.id == e.target.dataset.id);
