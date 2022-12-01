@@ -8,9 +8,14 @@
                     <p>Estos son los articulos actualmente en tu carrito: </p>
                 </div>
                 <form action="/" method="get" class="formularioCompra">
-                    <%- include("./partials/productArrayCart") %>
+                                    
+                  <table>
+                    <tbody class="cartRows">
+                  </tbody>
+    
+                </table>
                         <div class="finalCosto">
-                            <h2 class="precioTotal">Costo total:$0</h2>
+                            <h2 class="totalAmount">Costo total:$0</h2>
                             <button type="submit" class="botonForm">Comprar todo</button>
                         </div>
                 </form>
@@ -21,5 +26,5 @@
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
             crossorigin="anonymous"></script>
 
-            <script src="../public/scripts/cart.js"></script>
+            <script src="/scripts/cart.js"></script>
                 </html>

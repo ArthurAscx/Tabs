@@ -32,8 +32,9 @@ function removeItem(index) {
   }
   
   function calcularTotal(products) {
+    console.log("price", Number(products[0].price))
     return products.reduce(
-      (acum, product) => (acum += product.price * product.quantity),
+      (acum, product) => (acum += Number(product.price) * product.quantity),
       0
     );
   }
@@ -50,10 +51,25 @@ function removeItem(index) {
         .then((res) => res.json())
         .then((product) => {
           if (product) {
-            cartRows.innerHTML += `
+            
+            cartRows.innerHTML+=`
+            <article>
+            <a href="/producto/detalle/${product.data.idDisc}"><img src="/img/productos/${product.data.artwork}"></a>
+            <div class="datosDisco">
+                <a href="/producto/detalle/${product.data.idDisc}" style="text-decoration: none; color:black"><h3>${product.data.title}</h3></a>
+            <h4>${product.data.idArtist}</h4>
+            <span>ID:${product.data.idDisc}</span>
+            <span>${product.data.price}</span>
+            <span>Cant:${item.quantity}</span>
+        </div>
+            
+                <button class="botonForm">Eliminar</button>          
+        </article>
+            `
+           /*  cartRows.innerHTML += `
               <tr id="row${index}">
                   <th scope="row">${index + 1}</th>
-                  <td>${product.name}</td>
+                  <td>${product.data.title}</td>
                   <td>$ ${product.price}</td>
                   <td class="text-center">${item.quantity}</td>
                   <td class="text-center">$ ${parseFloat(
@@ -62,12 +78,10 @@ function removeItem(index) {
                   ).toFixed(2)}</td>
                   <td><button class="btn btn-danger btn-sm" onclick=removeItem(${index})><i class="fas fa-trash"></i></button></td>
               </tr>            
-              `;
+              `; */
             products.push({
-              productId: product.id,
-              name: product.name,
-              price: product.price,
-              quantity: item.quantity,
+             ...product.data, 
+             quantity:item.quantity
             });
           } else {
             carrito.splice(index, 1);
@@ -86,14 +100,14 @@ function removeItem(index) {
   
   let formCheckout = document.querySelector("#checkoutCart");
   
-  formCheckout.onsubmit = (e) => {
+  /* formCheckout.onsubmit = (e) => {
     e.preventDefault();
     const formData = {
       orderItems: products,
       paymentMethod: formCheckout.paymentMethod.value,
       shippingMethod: formCheckout.shippingMethod.value,
       total: calcularTotal(products),
-    };
+    }; 
     fetch("/api/checkout", {
       method: "POST",
       headers: {
@@ -113,5 +127,5 @@ function removeItem(index) {
       })
       .catch((error) => console.log(error));
     // console.log(formCheckout.elements, formData, products);
-  };
+  };*/
   
