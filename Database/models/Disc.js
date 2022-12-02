@@ -14,7 +14,7 @@ const cols = {
             allowNull: false,
          },
          price:{
-            type: DataTypes.DOUBLE,
+            type: DataTypes.FLOAT(11,10),
             defaultValue: 25,
             allowNull: false,
          },
