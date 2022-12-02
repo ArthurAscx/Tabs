@@ -11,7 +11,7 @@ const productHandler = {
             let idDisco = parseInt(req.params.id);
             let disco = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
             // UN TRY CATCH en caso de que este undefined el params id
-            res.render("productDetail");
+            res.render("productDetail", { disco: disco.data.data });
         } catch (error) {
             res.send("Error en el llamado al procedimiento: " + error)
         }
@@ -20,7 +20,7 @@ const productHandler = {
     carrito: async (req, res) => {
         try {
             let lista = await axios.get("http://127.0.0.1:3000/api/discs/all")
-            res.render("productCart", { lista: lista.data.data });
+            res.render("productCart");
         } catch (error) {
             res.send("Error en la consulta: " + error)
         }
