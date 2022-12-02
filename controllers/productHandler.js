@@ -11,7 +11,7 @@ const productHandler = {
             let idDisco = parseInt(req.params.id);
             let disco = await axios.get("http://127.0.0.1:3000/api/discs/detail/" + idDisco)
             // UN TRY CATCH en caso de que este undefined el params id
-            res.render("productDetail", { disco: disco.data.data });
+            res.render("productDetail");
         } catch (error) {
             res.send("Error en el llamado al procedimiento: " + error)
         }
