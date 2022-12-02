@@ -32,7 +32,7 @@ function removeItem(index) {
   }
   
   function calcularTotal(products) {
-    console.log("price", Number(products[0].price))
+    
     return products.reduce(
       (acum, product) => (acum += Number(product.price) * product.quantity),
       0
@@ -57,13 +57,13 @@ function removeItem(index) {
             <a href="/producto/detalle/${product.data.idDisc}"><img src="/img/productos/${product.data.artwork}"></a>
             <div class="datosDisco">
                 <a href="/producto/detalle/${product.data.idDisc}" style="text-decoration: none; color:black"><h3>${product.data.title}</h3></a>
-            <h4>${product.data.idArtist}</h4>
-            <span>ID:${product.data.idDisc}</span>
-            <span>${product.data.price}</span>
-            <span>Cant:${item.quantity}</span>
+           
+            <span>ID: ${product.data.idDisc}</span>
+            <span>Precio: $${product.data.price}</span>
+            <span>Cant: ${item.quantity}</span>
         </div>
             
-                <button class="botonForm">Eliminar</button>          
+                <button class="botonForm" onclick=removeItem(${index})>Eliminar</button>          
         </article>
             `
            /*  cartRows.innerHTML += `
