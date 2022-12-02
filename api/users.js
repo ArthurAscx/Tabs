@@ -12,7 +12,8 @@ let user = {
                     let userObj = {
                         firstName: allUsers[i].firstName, 
                         lastName: allUsers[i].lastName,
-                        email: allUsers[i].email
+                        email: allUsers[i].email,
+                        detail: "http://localhost:3000/usuario/detalle/"+userFound.idUser
                     }
                     userFiltered[i] = userObj
                 }
@@ -34,10 +35,13 @@ let user = {
         try {
             let userFound = await db.User.findByPk(req.params.id);
             if (userFound){
-            userFound.password = null
-            userFound.idCategory = null
             res.json({
-                data: userFound,
+                data: {
+                    idUser: userFound.idUser,
+                    firstName: userFound.firstName,
+                    lastName: userFound.lastName,
+                    avatar: userFound.avatar
+                },
                 status: 200,
                 detail: "http://localhost:3000/usuario/detalle/"+userFound.idUser
             })

@@ -89,8 +89,8 @@ const userHandler = {
 
     lista:async (req, res) => {
         try {
-            let listaUser = await axios.get("http://127.0.0.1:3000/api/users/all")
-            res.render("userList", { users: listaUser.data.data })
+            let listaUser = await db.User.findAll();
+            res.render("userList", { users: listaUser})
         } catch (error) {
             res.send("Hubo un error al intentar crear la lista de usuarios: " + error)
         }
