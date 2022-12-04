@@ -13,7 +13,8 @@ let user = {
                         firstName: allUsers[i].firstName, 
                         lastName: allUsers[i].lastName,
                         email: allUsers[i].email,
-                        detail: "http://localhost:3000/usuario/detalle/"+allUsers[i].idUser
+                        detail: "http://localhost:3000/usuario/detalle/"+allUsers[i].idUser,
+                        avatar: "http://localhost:3000/img/Avatares/"+allUsers[i].avatar
                     }
                     userFiltered[i] = userObj
                 }
@@ -40,7 +41,7 @@ let user = {
                     idUser: userFound.idUser,
                     firstName: userFound.firstName,
                     lastName: userFound.lastName,
-                    avatar: userFound.avatar
+                    avatar: "http://localhost:3000//img/Avatares/"+userFound.avatar
                 },
                 status: 200,
                 detail: "http://localhost:3000/usuario/detalle/"+userFound.idUser
