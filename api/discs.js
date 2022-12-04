@@ -24,6 +24,7 @@ let disc = {
             let discFound = await db.Disc.findByPk(req.params.id);
             discFound ? res.json({
                 data: discFound,
+                img:"http://localhost:3000/img/productos/"+discFound.artwork ,
                 status: 200
             })
                 :

@@ -13,7 +13,7 @@ let user = {
                         firstName: allUsers[i].firstName, 
                         lastName: allUsers[i].lastName,
                         email: allUsers[i].email,
-                        detail: "http://localhost:3000/usuario/detalle/"+userFound.idUser
+                        detail: "http://localhost:3000/usuario/detalle/"+allUsers[i].idUser
                     }
                     userFiltered[i] = userObj
                 }
