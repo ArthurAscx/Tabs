@@ -3,11 +3,42 @@ const Op = db.Sequelize.Op
 let disc = {
 
     all: async function (req, res) {
+        let DiscGenres = {
+            genre1 : 0,
+            genre2 : 0,
+            genre3 : 0,
+            genre4 : 0,
+            genre5 : 0,
+            genre6 : 0,
+            genre7 : 0,
+            genre8 : 0,
+        }
         try {
             let allDiscs = await db.Disc.findAll();
+            allDiscs.forEach(disc => {
+                switch(disc.idGenre) {
+                    case(1): DiscGenres.genre1 += 1
+                    break;
+                    case(2): DiscGenres.genre2 += 1
+                    break;
+                    case(3): DiscGenres.genre3 += 1
+                    break;
+                    case(4): DiscGenres.genre4 += 1
+                    break;
+                    case(5): DiscGenres.genre5 += 1
+                    break;
+                    case(6): DiscGenres.genre6 += 1
+                    break;
+                    case(7): DiscGenres.genre7 += 1
+                    break;
+                    case(8): DiscGenres.genre8 += 1
+                    break;
+                }
+            });
             allDiscs ?
                 res.json({
                     total: allDiscs.length,
+                    genres: DiscGenres,
                     data: allDiscs,
                     status: 200
                 })
@@ -24,7 +55,7 @@ let disc = {
             let discFound = await db.Disc.findByPk(req.params.id);
             discFound ? res.json({
                 data: discFound,
-                img:"http://localhost:3000/img/productos/"+discFound.artwork ,
+                img: "http://localhost:3000/img/productos/" + discFound.artwork,
                 status: 200
             })
                 :
@@ -80,7 +111,7 @@ let disc = {
         }
     },
     delete: async (req, res) => {
-        try{
+        try {
             await db.Disc.destroy({
                 where: {
                     idDisc: req.params.id
@@ -95,12 +126,12 @@ let disc = {
         }
     },
 
-    find: async (req,res)=>{
+    find: async (req, res) => {
         try {
             let searchword = req.query.finder.toLowerCase()
             let discsFound = await db.Disc.findAll({
                 where: {
-                    title: {[Op.like]: "%"+ searchword +"%"}
+                    title: { [Op.like]: "%" + searchword + "%" }
                 }
             })
             discsFound ?
@@ -111,9 +142,9 @@ let disc = {
                 })
                 :
                 res.send("No se recibió informacion")
-           // res.send("La búsqueda de "+ searchword+ " es: "+ discsFound.title)
+            // res.send("La búsqueda de "+ searchword+ " es: "+ discsFound.title)
         } catch (error) {
-            res.send("No se encontro el disco. Razón: "+ error)
+            res.send("No se encontro el disco. Razón: " + error)
         }
     }
 }
