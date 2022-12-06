@@ -12,18 +12,21 @@ const handlerOne = {
 
         let masvendidos = await db.Disc.findAll({
             where: {
-                sales: {[Op.gte]: 20}
-            }
+                sales: {[Op.gte]: 20},
+            },
+            limit : 20
         })
         let nuevos = await db.Disc.findAll({
             where: {
                  releaseYear: {[Op.gt]: 2000}
-            }
+            },
+            limit : 20
         })
         let nuestros = await db.Disc.findAll({
             where: {
                 idGenre: 5
-            }
+            },
+            limit : 20
         })
         res.render("index", {masvendidos, nuevos, nuestros, user});
     },
