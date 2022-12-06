@@ -100,7 +100,7 @@ const userHandler = {
         try {
             let idUser = Number(req.params.id);
             let user = await db.User.findByPk(idUser);
-            console.log(user);
+            
             res.render("userDetail", { user: user });
         } catch (error) {
             res.send("Error intentando traer el usuario a la vista: " + error)
